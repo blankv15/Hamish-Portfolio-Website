@@ -5,6 +5,7 @@ import profilePic from '../src/assets/profile.png'
 import { Card } from '@mantine/core';
 import DisplayCard from './components/DisplayCard';
 import SomeData from './assets/data/someData.json';
+import TabSection from './components/TabSection';
 
 function App(SomeData) {
   const [count, setCount] = useState(0)
@@ -49,7 +50,16 @@ function App(SomeData) {
         </div>
 
 
+
+
         
+      </div>
+
+
+      <div>
+        <h2>My Skills</h2>
+        <TabSection/>
+
       </div>
 
 

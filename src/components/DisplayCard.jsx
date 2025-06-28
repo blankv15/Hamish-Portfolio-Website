@@ -14,7 +14,7 @@ function DisplayCard(props) {
 
           <p>
            {props.description}
-          </p>s
+          </p>
           <button>{props.buttonText}</button>
         </div>
       </div>
