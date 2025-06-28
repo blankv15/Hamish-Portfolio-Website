@@ -1,0 +1,27 @@
+.card{
+    width: 300px;
+    height: 350px;
+    white-space: normal;
+    background-color: grey;
+}
+
+.card img{
+    height: 160px;
+}
+
+.card ol{
+        list-style-type: none;
+        padding: 2px;
+
+
+}
+.card button-li{
+    text-align: center;
+}
+
+.card button{
+    font-size: 1.5em;
+    padding: 3px 3px 3px 3px;
+    border-radius: 5px;
+    text-align: center;
+}
