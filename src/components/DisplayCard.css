@@ -2,21 +2,35 @@
     width: 300px;
     height: 350px;
     white-space: normal;
-    background-color: grey;
+    background-color:#ffffff;
+    grid-template-columns: 1;
+    border-radius: 15px;
+    box-shadow: 6px 0 7.5px -2px rgba(31, 73, 125, 0.8), -6px 0 4px -2px rgba(31, 73, 125, 0.8);
+    border: 2px;
+    border-color: black;
+
+
+}
+
+#text-infomation{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 }
 
 .card img{
     height: 160px;
-}
-
-.card ol{
-        list-style-type: none;
-        padding: 2px;
-
+    border-radius:  15px 15px 0px 0px; 
+    
 
 }
-.card button-li{
+
+
+.card button{
     text-align: center;
+    width: 100%;
+    border-radius: 3px;
 }
 
 .card button{
@@ -25,3 +39,4 @@
     border-radius: 5px;
     text-align: center;
 }
+
