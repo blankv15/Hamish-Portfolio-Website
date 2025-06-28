@@ -3,22 +3,19 @@ import "./DisplayCard.css";
 {
   /*.  image size is 300px* 160px */
 }
-function DisplayCard() {
+function DisplayCard(props) {
   return (
     <>
       <div className="card">
-        <img src="https://picsum.photos/300/160" alt="project image" />
+        <img src={props.image_url} alt="project image" />
 
-        <div id="text-infomation">
-          <h4>Norway Fjord Adventures</h4>
+        <div id="title">
+          <h4>{props.title}</h4>
 
           <p>
-            With Fjord Tours you can explore more of the magical fjord
-            landscapes with tours and activities on and around the fjords of
-            Norway
-          </p>
-
-          <button>Read More</button>
+           {props.description}
+          </p>s
+          <button>{props.buttonText}</button>
         </div>
       </div>
     </>

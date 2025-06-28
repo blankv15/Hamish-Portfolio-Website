@@ -4,9 +4,12 @@ import viteLogo from '/vite.svg'
 import profilePic from '../src/assets/profile.png'
 import { Card } from '@mantine/core';
 import DisplayCard from './components/DisplayCard';
+import SomeData from './assets/data/someData.json';
 
-function App() {
+function App(SomeData) {
   const [count, setCount] = useState(0)
+
+  const cardInfo = SomeData;
 
   return (
     <>
@@ -19,8 +22,31 @@ function App() {
       </div>
 
       <div className='current-projects'>
-        <h2>Current Projects</h2>
-        <DisplayCard/>
+        <h2>Recent Projects</h2>
+        <div className="card-grid-container">
+
+            <DisplayCard 
+              image_url="https://picsum.photos/300/160"
+              title="Norway Fjord Adventures"
+              description="With Fjord Tours you can explore more of the magical fjord lndscapes with tours and activities on and around the fjords of Norway"
+              buttonText="Read More"
+              
+              />
+                          <DisplayCard 
+              image_url="https://picsum.photos/300/160"
+              title="Norway Fjord Adventures"
+              description="With Fjord Tours you can explore more of the magical fjord lndscapes with tours and activities on and around the fjords of Norway"
+              buttonText="Read More"
+              
+              />
+                          <DisplayCard 
+              image_url="https://picsum.photos/300/160"
+              title="Norway Fjord Adventures"
+              description="With Fjord Tours you can explore more of the magical fjord lndscapes with tours and activities on and around the fjords of Norway"
+              buttonText="Read More"
+              
+              />
+        </div>
 
 
         
