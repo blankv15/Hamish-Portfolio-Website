@@ -1,0 +1,41 @@
+[
+  {
+    "value": "full-stack",
+    "label": "Full-Stack Development",
+    "image": "https://picsum.photos/400/400",
+    "title": "Full-Stack Development",
+    "description": "I develop full-stack web applications, focusing on creating functional, user-friendly experiences that meet business objectives.",
+    "points": [
+      "Developed web applications from concept to deployment, including lead-generation and e-commerce sites.",
+      "Built responsive user interfaces using HTML, CSS, and JavaScript.",
+      "Implemented server-side logic and managed databases with PHP and MySQL on a LAMP stack."
+    ],
+    "tech": ["PHP", "MySQL", "JavaScript", "HTML/CSS"]
+  },
+  {
+    "value": "cloud-infra",
+    "label": "Cloud & Infrastructure",
+    "image": "https://picsum.photos/401/400",
+    "title": "Cloud & Infrastructure",
+    "description": "I design and manage cloud infrastructure to ensure scalability, reliability, and performance.",
+    "points": [
+      "Provisioned and managed cloud resources on AWS and Google Cloud.",
+      "Implemented CI/CD pipelines for automated testing and deployment.",
+      "Monitored system health and performance, ensuring high availability."
+    ],
+    "tech": ["AWS", "Google Cloud", "Docker", "Terraform"]
+  },
+  {
+    "value": "ai-automation",
+    "label": "AI & Automation",
+    "image": "https://picsum.photos/402/400",
+    "title": "AI & Automation",
+    "description": "I leverage AI and automation to streamline processes and create intelligent applications.",
+    "points": [
+      "Developed custom AI models for data analysis and prediction.",
+      "Automated repetitive tasks using scripts and modern AI tools.",
+      "Integrated third-party AI services to enhance application capabilities."
+    ],
+    "tech": ["Python", "TensorFlow", "scikit-learn", "OpenAI API"]
+  }
+]

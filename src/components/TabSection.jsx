@@ -1,51 +1,47 @@
-import { Grid, Tabs } from "@mantine/core";
-import "./TabSection.css";
-import TechBadge from "./TechBadge";
+import React from 'react';
+import { Tabs, Loader } from '@mantine/core'; // Added Loader for a better UX
+import TabPanelContent from './TabPanelContent';
+import tabData from '../assets/data/tabData.json';
+import { useState } from "react";
 
-function TabSection(props) {
+
+function TabSection() {
+  const [activeTab, setActiveTab] = useState(tabData[0].value);
+
+  const handleBack = () => {
+    const currentIndex = tabData.findIndex((tab) => tab.value === activeTab);
+    const prevIndex = (currentIndex - 1 + tabData.length) % tabData.length;
+    setActiveTab(tabData[prevIndex].value);
+  };
+
+  const handleNext = () => {
+    const currentIndex = tabData.findIndex((tab) => tab.value === activeTab);
+    const nextIndex = (currentIndex + 1) % tabData.length;
+    setActiveTab(tabData[nextIndex].value);
+  };
+
   return (
-    <>
-      <Tabs defaultValue="Software Development">
-        <Tabs.List>
-          <Tabs.Tab value="gallery">Full-Stack Development</Tabs.Tab>
-          <Tabs.Tab value="messages">Cloud & Infrastructure</Tabs.Tab>
-          <Tabs.Tab value="settings">AI & Automation</Tabs.Tab>
-        </Tabs.List>
+    <Tabs value={activeTab} onChange={setActiveTab} variant="pills" radius="md">
+      <Tabs.List>
+        {tabData.map((tab) => (
+          <Tabs.Tab key={tab.value} value={tab.value}>
+            {tab.label}
+          </Tabs.Tab>
+        ))}
+      </Tabs.List>
 
-        <Tabs.Panel value="gallery">
-          <Grid grow>
-            <Grid.Col
-              className="tab-image-col"
-              span={{ base: 12, md: 6, lg: 3 }}
-            >
-              <img src="https://picsum.photos/400/400" />
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, md: 6, lg: 3 }}>
-              <h3>Full-Stack Development</h3>
-              <p>
-               I develop full-stack web applications, focusing on creating functional, user-friendly experiences that meet business objectives.
-              </p>
-
-              <ol>
-                <li>Project Delivery: Developed web applications from concept to deployment, including lead-generation and e-commerce sites.</li>
-                <li>Frontend: Built responsive user interfaces using HTML, CSS, and JavaScript.</li>
-                <li>Backend: Implemented server-side logic and managed databases with PHP and MySQL on a LAMP stack.</li>
-
-              </ol>
-              <TechBadge badgeText="PHP"/>
-              <TechBadge badgeText="MySQL"/>
-              <TechBadge badgeText="MySQL"/>
-              <TechBadge badgeText="MySQL"/>
-
-            </Grid.Col>
-          </Grid>
+      {tabData.map((tab, index) => (
+        <Tabs.Panel key={tab.value} value={tab.value} pt="xs">
+          <TabPanelContent
+            tab={tab}
+            onBack={handleBack}
+            onNext={handleNext}
+            isFirstTab={index === 0}
+            isLastTab={index === tabData.length - 1}
+          />
         </Tabs.Panel>
-
-        <Tabs.Panel value="messages">Messages tab content</Tabs.Panel>
-
-        <Tabs.Panel value="settings">Settings tab content</Tabs.Panel>
-      </Tabs>
-    </>
+      ))}
+    </Tabs>
   );
 }
 

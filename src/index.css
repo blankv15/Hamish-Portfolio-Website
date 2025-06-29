@@ -33,9 +33,10 @@ body{
 .current-projects{
   padding-top: 10%;
 }
-.card-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
-    gap: 15%; 
-    padding: 10%;
-    }
+
+
+.featured-projects SimpleGrid{
+  padding: 100px 100px 100px 100px ;
+  margin: 30%;
+
+}

@@ -1,3 +1,26 @@
-.tab-image-col{
-    padding: 5%;
+.tab-text-content-wrap {
+  padding:3%;
+}
+img {
+  height: 400px;
+  width: 400px;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.2rem;
+}
+ul {
+  padding-left: 0;
+}
+
+li {
+  padding: 10px 10px 10px 10px;
+  list-style: none;
+  border-radius: 10px;
+  background-color: aqua;
+  margin: 10px 0 0 0;
 }
