@@ -2,10 +2,11 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import profilePic from "../src/assets/profile.png";
-import { Card, SimpleGrid } from "@mantine/core";
+import { Card, SimpleGrid, Group } from "@mantine/core";
 import DisplayCard from "./components/DisplayCard";
 import SomeData from "./assets/data/someData.json";
 import TabSection from "./components/TabSection";
+import TechBadge from "./components/TechBadge";
 
 function App(SomeData) {
   const [count, setCount] = useState(0);
@@ -23,9 +24,9 @@ function App(SomeData) {
         </h1>
       </div>
 
-      <div className="current-projects">
-        <h2>Recent Projects</h2>
-        <SimpleGrid cols={2}>
+      <div className="featured-projects">
+        <h2>Featured Projects</h2>
+        <Group  >
           <DisplayCard
             image_url="https://picsum.photos/300/160"
             title="Norway Fjord Adventures"
@@ -44,12 +45,20 @@ function App(SomeData) {
             description="With Fjord Tours you can explore more of the magical fjord lndscapes with tours and activities on and around the fjords of Norway"
             buttonText="Read More"
           />
-        </SimpleGrid>
+        </Group>
       </div>
 
       <div className="skills">
         <h2>My Skills</h2>
         <TabSection />
+      </div>
+
+
+      <div>
+
+        <TechBadge badgeText="View My Github"/>
+        <TechBadge badgeText="Download My CV"/>
+
       </div>
     </>
   );
