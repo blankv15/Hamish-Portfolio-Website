@@ -1,3 +1,5 @@
+
+
 .tab-text-content-wrap {
   padding:3%;
 }
@@ -6,7 +8,7 @@ img {
   width: 400px;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 2.074srem;
   font-weight: 600;
 }
 
@@ -14,13 +16,97 @@ p {
   font-size: 1.2rem;
 }
 ul {
-  padding-left: 0;
 }
 
 li {
-  padding: 10px 10px 10px 10px;
   list-style: none;
   border-radius: 10px;
-  background-color: aqua;
   margin: 10px 0 0 0;
+
+  
+}
+
+
+/* --- Root Container --- */
+.custom-tabs-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* --- Tab List (the bar that holds the tabs) --- */
+.custom-tabs-list {
+  display: flex;
+  border-bottom: 2px solid #e9ecef; /* A subtle line under the tabs */
+  margin-bottom: 1.5rem;
+}
+
+/* --- Individual Tab Styling --- */
+.custom-tab {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+  color: white;
+}
+
+/* --- Tab Hover State --- */
+.custom-tab:hover {
+  color: #495057;
+  transform: translateY(-2px);
+}
+
+/* --- ACTIVE TAB HIGHLIGHT ---
+  Mantine adds a `data-active` attribute to the active tab.
+  We target this attribute to apply unique styles.
+*/
+.custom-tab[data-active] {
+  font-weight: 700; /* Make the font bolder */
+}
+
+/* --- Active Tab Indicator (the line underneath) --- */
+.custom-tab[data-active]::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Aligns perfectly with the parent's border-bottom */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #1971c2; /* Match the active text color */
+  border-radius: 2px;
+}
+
+/* --- Tab Panel (the content area) --- */
+.custom-tab-panel {
+  padding: 1rem 0.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- General Content Typography --- */
+.custom-tab-panel h3 {
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+
+.custom-tab-panel p {
+  line-height: 1.6;
+}
+
+.custom-tab-panel ul {
+  padding-left: 20px;
+  color: white;
+}
+
+.custom-tab-panel li {
+  margin-bottom: 0.5rem;
 }

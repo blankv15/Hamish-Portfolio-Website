@@ -3,6 +3,7 @@ import { Tabs, Loader } from '@mantine/core'; // Added Loader for a better UX
 import TabPanelContent from './TabPanelContent';
 import tabData from '../assets/data/tabData.json';
 import { useState } from "react";
+import './TabSection.css'
 
 
 function TabSection() {
@@ -21,17 +22,17 @@ function TabSection() {
   };
 
   return (
-    <Tabs value={activeTab} onChange={setActiveTab} variant="pills" radius="md">
-      <Tabs.List>
+    <Tabs className="custom-tabs-container" value={activeTab} onChange={setActiveTab} variant="gallery" radius="md"  defaultValue="first">
+      <Tabs.List className="custom-tabs-list">
         {tabData.map((tab) => (
-          <Tabs.Tab key={tab.value} value={tab.value}>
+          <Tabs.Tab className="custom-tab" key={tab.value} value={tab.value}>
             {tab.label}
           </Tabs.Tab>
         ))}
       </Tabs.List>
 
       {tabData.map((tab, index) => (
-        <Tabs.Panel key={tab.value} value={tab.value} pt="xs">
+        <Tabs.Panel className='custom-tab-panel' key={tab.value} value={tab.value} pt="xs">
           <TabPanelContent
             tab={tab}
             onBack={handleBack}

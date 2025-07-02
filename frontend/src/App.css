@@ -1,0 +1,41 @@
+.hero{
+  text-align: center;
+  padding: 6.25rem;
+  margin: 10% 10% 10% 10% ;
+
+}
+
+.hero h1{
+  font-weight: 400;
+  text-align: left;
+  font-size: 2.986rem;
+  color: white;
+
+
+
+}
+
+.hero  span{
+  color: aqua;
+}
+.hero img{
+  height: 20em;
+  border-radius: 30px;
+
+}
+
+.current-projects{
+  padding-top: 10%;
+}
+
+
+.featured-projects{
+    margin: 10%;
+    overflow: h;
+}
+
+
+.skills{
+    margin: 10%;
+
+}

@@ -1,0 +1,18 @@
+
+
+.navHeader ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+
+}
+
+.navHeader li{
+  float: left;
+    display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
