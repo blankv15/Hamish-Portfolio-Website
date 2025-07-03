@@ -1,21 +1,17 @@
-
 import profilePic from "../src/assets/profile.png";
 import { Card, SimpleGrid, Group } from "@mantine/core";
 import DisplayCard from "./components/DisplayCard";
 import SomeData from "./assets/data/someData.json";
 import TabSection from "./components/TabSection";
 import TechBadge from "./components/TechBadge";
-import ContactForm from "./components/ContactForm";
-import ManTineCard from "./components/MantineCard";
 import NavHeader from "./components/NavHeader";
-import "./App.css"
+import ManTineCard from "./components/MantineCard";
+import "./App.css";
+import GetInTouchSimple from "./components/GetInTouchSimple";
 
 function App() {
-
-
   return (
     <>
-
       <div className="hero">
         <img className="Profile-Pic" src={profilePic} />
         <h1 className="heroText">
@@ -28,34 +24,54 @@ function App() {
       <div className="featured-projects">
         <h2>Featured Projects</h2>
         <div className="featured-grid">
-          <div className="featured-grid-item"> <ManTineCard /></div>
-                    <div className="featured-grid-item"> <ManTineCard /></div>
-          <div className="featured-grid-item"> <ManTineCard /></div>
-          <div className="featured-grid-item"> <ManTineCard /></div>
-          <div className="featured-grid-item"> <ManTineCard /></div>
-          <div className="featured-grid-item"> <ManTineCard /></div>
-
-
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
+          <div className="featured-grid-item">
+            {" "}
+            <ManTineCard />
+          </div>
         </div>
-
-
-
-
       </div>
 
       <div className="skills">
         <h2>My Skills</h2>
         <TabSection />
       </div>
-      
+      <div className="contact-form">
+        <h2>Get In Touch</h2>
 
+        <div className="contact-grid">
+          <div className="contact-text">
+            <h6>
+              Whether you're a potential client, a fellow creative, or just
+              Browse, I'd be happy to connect. Drop me a line, and let's start a
+              conversation.
+            </h6>
+          </div>
 
-
-      <div className="new-cards">
-        <h2>My Skills</h2>
+          <div className="form-box">
+            <GetInTouchSimple />
+          </div>
+        </div>
       </div>
-      
-
     </>
   );
 }

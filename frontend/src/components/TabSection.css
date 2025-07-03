@@ -29,9 +29,7 @@ li {
 /* --- Root Container --- */
 .custom-tabs-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 1rem auto;
 }
 
 /* --- Tab List (the bar that holds the tabs) --- */
@@ -47,7 +45,6 @@ li {
   border: none;
   cursor: pointer;
   padding: 12px 20px;
-  font-size: 16px;
   font-weight: 600;
   color:green; /* Default color for inactive tabs */
   position: relative;
@@ -56,6 +53,8 @@ li {
 }
 .custom-tab span{
   color: white;
+    font-size: 1.2rem;
+
 }
 /* --- Tab Hover State --- */
 .custom-tab:hover span{
