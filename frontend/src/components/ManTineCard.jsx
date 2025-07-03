@@ -1,21 +1,19 @@
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
-{
-  /*.  image size is 300px* 160px */
-}
-function ManTineCard() {
+function MantineCard() {
   return (
-   <Card shadow="sm" padding="lg" radius="md" withBorder >
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
         <Image
-          src="https://picsum.photos/200/200"
-          height={200}
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+          height={160}
           alt="Norway"
         />
       </Card.Section>
 
       <Group justify="space-between" mt="md" mb="xs">
         <Text fw={500}>Norway Fjord Adventures</Text>
+        <Badge color="pink">On Sale</Badge>
       </Group>
 
       <Text size="sm" c="dimmed">
@@ -29,5 +27,4 @@ function ManTineCard() {
     </Card>
   );
 }
-
-export default ManTineCard;
+export default MantineCard

@@ -8,7 +8,7 @@ import NavHeader from "./components/NavHeader.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <MantineProvider>
+    <MantineProvider defaultColorScheme="dark">
       <>
         <App />
       </>

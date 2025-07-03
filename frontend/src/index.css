@@ -3,11 +3,8 @@ body {
   font-family: "Questrial", sans-serif;
   background-image: linear-gradient(
     to top,
-    #8e8e8e,
-    #6d6a7d,
-    #4d476c,
-    #2c265a,
-    #000648
+    #000000,
+    #2c265a
   );
 
 }
@@ -15,88 +12,6 @@ body {
 
 
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-@media (min-width: 1200px) {  }
-h1 {
-  font-size: 2.986rem;
-  color: white;
-}
-h2 {
-  font-size: 2.488rem;
-    color: white;
-
-}
-h3 {
-  font-size: 2.074rem;
-    color: white;
-
-}
-h4 {
-  font-size: 1.728rem;
-    color: white;
-
-}
-h5 {
-  font-size: 1.44rem;
-    color: white;
-
-}
-h6 {
-  font-size: 1.2rem;
-    color: white;
-
-}
-
-p {
-  font-size: 1rem;
-    color: white;
-
-}
- }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-@media (min-width: 1200px) {  }
-h1 {
-  font-size: 2.986rem;
-  color: white;
-}
-h2 {
-  font-size: 2.488rem;
-    color: white;
-
-}
-h3 {
-  font-size: 2.074rem;
-    color: white;
-
-}
-h4 {
-  font-size: 1.728rem;
-    color: white;
-
-}
-h5 {
-  font-size: 1.44rem;
-    color: white;
-
-}
-h6 {
-  font-size: 1.2rem;
-    color: white;
-
-}
-
-p {
-  font-size: 1rem;
-    color: white;
-
-}
- }
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
 h1 {
   font-size: 2.986rem;
   color: white;

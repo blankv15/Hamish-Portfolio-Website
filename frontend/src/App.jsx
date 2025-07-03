@@ -6,7 +6,7 @@ import SomeData from "./assets/data/someData.json";
 import TabSection from "./components/TabSection";
 import TechBadge from "./components/TechBadge";
 import ContactForm from "./components/ContactForm";
-import ManTineCard from "./components/ManTineCard";
+import ManTineCard from "./components/MantineCard";
 import NavHeader from "./components/NavHeader";
 import "./App.css"
 
@@ -27,23 +27,34 @@ function App() {
 
       <div className="featured-projects">
         <h2>Featured Projects</h2>
+        <div className="featured-grid">
+          <div className="featured-grid-item"> <ManTineCard /></div>
+                    <div className="featured-grid-item"> <ManTineCard /></div>
+          <div className="featured-grid-item"> <ManTineCard /></div>
+          <div className="featured-grid-item"> <ManTineCard /></div>
+          <div className="featured-grid-item"> <ManTineCard /></div>
+          <div className="featured-grid-item"> <ManTineCard /></div>
 
 
-    <SimpleGrid cols={4}  >
-          <ManTineCard/>
-          <ManTineCard/>    
-          <DisplayCard/>
-    </SimpleGrid>
+        </div>
+
+
+
+
       </div>
 
       <div className="skills">
         <h2>My Skills</h2>
         <TabSection />
       </div>
+      
 
 
 
-
+      <div className="new-cards">
+        <h2>My Skills</h2>
+      </div>
+      
 
     </>
   );

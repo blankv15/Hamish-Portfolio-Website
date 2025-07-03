@@ -26,7 +26,7 @@ function TabSection() {
       <Tabs.List className="custom-tabs-list">
         {tabData.map((tab) => (
           <Tabs.Tab className="custom-tab" key={tab.value} value={tab.value}>
-            {tab.label}
+            <span>{tab.label}</span>
           </Tabs.Tab>
         ))}
       </Tabs.List>

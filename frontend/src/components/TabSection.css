@@ -26,7 +26,6 @@ li {
   
 }
 
-
 /* --- Root Container --- */
 .custom-tabs-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
@@ -50,14 +49,17 @@ li {
   padding: 12px 20px;
   font-size: 16px;
   font-weight: 600;
+  color:green; /* Default color for inactive tabs */
   position: relative;
   transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent tab text from wrapping */
+}
+.custom-tab span{
   color: white;
 }
-
 /* --- Tab Hover State --- */
-.custom-tab:hover {
-  color: #495057;
+.custom-tab:hover span{
+  color: #0d4375;
   transform: translateY(-2px);
 }
 
@@ -65,7 +67,8 @@ li {
   Mantine adds a `data-active` attribute to the active tab.
   We target this attribute to apply unique styles.
 */
-.custom-tab[data-active] {
+.custom-tab[data-active] span {
+  color: #1971c2; /* A strong, clear blue for the active tab text */
   font-weight: 700; /* Make the font bolder */
 }
 
@@ -96,9 +99,11 @@ li {
 .custom-tab-panel h3 {
   margin-top: 0;
   font-size: 1.75rem;
+  color: white;
 }
 
 .custom-tab-panel p {
+  color: white;
   line-height: 1.6;
 }
 
@@ -109,4 +114,70 @@ li {
 
 .custom-tab-panel li {
   margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .custom-tabs-container {
+    margin: 1rem auto;
+    padding: 0.5rem;
+    
+  }
+
+  .custom-tabs-list {
+    /* Allows horizontal scrolling on small screens if tabs overflow */
+    overflow-x: auto;
+    /* Hides the scrollbar for a cleaner look, but still allows scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .custom-tabs-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  .custom-tab {
+    padding: 10px 15px;
+    font-size: 15px;
+
+  }
+
+  .custom-tab-panel h3 {
+    font-size: 1.5rem;
+    
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .custom-tabs-container {
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  .custom-tab-panel {
+    padding: 0.5rem 0;
+  }
+  
+  /* Target the Mantine Flex component holding the buttons */
+  .custom-tab-panel .mantine-Flex-root {
+    flex-direction: column;
+    align-items: stretch; /* Make buttons take full width */
+    margin-top: 1rem;
+  }
+
+  /* Target the Mantine Group component */
+  .custom-tab-panel .mantine-Group-root {
+    width: 100%;
+    /* Stack buttons vertically, with Next on top */
+    flex-direction: column-reverse; 
+    gap: 0.5rem;
+  }
+  
+  /* Target the Mantine Button component */
+  .custom-tab-panel .mantine-Button-root {
+    width: 100%;
+    margin: 0;
+  }
 }

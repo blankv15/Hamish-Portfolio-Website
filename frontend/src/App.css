@@ -31,11 +31,21 @@
 
 .featured-projects{
     margin: 10%;
-    overflow: h;
 }
 
 
 .skills{
     margin: 10%;
 
+}
+
+.featured-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 2fr;
+
+}
+.featured-grid-item{
+    padding: 5%;
+    background-color: b;
 }
