@@ -79,11 +79,10 @@ function App() {
 
 
 
-      {/* Modal component that displays the project details */}
       <Modal
         opened={modalOpened}
         onClose={() => setModalOpened(false)}
-        title={selectedProject?.title || ""}
+        title={selectedProject?.title || ''}
         size="xl"
         centered
         overlayProps={{
@@ -94,6 +93,7 @@ function App() {
         {/* The ProjectDetailPage is rendered inside the modal only when a project is selected */}
         {selectedProject && <ProjectDetailPage project={selectedProject} />}
       </Modal>
+    
     </>
   );
 }

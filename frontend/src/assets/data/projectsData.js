@@ -1,20 +1,20 @@
 export const projectsData = [
   {
-    id: 'data-dashboard', // Unique ID for URL routing
-    title: 'Interactive Data Dashboard',
+    id: 'the-phone-mason', // Unique ID for URL routing
+    title: 'The Phone Mason',
     summary: 'A full-stack web application for visualizing complex datasets in real-time.', // Short summary for the grid card
     images: [
-        'https://placehold.co/1200x800/2c265a/white?text=Dashboard+View',
-        'https://placehold.co/1200x800/4d476c/white?text=Analytics+Page',
-        'https://placehold.co/1200x800/6d6a7d/white?text=User+Profile'
+        '../src/assets/features/the-phone-mason/2.png',
+        '../src/assets/features/the-phone-mason/3.png',
+        '../src/assets/features/the-phone-mason/1.png',
     ],
-    description: 'This project is a full-stack web application designed to visualize complex datasets in real-time. It features a dynamic and responsive user interface built with React, allowing users to filter, sort, and explore data through interactive charts and graphs. The backend is powered by Node.js and Express, providing a robust API that serves data from a PostgreSQL database. The application is fully containerized with Docker and deployed on AWS for scalability and reliability.',
-    technologies: ['React', 'D3.js', 'Node.js', 'Express', 'PostgreSQL', 'Docker', 'AWS'],
+    description: 'I was responsible for the end-to-end development and deployment of their business website. A primary focus was to establish a robust lead generation system. I achieved this by strategically implementing local SEO tactics and comprehensive on-page optimization, significantly increasing organic search visibility and converting visitors into valuable business leads.',
+    technologies: ['WordPress', 'AWS', 'Elementor', 'Photoshop', 'HTML', 'CSS', 'JavaScript', 'Ahrefs'],
     githubUrl: 'https://github.com/your-username/data-dashboard-repo',
     liveUrl: 'https://your-live-project-url.com'
   },
   {
-    id: 'e-commerce-platform',
+    id: '2',
     title: 'E-Commerce Platform',
     summary: 'A feature-rich online store with a custom CMS and payment gateway integration.',
     images: [

@@ -1,0 +1,161 @@
+/* --- Main Container --- */
+.pdp-container {
+  padding: 0 1rem 1rem 1rem; /* Padding for content inside the modal */
+  color: #f0f0f0;
+  font-family: "Questrial", sans-serif;
+}
+
+.pdp-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1c7ed6;
+  padding-bottom: 0.5rem;
+  color: white;
+}
+
+.pdp-description {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* --- Tech Section --- */
+.pdp-tech-section {
+  margin-bottom: 2.5rem;
+}
+
+.pdp-tech-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.pdp-tech-badge {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 4px 12px;
+  margin: 4px;
+  border-radius: 16px;
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* --- Links Section --- */
+.pdp-links-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pdp-link-button {
+  display: inline-block;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pdp-link-button.github {
+  background-color: #1c7ed6;
+}
+.pdp-link-button.github:hover {
+  background-color: #155a9a;
+  transform: translateY(-2px);
+}
+
+.pdp-link-button.live {
+  background-color: #555;
+}
+.pdp-link-button.live:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+
+/* --- Image Carousel --- */
+.pdp-carousel {
+  height: 500px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.pdp-carousel-slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.pdp-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  line-height: 45px;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+.pdp-carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.pdp-carousel-arrow.left {
+  left: 15px;
+}
+.pdp-carousel-arrow.right {
+  right: 15px;
+}
+
+.pdp-dots-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.pdp-dot {
+  margin: 0 5px;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+}
+.pdp-dot.active {
+  background-color: #fff;
+}
+
+/* --- Responsive Carousel --- */
+@media (max-width: 768px) {
+  .pdp-carousel {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdp-carousel {
+    height: 250px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+  .pdp-carousel-slide {
+    border-radius: 0;
+  }
+}
