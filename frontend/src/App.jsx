@@ -1,53 +1,57 @@
 import profilePic from "../src/assets/profile.png";
-import { Card, SimpleGrid, Group } from "@mantine/core";
+import { Card, SimpleGrid, Group ,Modal} from "@mantine/core";
+import React, { useState } from "react";
 import DisplayCard from "./components/DisplayCard";
 import SomeData from "./assets/data/someData.json";
 import TabSection from "./components/TabSection";
 import TechBadge from "./components/TechBadge";
-import NavHeader from "./components/NavHeader";
-import ManTineCard from "./components/MantineCard";
+import MantineCard from "./components/ManTineCard";
 import "./App.css";
 import GetInTouchSimple from "./components/GetInTouchSimple";
+import { projectsData } from "./assets/data/projectsData"; // Your centralized data
+import { Link } from "react-router";
+import ProjectDetailPage from "./components/ProjectDetailPage";
 
 function App() {
+  const [modalOpened, setModalOpened] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Function to open the modal and set the project data
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+    setModalOpened(true);
+  };
   return (
     <>
       <div className="hero">
-        <img className="Profile-Pic" src={profilePic} />
+        <img src={profilePic} />
         <h1 className="heroText">
-          Hey, I'm <span className="name">Hamish Chhagan.</span> I Like to build
-          Things. Here you can find my latest work and what I'm doing at the
-          moment
+          Hey, I'm <span className="name">Hamish Chhagan.</span> Here you can
+          find my latest work & projects I'm working on at the moment.
         </h1>
       </div>
-
       <div className="featured-projects">
         <h2>Featured Projects</h2>
+        {/* This grid is now dynamically generated from your projectsData file */}
         <div className="featured-grid">
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
-          <div className="featured-grid-item">
-            {" "}
-            <ManTineCard />
-          </div>
+          {projectsData.map((project) => (
+            // When a grid item is clicked, it will open the modal with that project's data
+            <div
+              key={project.id}
+              className="featured-grid-item"
+              onClick={() => handleOpenModal(project)}
+              style={{ cursor: "pointer" }}
+            >
+              <MantineCard
+                title={project.title}
+                imageUrl={project.images[0]} // Use the first image for the card
+                badgeText={project.technologies[0]} // Use the first tech as a badge
+                description={project.summary}
+                // The button is now just for show, as the whole card is clickable
+                buttonText="Learn More"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -72,6 +76,24 @@ function App() {
           </div>
         </div>
       </div>
+
+
+
+      {/* Modal component that displays the project details */}
+      <Modal
+        opened={modalOpened}
+        onClose={() => setModalOpened(false)}
+        title={selectedProject?.title || ""}
+        size="xl"
+        centered
+        overlayProps={{
+          backgroundOpacity: 0.55,
+          blur: 3,
+        }}
+      >
+        {/* The ProjectDetailPage is rendered inside the modal only when a project is selected */}
+        {selectedProject && <ProjectDetailPage project={selectedProject} />}
+      </Modal>
     </>
   );
 }

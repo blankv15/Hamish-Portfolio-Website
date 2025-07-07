@@ -4,13 +4,22 @@ import App from "./App.jsx";
 import "@mantine/core/styles.css"; // Import Mantine styles
 import { MantineProvider } from "@mantine/core";
 import "./index.css";
-import NavHeader from "./components/NavHeader.jsx";
+import Navbar from "./components/Navbar.jsx";
+import { BrowserRouter, Routes, Route } from "react-router";
+import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <MantineProvider defaultColorScheme="dark">
       <>
-        <App />
+        <Navbar />
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+
+          </Routes>
+        </BrowserRouter>
       </>
     </MantineProvider>
   </StrictMode>

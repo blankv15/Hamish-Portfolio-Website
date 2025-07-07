@@ -5,21 +5,34 @@
 
 }
 
-.hero h1{
+.hero h1 {
   font-weight: 400;
   text-align: left;
-  font-size: 2.986rem;
   color: white;
-
-
-
+  font-size: 1.8rem; /* Smaller font size for mobile */
+  line-height: 1.2; /* Improves readability for wrapped text */
 }
 
+/* --- Tablet and larger screens (e.g., > 768px) --- */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem; /* A larger size for tablets */
+  }
+}
+
+/* --- Large desktop screens (e.g., > 1024px) --- */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 2.986rem; /* Your original large size for desktops */
+  }
+}
 .hero  span{
   color: aqua;
 }
 .hero img{
-  height: 20em;
+  height: 40vh;
+    width: 40vh;
+
   border-radius: 30px;
 
 }
