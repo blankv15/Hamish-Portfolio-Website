@@ -1,16 +1,17 @@
 [
-  {
-    "value": "full-stack",
-    "label": "Full-Stack Development",
-    "image": "https://picsum.photos/400/400",
-    "title": "Full-Stack Development",
-    "description": "I develop full-stack web applications, focusing on creating functional, user-friendly experiences that meet business objectives.",
+ {
+    "value": "dev-tools",
+    "label": "Dev Tools",
+    "image": "https://picsum.photos/401/400",
+    "title": "Development Tools & Software",
+    "description": "I use a suite of professional tools to ensure efficient development, robust version control, and seamless deployment.",
     "points": [
-      "Developed web applications from concept to deployment, including lead-generation and e-commerce sites.",
-      "Built responsive user interfaces using HTML, CSS, and JavaScript.",
-      "Implemented server-side logic and managed databases with PHP and MySQL on a LAMP stack."
+      "Proficient in Git for version control and collaborative development.",
+      "Utilise VS Code with custom configurations for an optimised workflow.",
+      "Experience with Docker for creating consistent development environments.",
+      "Skilled in using Postman for API development, testing, and validation."
     ],
-    "tech": ["PHP", "MySQL", "JavaScript", "HTML/CSS"]
+    "tech": ["Git", "VS Code", "Docker", "Postman", "GitHub", "Jira"]
   },
   {
     "value": "cloud-infra",

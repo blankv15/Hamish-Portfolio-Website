@@ -1,0 +1,119 @@
+.to-do-list {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 700px; /* Use max-width for better control */
+}
+
+.to-do-list h1 {
+  /* Fluid font size */
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: white;
+}
+
+/* --- Input Area --- */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.task-text-field {
+  flex-grow: 1; /* Allow input to take available space */
+  font-size: 1.2rem;
+  padding: 10px;
+  border: 2px solid #ffffff6e;
+  border-radius: 5px;
+  color: #333; /* Darker text for better readability on white background */
+  background-color: white;
+}
+
+.add-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: rgb(0, 136, 0);
+}
+.add-button:hover {
+  background-color: rgb(0, 105, 0);
+}
+
+
+/* --- Task List --- */
+.to-do-list ol {
+  padding: 0;
+  list-style: none; /* Remove default bullet points */
+}
+
+.to-do-list li {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: #ffffff2e; /* Slightly more transparent */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between; /* Puts space between text and buttons */
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.text {
+  flex-grow: 1; /* Allows text to take up available space */
+  text-align: left; /* Align text to the left for readability */
+  word-break: break-word; /* Prevents long words from overflowing */
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.delete-button, .move-button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button {
+  background-color: rgb(211, 47, 47);
+}
+.delete-button:hover {
+  background-color: rgb(183, 28, 28);
+}
+
+.move-button {
+  background-color: rgb(25, 118, 210);
+}
+.move-button:hover {
+  background-color: rgb(21, 101, 192);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+  .to-do-list li {
+    flex-direction: column; /* Stack text and buttons vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .text {
+    margin-bottom: 10px; /* Add space between text and buttons */
+  }
+
+  .button-group {
+    width: 100%;
+    justify-content: flex-end; /* Align buttons to the right */
+  }
+}

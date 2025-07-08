@@ -1,0 +1,85 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #f0f0f0;
+  border-radius: 50px;
+  background-color: white;
+  padding: 30px;
+  max-width: 90%; /* Ensure it doesn't get too wide on large screens */
+  margin: 2rem auto;
+}
+
+.display {
+  /* Use clamp() for fluid typography. 
+     It will be at least 2.5rem, at most 5rem, 
+     and will scale based on 10% of the viewport width. */
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-family: monospace;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap onto the next line on small screens */
+  gap: 10px; /* Use gap for consistent spacing */
+}
+
+.controls button {
+  /* Fluid font size for buttons */
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-weight: bold;
+  padding: 10px 20px;
+  min-width: 125px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+}
+
+.start-button {
+  background-color: rgb(0, 206, 0);
+}
+.start-button:hover {
+  background-color: rgb(0, 151, 0);
+}
+
+.stop-button {
+  background-color: rgb(241, 0, 0);
+}
+.stop-button:hover {
+  background-color: rgb(151, 0, 0);
+}
+
+.reset-button {
+  background-color: rgb(0, 0, 241);
+}
+.reset-button:hover {
+  background-color: rgb(0, 0, 151);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .stopwatch {
+    padding: 20px;
+    border-radius: 30px;
+  }
+
+  .controls {
+    flex-direction: column; /* Stack buttons vertically on very small screens */
+    width: 100%;
+  }
+
+  .controls button {
+    width: 100%; /* Make buttons take full width */
+  }
+}
