@@ -60,6 +60,8 @@
     When there isn't enough space for another 280px column, items will wrap to the next row.
   */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 1fr; 
+  
   
   /* Adds a gap between grid items for better spacing */
   gap: 2rem; 

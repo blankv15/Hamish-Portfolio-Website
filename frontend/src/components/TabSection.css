@@ -1,41 +1,19 @@
-
-
-.tab-text-content-wrap {
-  padding:3%;
-}
-img {
-  height: 400px;
-  width: 400px;
-}
-h3 {
-  font-size: 2.074srem;
-  font-weight: 600;
-}
-
-p {
-  font-size: 1.2rem;
-}
-ul {
-}
-
-li {
-  list-style: none;
-  border-radius: 10px;
-  margin: 10px 0 0 0;
-
-  
-}
+/* =================================================================
+   1. TabSection STYLES (Container & Tab Headers)
+   ================================================================= */
 
 /* --- Root Container --- */
 .custom-tabs-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  margin: 1rem auto;
+  max-width: 1200px; /* Wider for better layout */
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 /* --- Tab List (the bar that holds the tabs) --- */
 .custom-tabs-list {
   display: flex;
-  border-bottom: 2px solid #e9ecef; /* A subtle line under the tabs */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle line under the tabs */
   margin-bottom: 1.5rem;
 }
 
@@ -45,30 +23,23 @@ li {
   border: none;
   cursor: pointer;
   padding: 12px 20px;
+  font-size: 16px;
   font-weight: 600;
-  color:green; /* Default color for inactive tabs */
+  color: #868e96; /* Default color for inactive tabs */
   position: relative;
   transition: color 0.3s ease, transform 0.2s ease;
   white-space: nowrap; /* Prevent tab text from wrapping */
 }
-.custom-tab span{
-  color: white;
-    font-size: 1.2rem;
 
-}
 /* --- Tab Hover State --- */
-.custom-tab:hover span{
-  color: #0d4375;
-  transform: translateY(-2px);
+.custom-tab:hover {
+  color: #e0e0e0;
 }
 
-/* --- ACTIVE TAB HIGHLIGHT ---
-  Mantine adds a `data-active` attribute to the active tab.
-  We target this attribute to apply unique styles.
-*/
-.custom-tab[data-active] span {
-  color: #1971c2; /* A strong, clear blue for the active tab text */
-  font-weight: 700; /* Make the font bolder */
+/* --- ACTIVE TAB HIGHLIGHT --- */
+.custom-tab[data-active] {
+  color: #389bff; /* A strong, clear blue for the active tab text */
+  font-weight: 700;
 }
 
 /* --- Active Tab Indicator (the line underneath) --- */
@@ -79,104 +50,154 @@ li {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #1971c2; /* Match the active text color */
+  background-color: #389bff; /* Match the active text color */
   border-radius: 2px;
 }
 
-/* --- Tab Panel (the content area) --- */
-.custom-tab-panel {
-  padding: 1rem 0.5rem;
-  animation: fadeIn 0.5s ease-in-out;
+/* =================================================================
+   2. TabPanelContent STYLES (Content inside each tab)
+   ================================================================= */
+
+.tab-panel-container {
+  padding: 1rem 0;
+  color: #e0e0e0;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* --- Image Section --- */
+.tab-image-container {
+  height: 100%;
+}
+.tab-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- General Content Typography --- */
-.custom-tab-panel h3 {
-  margin-top: 0;
-  font-size: 1.75rem;
+/* --- Content Section --- */
+.tab-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 1rem;
+}
+
+.tab-header {
+  margin-bottom: 1rem;
+}
+
+.tab-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: white;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.custom-tab-panel p {
-  color: white;
+.tab-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #c0c0c0;
+  margin-bottom: 2rem;
+}
+
+/* --- Highlighted Points --- */
+.points-list {
+  margin-bottom: 2rem;
+}
+
+.point-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  background-color: rgba(10, 25, 47, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 119, 238, 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.point-item:hover {
+  background-color: rgba(10, 25, 47, 0.8);
+  border-color: rgba(56, 119, 238, 0.4);
+}
+
+.point-icon {
+  font-size: 1.2rem;
+  color: #389bff;
+  margin-right: 1rem;
   line-height: 1.6;
 }
 
-.custom-tab-panel ul {
-  padding-left: 20px;
-  color: white;
+.point-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #e0e0e0;
 }
 
-.custom-tab-panel li {
-  margin-bottom: 0.5rem;
+/* --- Footer Layout --- */
+.tab-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- Responsive Design --- */
+/* --- Skills Section (inside footer) --- */
+.skills-title {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
 
-/* For tablets and smaller devices */
+.skills-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background-color: rgba(56, 119, 238, 0.1);
+  color: #a3c9ff;
+  border: 1px solid rgba(56, 119, 238, 0.3);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- Navigation Buttons --- */
+.nav-arrow-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .tab-content-container {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .custom-tabs-container {
-    margin: 1rem auto;
-    padding: 0.5rem;
-    
+  .tab-footer {
+    flex-wrap: wrap;
   }
-
-  .custom-tabs-list {
-    /* Allows horizontal scrolling on small screens if tabs overflow */
-    overflow-x: auto;
-    /* Hides the scrollbar for a cleaner look, but still allows scrolling */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  .skills-section {
+    flex-basis: 100%;
   }
-  .custom-tabs-list::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-
-  .custom-tab {
-    padding: 10px 15px;
-    font-size: 15px;
-
-  }
-
-  .custom-tab-panel h3 {
-    font-size: 1.5rem;
-    
-  }
-}
-
-/* For mobile phones */
-@media (max-width: 480px) {
-  .custom-tabs-container {
-    margin: 0;
-    padding: 0.5rem;
-  }
-
-  .custom-tab-panel {
-    padding: 0.5rem 0;
-  }
-  
-  /* Target the Mantine Flex component holding the buttons */
-  .custom-tab-panel .mantine-Flex-root {
-    flex-direction: column;
-    align-items: stretch; /* Make buttons take full width */
-    margin-top: 1rem;
-  }
-
-  /* Target the Mantine Group component */
-  .custom-tab-panel .mantine-Group-root {
-    width: 100%;
-    /* Stack buttons vertically, with Next on top */
-    flex-direction: column-reverse; 
-    gap: 0.5rem;
-  }
-  
-  /* Target the Mantine Button component */
-  .custom-tab-panel .mantine-Button-root {
-    width: 100%;
-    margin: 0;
+  .tab-navigation-buttons {
+    margin-left: auto;
   }
 }

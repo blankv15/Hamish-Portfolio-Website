@@ -1,42 +1,71 @@
 [
- {
-    "value": "dev-tools",
-    "label": "Dev Tools",
-    "image": "https://picsum.photos/401/400",
-    "title": "Development Tools & Software",
-    "description": "I use a suite of professional tools to ensure efficient development, robust version control, and seamless deployment.",
+  {
+    "value": "frontend-development",
+    "label": "Front-End",
+    "image": "../src/assets/tabs/frontend/1.png",
+    "title": "Front-End Development",
+    "description": "With over three years of professional experience, I build high-performance and user-focused applications using React, Next.js, and modern JavaScript.",
     "points": [
-      "Proficient in Git for version control and collaborative development.",
-      "Utilise VS Code with custom configurations for an optimised workflow.",
-      "Experience with Docker for creating consistent development environments.",
-      "Skilled in using Postman for API development, testing, and validation."
+      "Building scalable and interactive user interfaces with React and component libraries.",
+      "Developing server-side rendered (SSR) websites with Next.js for enhanced performance and SEO.",
+      "Integrating with RESTful and GraphQL APIs to efficiently fetch and send data.",
+      "Creating responsive, accessible layouts using modern HTML5, CSS, React Component Libraries."
     ],
-    "tech": ["Git", "VS Code", "Docker", "Postman", "GitHub", "Jira"]
+    "tech": [
+      "React",
+      "NextJS",
+      "React Native",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "REST APIs",
+      "Mantine"
+    ]
   },
   {
-    "value": "cloud-infra",
-    "label": "Cloud & Infrastructure",
-    "image": "https://picsum.photos/401/400",
-    "title": "Cloud & Infrastructure",
-    "description": "I design and manage cloud infrastructure to ensure scalability, reliability, and performance.",
-    "points": [
-      "Provisioned and managed cloud resources on AWS and Google Cloud.",
-      "Implemented CI/CD pipelines for automated testing and deployment.",
-      "Monitored system health and performance, ensuring high availability."
-    ],
-    "tech": ["AWS", "Google Cloud", "Docker", "Terraform"]
-  },
-  {
-    "value": "ai-automation",
-    "label": "AI & Automation",
+    "value": "backend-databases",
+    "label": "Back-End",
     "image": "https://picsum.photos/402/400",
-    "title": "AI & Automation",
-    "description": "I leverage AI and automation to streamline processes and create intelligent applications.",
+    "title": "Back-End & Databases",
+    "description": "I build the engines that power applications, from scalable server logic to efficient data storage solutions.",
     "points": [
-      "Developed custom AI models for data analysis and prediction.",
-      "Automated repetitive tasks using scripts and modern AI tools.",
-      "Integrated third-party AI services to enhance application capabilities."
+      "Designing and developing robust RESTful and GraphQL APIs with Node.js.",
+      "Implementing secure user authentication and authorization systems.",
+      "Modeling and managing both SQL and NoSQL databases for optimal performance.",
+      "Writing clean, efficient server-side logic to power application features."
     ],
-    "tech": ["Python", "TensorFlow", "scikit-learn", "OpenAI API"]
-  }
+    "tech": [
+      "Node.js",
+      "Express",
+      "Python",
+      "PostgreSQL",
+      "MongoDB",
+      "REST APIs",
+      "GraphQL"
+    ]
+  },
+
+  {
+  "value": "homelab-virtualisation",
+  "label": "Homelab",
+  "image": "https://picsum.photos/405/400",
+  "title": "Homelab & Virtualisation",
+  "description": "In my personal homelab, I experiment with virtualisation and self-hosting to deepen my understanding of infrastructure and system administration.",
+  "points": [
+    "Managing a Proxmox VE server for both virtual machines and lightweight containers.",
+    "Confident with Linux system administration, including managing services and users.",
+    "Securing system resources and services by managing file and user permissions.",
+    "Deploying and managing containerised applications for various personal projects."
+  ],
+  "tech": [
+    "Proxmox VE",
+    "Linux",
+    "LXC Containers",
+    "Docker",
+    "Self-Hosting",
+    "Networking",
+    "Bash"
+  ]
+}
+
 ]

@@ -1,8 +1,6 @@
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
 function MantineCard(props) {
-  // By making the Card a flex container and allowing the description to grow,
-  // we ensure all cards in a row have the same height and aligned buttons.
   return (
     <Card 
       shadow="sm" 
@@ -15,7 +13,7 @@ function MantineCard(props) {
       <Card.Section>
         <Image
           src={props.imageUrl}
-          height={160}
+          height={400}
           alt={props.title || "Project image"}
         />
       </Card.Section>

@@ -11,6 +11,7 @@ import ToDoList from "./components/ToDoList";
 import { projectsData } from "./assets/data/projectsData";
 import profilePic from "../src/assets/profile.png";
 import "./App.css";
+import AboutAndContact from "./components/AboutAndContact";
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -66,21 +67,8 @@ function App() {
         <TabSection />
       </div>
       
-      <div className="contact-form">
-        <h2>Get In Touch</h2>
-        <div className="contact-grid">
-          <div className="contact-text">
-            <h6>
-              Whether you're a potential client, a fellow creative, or just
-              Browse, I'd be happy to connect. Drop me a line, and let's start a
-              conversation.
-            </h6>
-          </div>
-          <div className="form-box">
-            <GetInTouchSimple />
-          </div>
-        </div>
-      </div>
+
+<AboutAndContact/>
 
       <Modal
         opened={modalOpened}

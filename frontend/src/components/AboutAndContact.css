@@ -1,0 +1,81 @@
+/* --- Main Section Container --- */
+.about-contact-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  color: #e0e0e0;
+}
+
+/* --- Grid Layout --- */
+.about-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 3rem; /* Space between the columns */
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- About Me Content (Left Column) --- */
+.about-me-content .section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Adds a small accent line under the title */
+.about-me-content .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #1c7ed6;
+}
+
+.about-me-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #c0c0c0;
+}
+
+/* --- Contact Form (Right Column) --- */
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-container .form-title {
+  font-size: 1.75rem;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-container .form-intro {
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .about-contact-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-contact-section {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+  }
+  .about-contact-grid {
+    padding: 1.5rem;
+  }
+}
