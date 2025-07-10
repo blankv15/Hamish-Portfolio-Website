@@ -62,9 +62,7 @@ const Navbar = () => {
             <nav id={navId}>
                 <div className="navbar-content">
                     
-                    <div className="flex-shrink-0">
-                        <a href="#" className="navbar-logo">LOGO</a>
-                    </div>
+
 
                     <div className="nav-links-desktop">
                         <a href="#projects" className="nav-link">Projects</a>

@@ -5,11 +5,12 @@ import TabSection from "./components/TabSection";
 import MantineCard from "./components/MantineCard";
 import GetInTouchSimple from "./components/GetInTouchSimple";
 import ProjectDetailPage from "./components/ProjectDetailPage";
-import Stopwatch from './components/Stopwatch';
+import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
+import Hero from "./components/Hero";
 
 import { projectsData } from "./assets/data/projectsData";
-import profilePic from "../src/assets/profile.png";
+import profilePic from "../src/assets/hero3.png";
 import "./App.css";
 import AboutAndContact from "./components/AboutAndContact";
 
@@ -24,22 +25,26 @@ function App() {
 
   const componentMap = {
     Stopwatch: Stopwatch,
-    ToDoList: ToDoList
-    
+    ToDoList: ToDoList,
   };
 
-
-  const ComponentToEmbed = selectedProject ? componentMap[selectedProject.embeddedComponent] : null;
+  const ComponentToEmbed = selectedProject
+    ? componentMap[selectedProject.embeddedComponent]
+    : null;
 
   return (
     <>
       <div className="hero">
+        
         <img src={profilePic} alt="Hamish Chhagan" />
-        <h1 className="heroText">
-          Hey, I'm <span className="name">Hamish Chhagan.</span> Here you can
-          find my latest work & projects I'm working on at the moment.
+              <h1 className="heroText">
+          Welcome to the website,{" "}
+          <span className="name">I'm a Fullstack Developer</span>, check out my
+          thing.
         </h1>
+
       </div>
+
       <div className="featured-projects">
         <h2>Featured Projects</h2>
         <div className="featured-grid">
@@ -66,14 +71,13 @@ function App() {
         <h2>My Skills</h2>
         <TabSection />
       </div>
-      
 
-<AboutAndContact/>
+      <AboutAndContact />
 
       <Modal
         opened={modalOpened}
         onClose={() => setModalOpened(false)}
-        title={selectedProject?.title || ''}
+        title={selectedProject?.title || ""}
         size="xl"
         centered
         overlayProps={{
@@ -82,9 +86,9 @@ function App() {
         }}
       >
         {selectedProject && (
-          <ProjectDetailPage 
-            project={selectedProject} 
-            EmbeddedComponent={ComponentToEmbed} 
+          <ProjectDetailPage
+            project={selectedProject}
+            EmbeddedComponent={ComponentToEmbed}
           />
         )}
       </Modal>

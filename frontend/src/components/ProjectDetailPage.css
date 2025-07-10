@@ -1,6 +1,5 @@
-/* --- Main Container --- */
 .pdp-container {
-  padding: 0 1rem 1rem 1rem; /* Padding for content inside the modal */
+  padding: 0 1rem 1rem 1rem; 
   color: #f0f0f0;
   font-family: "Questrial", sans-serif;
 }
@@ -19,7 +18,6 @@
   margin-bottom: 2rem;
 }
 
-/* --- Tech Section --- */
 .pdp-tech-section {
   margin-bottom: 2.5rem;
 }
@@ -41,7 +39,6 @@
   font-weight: 500;
 }
 
-/* --- Links Section --- */
 .pdp-links-section {
   display: flex;
   flex-wrap: wrap;
@@ -141,7 +138,6 @@
   background-color: #fff;
 }
 
-/* --- Responsive Carousel --- */
 @media (max-width: 768px) {
   .pdp-carousel {
     height: 300px;

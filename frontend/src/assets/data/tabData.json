@@ -25,7 +25,7 @@
   {
     "value": "backend-databases",
     "label": "Back-End",
-    "image": "https://picsum.photos/402/400",
+    "image": "../src/assets/tabs/backend/3.png",
     "title": "Back-End & Databases",
     "description": "I build the engines that power applications, from scalable server logic to efficient data storage solutions.",
     "points": [

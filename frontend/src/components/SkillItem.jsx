@@ -1,4 +1,3 @@
-// SkillItem.jsx
 import React from 'react';
 import * as Di from 'react-icons/di'; // Import all DevIcons
 
