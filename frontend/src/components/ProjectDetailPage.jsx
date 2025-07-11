@@ -78,7 +78,7 @@ const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
       )}
 
       <div className="pdp-tech-section">
-        <div>
+        <div className="pdp-tech-badge-container">
           {project.technologies.map((tech) => (
             <TechBadge key={tech} techName={tech} />
           ))}
