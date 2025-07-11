@@ -71,7 +71,6 @@
 
 .featured-grid-item {
   /* I've used a valid color here for the background */
-  background-color: #f0f0f0; 
   border-radius: 8px; /* Added for a softer look */
 }
 /* --- Default (Mobile) Styles --- */

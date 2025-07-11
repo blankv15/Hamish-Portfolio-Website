@@ -10,7 +10,7 @@ import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <MantineProvider defaultColorScheme="dark">
+    <MantineProvider >
       <>
         <Navbar />
 

@@ -11,7 +11,8 @@ export const projectsData = [
     description: 'I developed and deployed a comprehensive business website for The Phone Mason, a device repair specialist based in Howick, Auckland. The primary objective was to generate a steady stream of local leads. To achieve this, I implemented a robust local SEO strategy and performed extensive on-page optimisation. These efforts significantly boosted their visibility in organic search results, effectively converting website visitors into valuable customers for their repair services.',
     technologies: ['WordPress', 'Elementor', 'AWS', 'Google Analytics', 'Ahrefs', 'Photoshop', 'HTML', 'CSS', 'JavaScript'],
     githubUrl: '', // Replace with your actual GitHub repository URL
-    liveUrl: 'https://thephonemason.nz/' // The actual live URL for the website
+    liveUrl: 'https://thephonemason.nz/' ,
+    // The actual live URL for the website
   },
 {
     id: 'kiwikandy', // Unique ID for URL routing

@@ -76,6 +76,7 @@ function App() {
 
       <Modal
         opened={modalOpened}
+        color='#3877ee1a'
         onClose={() => setModalOpened(false)}
         title={selectedProject?.title || ""}
         size="xl"
