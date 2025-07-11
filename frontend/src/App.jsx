@@ -13,10 +13,22 @@ import { projectsData } from "./assets/data/projectsData";
 import profilePic from "../src/assets/hero3.png";
 import "./App.css";
 import AboutAndContact from "./components/AboutAndContact";
+import './MyModal.css';
+
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+
+    const modalClassNames = {
+    // These keys are defined by Mantine.
+    // The values are the class names from your CSS file.
+    modal: 'custom-modal-modal',
+    header: 'custom-modal-header',
+    title: 'custom-modal-title',
+    body: 'custom-modal-body',
+    close: 'custom-modal-close',
+  };
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -74,25 +86,26 @@ function App() {
 
       <AboutAndContact />
 
-      <Modal
-        opened={modalOpened}
-        color='#3877ee1a'
-        onClose={() => setModalOpened(false)}
-        title={selectedProject?.title || ""}
-        size="xl"
-        centered
-        overlayProps={{
-          backgroundOpacity: 0.55,
-          blur: 3,
-        }}
-      >
-        {selectedProject && (
-          <ProjectDetailPage
-            project={selectedProject}
-            EmbeddedComponent={ComponentToEmbed}
-          />
-        )}
-      </Modal>
+          <Modal
+      opened={modalOpened}
+      onClose={() => setModalOpened(false)}
+      size="xl"
+      centered
+      overlayProps={{
+        backgroundOpacity: 0.55,
+        blur: 5,
+      }}
+      // 3. Pass the object to the classNames prop
+      classNames={modalClassNames}
+      radius="lg" // This still works for rounding the corners!
+    >
+      {selectedProject && (
+        <ProjectDetailPage
+          project={selectedProject}
+          EmbeddedComponent={ComponentToEmbed}
+        />
+      )}
+    </Modal>
     </>
   );
 }

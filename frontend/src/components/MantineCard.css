@@ -1,7 +1,9 @@
-.mantine-Card-root{
-    background-color: blue;
-}
-
-h4{
-    color: blue;
+.skill-badge {
+  background-color: #3877ee1a;
+  color: #a3c9ff;
+  border: 1px solid #3877ee4d;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }

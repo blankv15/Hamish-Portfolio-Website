@@ -1,11 +1,7 @@
 .pdp-container {
-  padding: 0; 
+  padding: 0;
   color: #f0f0f0;
   font-family: "Questrial", sans-serif;
-  /* Remove all background, border, and backdrop-filter properties */
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
 }
 
 .pdp-title {

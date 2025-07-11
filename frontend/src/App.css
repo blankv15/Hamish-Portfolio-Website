@@ -80,9 +80,7 @@
   padding: 1.5rem;
 }
 
-.contact-grid {
-  /* On mobile, the grid items will stack vertically by default */
-}
+
 
 /* Add some space below the text when it's stacked on top of the form */
 .contact-text {
