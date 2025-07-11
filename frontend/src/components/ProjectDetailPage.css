@@ -1,11 +1,8 @@
 .pdp-container {
-  padding: 0; 
+  padding: 0 1rem 1rem 1rem; 
   color: #f0f0f0;
   font-family: "Questrial", sans-serif;
-  /* Remove all background, border, and backdrop-filter properties */
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
+  background-color: #3877ee1a;
 }
 
 .pdp-title {
@@ -33,10 +30,10 @@
 }
 
 .pdp-tech-badge {
-  background-color: rgba(56, 119, 238, 0.1);
-  color: #a3c9ff;
-  border: 1px solid #3877ee4d;
+  background-color: #e0e0e0;
+  color: #333;
   padding: 4px 12px;
+  margin: 4px;
 
   border-radius: 16px;
   font-size: 0.9rem;
