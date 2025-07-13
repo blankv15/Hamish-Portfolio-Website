@@ -1,16 +1,18 @@
 import React from "react";
-import GetInTouchSimple from "./GetInTouchSimple"; // Assuming this is your form component
-import "./AboutAndContact.css"; // The new stylesheet
+// 1. IMPORT YOUR IMAGE
+// Make sure to place your image file in your project (e.g., in the src/assets folder)
+// and update the path below accordingly.
+import profileImage from "../assets/profile.png"; // <-- UPDATE THIS PATH
+
+import "./AboutAndContact.css";
 
 function AboutAndContact() {
   return (
     <div className="about-contact-section" id="about">
       <div className="about-contact-grid">
-        {/* --- Left Column: About Me --- */}
+        {/* --- Left Column: About Me (This part is unchanged) --- */}
         <div className="about-me-content">
-          <h2 className="section-title">
-            Who is <span>Hamish Chhagan</span>.
-          </h2>
+
           <p>
             As a <span>full-stack developer</span>, I bring a unique perspective shaped by
             years of experience in <span>technical customer support</span> and business. This
@@ -34,13 +36,15 @@ function AboutAndContact() {
           </p>
         </div>
 
-        {/* --- Right Column: Contact Form --- */}
-        <div className="contact-form-container">
-          <h3 className="form-title">Let's Connect</h3>
-          <p className="form-intro">
-            Have a project in mind or just want to say hello? Drop me a line.
-          </p>
+        {/* --- Right Column: Replaced with an Image --- */}
+        <div className="about-image-container">
+          <img 
+            src={profileImage} 
+            alt="A portrait of Hamish Chhagan" 
+            className="about-image" 
+          />
         </div>
+        
       </div>
     </div>
   );

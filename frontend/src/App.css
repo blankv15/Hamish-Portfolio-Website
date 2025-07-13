@@ -1,8 +1,7 @@
-.hero{
+.hero {
   text-align: center;
   padding: 5.5rem;
   margin: 5% 10% 10% 10%;
-
 }
 
 .hero h1 {
@@ -28,30 +27,38 @@
     font-size: 2.986rem; /* Your original large size for desktops */
   }
 }
-.hero  span{
-  color: #E67319;
+.hero span {
+  color: #e67319;
 }
-.hero img{
+.hero img {
   height: auto;
   max-width: 60%;
-
-
-
 }
 
-.current-projects{
+.current-projects {
   padding-top: 10%;
 }
 
-
-.featured-projects{
-    margin: 10%;
+.featured-projects {
+  margin: 10%;
 }
 
+.skills {
+  margin: 10%;
+}
 
-.skills{
-    margin: 10%;
+.skills span {
+}
 
+.about {
+  margin: 10%;
+}
+.about span {
+  color: #e67319;
+}
+
+.contact {
+  margin: 10%;
 }
 
 .featured-grid {
@@ -62,11 +69,10 @@
     When there isn't enough space for another 280px column, items will wrap to the next row.
   */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-auto-rows: 1fr; 
-  
-  
+  grid-auto-rows: 1fr;
+
   /* Adds a gap between grid items for better spacing */
-  gap: 2rem; 
+  gap: 2rem;
 }
 
 .featured-grid-item {
@@ -89,9 +95,6 @@
   margin-bottom: 2rem;
 }
 
-
-/* --- Desktop Styles --- */
-
 /* This code only runs when the screen width is 992px or more */
 @media (min-width: 992px) {
   .contact-form {
@@ -108,7 +111,7 @@
     /* Add space between the text column and the form column */
     gap: 3rem; /* Adjust gap as needed */
   }
-  
+
   /* No bottom margin needed on desktop as elements are side-by-side */
   .contact-text {
     margin-bottom: 0;

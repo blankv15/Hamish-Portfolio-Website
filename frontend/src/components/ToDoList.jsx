@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ToDoList.css"; // Link to the new CSS file
 
 function ToDoList() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(["Try Me!","Add A Task"]);
     const [newTask, setNewTask] = useState("");
 
     function handleInputChange(event) {

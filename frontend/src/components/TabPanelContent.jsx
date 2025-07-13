@@ -51,10 +51,10 @@ function TabPanelContent({ tab, onBack, onNext }) {
               </div>
               {/* Buttons now use icons and have a new class for styling */}
               <Group className="tab-navigation-buttons" gap="xs">
-                <Button variant="default" onClick={onBack} className="nav-arrow-button">
+                <Button color="#6356c2" onClick={onBack}  className="nav-arrow-button">
                   Back
                 </Button>
-                <Button onClick={onNext} className="nav-arrow-button">
+                <Button onClick={onNext} color='#2c265a' className="nav-arrow-button">
                   Next
                 </Button>
               </Group>

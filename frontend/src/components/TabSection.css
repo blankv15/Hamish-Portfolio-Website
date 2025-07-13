@@ -5,7 +5,6 @@
 /* --- Root Container --- */
 .custom-tabs-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  max-width: 1200px; /* Wider for better layout */
   margin: 2rem auto;
   padding: 1rem;
 }

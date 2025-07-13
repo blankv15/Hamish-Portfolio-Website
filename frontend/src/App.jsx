@@ -35,16 +35,13 @@ function App() {
   return (
     <>
       <div className="hero">
-        
         <img src={profilePic} alt="Hamish Chhagan" />
-              <h1 className="heroText">
+        <h1 className="heroText">
           Welcome to the website,{" "}
           <span className="name">I'm a Fullstack Developer</span>, check out my
           thing.
         </h1>
-
       </div>
-
       <div className="featured-projects" id="projects">
         <h2>Featured Projects</h2>
         <div className="featured-grid">
@@ -66,17 +63,24 @@ function App() {
           ))}
         </div>
       </div>
-
       <div className="skills" id="skills">
-        <h2>My Skills</h2>
+        <h2>My <span>Skills</span>.</h2>
         <TabSection />
       </div>
+      
+      <div className="about">
+        <h2>
+          Who is <span>Hamish Chhagan</span>.
+        </h2>
+                  <AboutAndContact/>
 
-      <AboutAndContact id="about"/>
-
+      </div>
+      <div id="contact" className="contact">
+        <GetInTouchSimple />
+      </div>
       <Modal
         opened={modalOpened}
-        color='#3877ee1a'
+        color="#3877ee1a"
         onClose={() => setModalOpened(false)}
         title={selectedProject?.title || ""}
         size="xl"
