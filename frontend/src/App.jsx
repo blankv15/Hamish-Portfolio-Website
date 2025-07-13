@@ -45,7 +45,7 @@ function App() {
 
       </div>
 
-      <div className="featured-projects">
+      <div className="featured-projects" id="projects">
         <h2>Featured Projects</h2>
         <div className="featured-grid">
           {projectsData.map((project) => (
@@ -67,12 +67,12 @@ function App() {
         </div>
       </div>
 
-      <div className="skills">
+      <div className="skills" id="skills">
         <h2>My Skills</h2>
         <TabSection />
       </div>
 
-      <AboutAndContact />
+      <AboutAndContact id="about"/>
 
       <Modal
         opened={modalOpened}

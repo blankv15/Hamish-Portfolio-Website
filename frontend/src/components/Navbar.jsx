@@ -65,9 +65,9 @@ const Navbar = () => {
 
 
                     <div className="nav-links-desktop">
-                        <a href="#projects" className="nav-link">Projects</a>
-                        <a href="#skills" className="nav-link">Skills</a>
-                        <a href="#contact" className="nav-link">Contact</a>
+                        <a href="#projects" className="nav-link">My Work</a>
+                        <a href="#skills" className="nav-link">Skill's</a>
+                        <a href="#about" className="nav-link">About Me</a>
                     </div>
 
                     <div className="nav-actions-desktop">
@@ -89,16 +89,16 @@ const Navbar = () => {
 
                 <div className={mobileMenuClasses}>
                     <div className="mobile-menu-content">
-                        <a href="#projects" onClick={closeMenu}>Projects</a>
-                        <a href="#skills" onClick={closeMenu}>Skills</a>
-                        <a href="#contact" onClick={closeMenu}>Contact</a>
+                        <a href="#projects" onClick={closeMenu}>My Work</a>
+                        <a href="#skills" onClick={closeMenu}>Skill's</a>
+                        <a href="#contact" onClick={closeMenu}>About Me</a>
                         <div className="mobile-menu-divider"></div>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
+                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
                             GitHub
-                            <GitHubIcon />
+                            <GitHubIcon/>
                         </a>
                         <a href="/path-to-your-cv.pdf" download onClick={closeMenu} className="cv-button mobile-menu-cv-button">
-                            Download CV
+                            View CV
                         </a>
                     </div>
                 </div>

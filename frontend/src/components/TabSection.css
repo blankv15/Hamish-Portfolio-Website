@@ -15,6 +15,7 @@
   display: flex;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle line under the tabs */
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 /* --- Individual Tab Styling --- */
@@ -25,7 +26,7 @@
   padding: 12px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #868e96; /* Default color for inactive tabs */
+  color: #389bff; /* Default color for inactive tabs */
   position: relative;
   transition: color 0.3s ease, transform 0.2s ease;
   white-space: nowrap; /* Prevent tab text from wrapping */
@@ -160,7 +161,7 @@
 .skills-badge-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.1rem;
+  gap: 0.5rem;
 }
 
 .skill-badge {

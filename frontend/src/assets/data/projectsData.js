@@ -30,7 +30,7 @@ export const projectsData = [
   },
   {
     id: 'social-meetup-app', // Unique ID for URL routing
-    title: 'Social Meetup IOS App',
+    title: 'WEDO IOS/Android App',
     summary: 'A full-stack, cross-platform mobile application designed to connect people through local events and activities.', // Short summary for the grid card
     images: [        
         '../src/assets/features/we-do/2.png',

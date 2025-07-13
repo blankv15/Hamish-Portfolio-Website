@@ -6,7 +6,7 @@ body {
   font-family: "Questrial", sans-serif;
   background-image: linear-gradient(
     to top,
-    #000000,
+    hsl(0, 0%, 0%),
     #2c265a
   );
 

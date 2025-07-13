@@ -12,7 +12,6 @@ function MantineCard(props) {
       shadow="sm" 
       padding="lg" 
       radius="md" 
-      withBorder="#3877ee4d"
       bc
       bg="#3877ee1a" 
     
@@ -39,7 +38,7 @@ function MantineCard(props) {
       </Text>
 
       {/* 3. The button will now be pushed to the bottom of the card. */}
-      <Button color="blue" fullWidth mt="md" radius="md">
+      <Button bg="#2c265a"  withBorder  fullWidth mt="md" radius="md">
         {props.buttonText}
       </Button>
     </Card>
