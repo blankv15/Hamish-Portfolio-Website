@@ -20,13 +20,14 @@
       "CSS3",
       "Mantine",
       "On Page SEO",
+      "Off Page SEO",
       "Git",
       "Wordpress",
       "Themify",
       "Elementor",
       "Figma",
-      "Photoshop"
-
+      "Photoshop",
+      "Pixelmator"
     ]
   },
 
@@ -42,7 +43,7 @@
       "Designing and implementing RESTful APIs to handle client-server communication.",
       "Working with both SQL and NoSQL databases to manage application data."
     ],
-    "tech": [ "Wordpress CMS", "Node.js", "Python", "REST APIs", "SQL"]
+    "tech": ["Wordpress CMS", "Node.js", "Python", "REST APIs", "SQL","postgressSQL","AWS","CPanel"]
   },
 
   {

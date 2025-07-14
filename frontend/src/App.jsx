@@ -12,7 +12,7 @@ import Hero from "./components/Hero";
 import { projectsData } from "./assets/data/projectsData";
 import profilePic from "../src/assets/hero3.png";
 import "./App.css";
-import AboutAndContact from "./components/AboutAndContact";
+import About from "./components/About";
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -64,16 +64,17 @@ function App() {
         </div>
       </div>
       <div className="skills" id="skills">
-        <h2>My <span>Skills</span>.</h2>
+        <h2>
+          My <span>Skills</span>.
+        </h2>
         <TabSection />
       </div>
-      
+
       <div className="about">
         <h2>
           Who is <span>Hamish Chhagan</span>.
         </h2>
-                  <AboutAndContact/>
-
+        <About />
       </div>
       <div id="contact" className="contact">
         <GetInTouchSimple />
