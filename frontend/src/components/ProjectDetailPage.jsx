@@ -5,6 +5,8 @@ const TechBadge = ({ techName }) => (
   <span className="pdp-tech-badge">{techName}</span>
 );
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,6 +25,11 @@ const ImageCarousel = ({ images }) => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
+  // Handle case where images might not be loaded yet
+  if (!images || images.length === 0) {
+    return null;
+  }
 
   return (
     <div className="pdp-carousel">
@@ -61,14 +68,20 @@ const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
     return null;
   }
 
+  // Transform the relative image paths into full, absolute URLs
+  const fullImageUrls = project.images 
+    ? project.images.map(imagePath => `${API_URL}${imagePath}`)
+    : [];
+
   const hasLinks = project.githubUrl || project.liveUrl;
 
   return (
     <div className="pdp-container">
       <h1 className="pdp-title">{project.title}</h1>
 
+      {/* Pass the new array with full URLs to the ImageCarousel */}
       {project.images && project.images.length > 0 && (
-        <ImageCarousel images={project.images} />
+        <ImageCarousel images={fullImageUrls} />
       )}
 
       {EmbeddedComponent && (
