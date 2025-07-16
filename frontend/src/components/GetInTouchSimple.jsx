@@ -4,7 +4,7 @@ import { useState } from 'react';
 // 1. Add Paper and notifications to your imports
 import { Button, Group, Textarea, TextInput, Title, Container, Stack, Text, Paper } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { notifications } from '@mantine/notifications';
+import { Notifications ,notifications} from '@mantine/notifications';
 
 // Define the base URL of your Express server
 const API_URL = import.meta.env.VITE_API_URL;
@@ -31,13 +31,16 @@ function GetInTouchSimple() {
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/send-email`, {
+      const response = await fetch(`${API_URL}send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
       });
 
+
+
       if (!response.ok) {
+
         throw new Error('Something went wrong on the server. Please try again.');
       }
 

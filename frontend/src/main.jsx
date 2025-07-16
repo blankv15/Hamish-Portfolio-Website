@@ -7,12 +7,15 @@ import "./index.css";
 import Navbar from "./components/Navbar.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
+import { Notifications } from '@mantine/notifications';
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <MantineProvider >
       <>
         <Navbar />
+      <Notifications/ >
 
         <BrowserRouter>
           <Routes>
@@ -20,6 +23,7 @@ createRoot(document.getElementById("root")).render(
 
           </Routes>
         </BrowserRouter>
+
       </>
     </MantineProvider>
   </StrictMode>
