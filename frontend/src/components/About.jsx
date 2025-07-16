@@ -2,11 +2,12 @@ import React from "react";
 // 1. IMPORT YOUR IMAGE
 // Make sure to place your image file in your project (e.g., in the src/assets folder)
 // and update the path below accordingly.
-import profileImage from "../assets/profile.png"; // <-- UPDATE THIS PATH
-
 import "./About.css";
 
 function About() {
+  
+  const API_URL = import.meta.env.VITE_API_URL;
+
   return (
     <div className="about-contact-section" id="about">
       <div className="about-contact-grid">
@@ -39,7 +40,7 @@ function About() {
         {/* --- Right Column: Replaced with an Image --- */}
         <div className="about-image-container">
           <img 
-            src={profileImage} 
+            src={`${API_URL}/images/profile/profile.png`} 
             alt="A portrait of Hamish Chhagan" 
             className="about-image" 
           />

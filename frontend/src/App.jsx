@@ -1,20 +1,70 @@
 import React, { useState } from "react";
-import { Modal } from "@mantine/core";
+import { Modal, Loader, Alert } from "@mantine/core";
+import { IconAlertCircle } from '@tabler/icons-react';
 
+// Helper hook for fetching data
+import useFetch from "./hooks/useFetch"; 
+
+// Import components
 import TabSection from "./components/TabSection";
 import MantineCard from "./components/MantineCard";
 import GetInTouchSimple from "./components/GetInTouchSimple";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
-import Hero from "./components/Hero";
-
-import { projectsData } from "./assets/data/projectsData";
-import profilePic from "../src/assets/hero3.png";
-import "./App.css";
 import About from "./components/About";
 
+// Import styles
+import "./App.css";
+
+// Define the base URL of your Express server
+const API_URL = import.meta.env.VITE_API_URL;
+
+// --- Helper Component for Rendering Projects ---
+// This component encapsulates all the logic for fetching and displaying projects.
+function ProjectGrid({ onProjectClick }) {
+  const { data: projectsData, loading, error } = useFetch(`${API_URL}data/projectsData.json`);
+
+  // 1. If loading, return ONLY the loader.
+  if (loading) {
+    return <Loader size="xl" />;
+  }
+
+  // 2. If there's an error, return ONLY the error alert.
+  if (error) {
+    return (
+      <Alert icon={<IconAlertCircle size="1rem" />} title="Error!" color="red">
+        Failed to load project data: {error}
+      </Alert>
+    );
+  }
+
+  // 3. If everything is successful, return ONLY the grid of projects.
+  return (
+    <div className="featured-grid">
+      {projectsData && projectsData.map((project) => (
+        <div
+          key={project.id}
+          className="featured-grid-item"
+          onClick={() => onProjectClick(project)}
+          style={{ cursor: "pointer" }}
+        >
+          <MantineCard
+            title={project.title}
+            imageUrl={`${API_URL}${project.images[0]}`}
+            badgeText={project.technologies[0]}
+            description={project.summary}
+            buttonText="Learn More"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
 function App() {
+  // State for the modal
   const [modalOpened, setModalOpened] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -23,6 +73,7 @@ function App() {
     setModalOpened(true);
   };
 
+  // Map component names from JSON to actual imported components
   const componentMap = {
     Stopwatch: Stopwatch,
     ToDoList: ToDoList,
@@ -35,34 +86,19 @@ function App() {
   return (
     <>
       <div className="hero">
-        <img src={profilePic} alt="Hamish Chhagan" />
+        <img src={`${API_URL}/images/hero/hero3.png`} alt="Hamish Chhagan" />
         <h1 className="heroText">
-          Welcome to the website,{" "}
-          <span className="name">I'm a Fullstack Developer</span>, check out my
-          thing.
+          Welcome to my Website,{" "}
+          <span className="name">I'm a FullStack Developer</span>. Check out my things
         </h1>
       </div>
+
       <div className="featured-projects" id="projects">
         <h2>Featured Projects</h2>
-        <div className="featured-grid">
-          {projectsData.map((project) => (
-            <div
-              key={project.id}
-              className="featured-grid-item"
-              onClick={() => handleOpenModal(project)}
-              style={{ cursor: "pointer" }}
-            >
-              <MantineCard
-                title={project.title}
-                imageUrl={project.images[0]}
-                badgeText={project.technologies[0]}
-                description={project.summary}
-                buttonText="Learn More"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Use the new, self-contained ProjectGrid component */}
+        <ProjectGrid onProjectClick={handleOpenModal} />
       </div>
+
       <div className="skills" id="skills">
         <h2>
           My <span>Skills</span>.
@@ -76,12 +112,13 @@ function App() {
         </h2>
         <About />
       </div>
+
       <div id="contact" className="contact">
         <GetInTouchSimple />
       </div>
+
       <Modal
         opened={modalOpened}
-        color="#3877ee1a"
         onClose={() => setModalOpened(false)}
         title={selectedProject?.title || ""}
         size="xl"

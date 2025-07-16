@@ -29,7 +29,7 @@ function useFetch(url) {
         if (err.name !== 'AbortError') {
           setError(err.message);
         }
-      } finally {hook
+      } finally {
         setLoading(false);
       }
     };
