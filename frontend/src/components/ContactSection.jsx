@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import {
-  Paper, Text, TextInput, Textarea, Button, Group, SimpleGrid, Title, Container
+  Paper,
+  Text,
+  TextInput,
+  Textarea,
+  Button,
+  Group,
+  SimpleGrid,
+  Title,
+  Container,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import {
-  IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX
-} from '@tabler/icons-react';
-// 1. Import the reCAPTCHA hook
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX } from '@tabler/icons-react';
 import './ContactSection.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
+  // New state to track form submission status (success, error, or null)
   const [formStatus, setFormStatus] = useState(null);
-  
-  // 2. Get the function to execute reCAPTCHA
-  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm({
     initialValues: { name: '', email: '', message: '' },
@@ -30,41 +32,33 @@ export function ContactSection() {
 
   const handleSubmit = async (values) => {
     setLoading(true);
-    setFormStatus(null);
-
-    // 3. Check if executeRecaptcha is available
-    if (!executeRecaptcha) {
-      setFormStatus({ status: 'error', message: 'reCAPTCHA not ready. Please try again.' });
-      setLoading(false);
-      return;
-    }
-
+    setFormStatus(null); // Reset status on new submission
     try {
-      // 4. Generate the reCAPTCHA token
-      const token = await executeRecaptcha('contact_form');
-
-      // 5. Send the token along with the form data
-      const response = await fetch(`${API_URL}/api/send-email`, {
+      // FIX: The URL was missing '/api/'. It should match your server endpoint.
+      const response = await fetch(`${API_URL}send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, token }),
+        body: JSON.stringify(values),
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'An error occurred on the server.');
+        // Throw an error to be caught by the catch block
+        throw new Error('An error occurred on the server. Please try again.');
       }
       
+      // On success, update the status and reset the form
       setFormStatus({ status: 'success', message: 'Message sent! Thank you for reaching out.' });
       form.reset();
 
     } catch (error) {
-      setFormStatus({ status: 'error', message: error.message });
+      // On failure, update the status with an error message
+      setFormStatus({ status: 'error', message: 'Failed to send message. Please check your connection and try again.' });
     } finally {
       setLoading(false);
     }
   };
 
+  // Function to reset the form and show it again
   const handleSendAnother = () => {
     setFormStatus(null);
   };
@@ -75,6 +69,7 @@ export function ContactSection() {
         <Paper shadow="md" radius="lg">
           <div className="contact-inner">
             <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
+              {/* Left Column: Contact Info (Unchanged) */}
               <div className="contact-info">
                 <Title order={2} className="contact-title">Get in touch</Title>
                 <Text mt="sm" mb={30}>
@@ -103,7 +98,9 @@ export function ContactSection() {
                 </Group>
               </div>
 
+              {/* Right Column: Form */}
               <div className="contact-form-container">
+                {/* If the form was submitted successfully, show the success message */}
                 {formStatus?.status === 'success' ? (
                   <div className="form-status-message success">
                     <IconCheck size={48} stroke={1.5} />
@@ -114,11 +111,34 @@ export function ContactSection() {
                     </Button>
                   </div>
                 ) : (
+                  // Otherwise, show the form
                   <form className="contact-form" onSubmit={form.onSubmit(handleSubmit)}>
-                    <TextInput required label="Your Name" placeholder="John Doe" leftSection={<IconUser size={16} />} {...form.getInputProps('name')} />
-                    <TextInput required mt="md" label="Your Email" placeholder="your@email.com" leftSection={<IconAt size={16} />} {...form.getInputProps('email')} />
-                    <Textarea required mt="md" label="Your Message" placeholder="I'd like to talk about..." minRows={4} leftSection={<IconMessageCircle size={16} />} {...form.getInputProps('message')} />
+                    <TextInput
+                      required
+                      label="Your Name"
+                      placeholder="John Doe"
+                      leftSection={<IconUser size={16} />}
+                      {...form.getInputProps('name')}
+                    />
+                    <TextInput
+                      required
+                      mt="md"
+                      label="Your Email"
+                      placeholder="your@email.com"
+                      leftSection={<IconAt size={16} />}
+                      {...form.getInputProps('email')}
+                    />
+                    <Textarea
+                      required
+                      mt="md"
+                      label="Your Message"
+                      placeholder="I'd like to talk about..."
+                      minRows={4}
+                      leftSection={<IconMessageCircle size={16} />}
+                      {...form.getInputProps('message')}
+                    />
                     
+                    {/* Display the error message right above the button */}
                     {formStatus?.status === 'error' && (
                       <Text c="red" size="sm" mt="sm" className="form-status-message error">
                         <IconX size={16} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
@@ -141,3 +161,5 @@ export function ContactSection() {
     </div>
   );
 }
+
+export default ContactSection;

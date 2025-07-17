@@ -40,33 +40,45 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // --- 5. API ENDPOINTS ---
 
-// Endpoint for sending emails from your contact form
-app.post('/send-email', async (req, res) => {
-  // Destructure the name, email, and message from the request body
-  const { name, email, message } = req.body;
+app.post('/api/send-email', async (req, res) => {
+  // Destructure name, email, message, AND the new token
+  const { name, email, message, token } = req.body;
 
-  // Basic validation
-  if (!name || !email || !message) {
-    return res.status(400).send('All fields are required.');
-  }
-
-  const mailOptions = {
-    from: `"${name}" <${process.env.FROM_EMAIL}>`, // Use a friendly sender name
-    to: process.env.YOUR_EMAIL, // The email address you want to receive messages at
-    replyTo: email, // Set the reply-to field to the user's email
-    subject: `New Contact Form Submission from ${name}`,
-    text: `You have a new message from:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-  };
-
+  // --- reCAPTCHA Verification Step ---
   try {
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
+    
+    const response = await axios.post(verificationURL);
+    const { success, score } = response.data;
+
+    // Check if verification failed or the score is too low
+    if (!success || score < 0.5) {
+      return res.status(400).json({ message: 'reCAPTCHA verification failed. Please try again.' });
+    }
+
+    // --- If verification succeeds, proceed to send the email ---
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: 'All fields are required.' });
+    }
+
+    const mailOptions = {
+      from: `"${name}" <${process.env.FROM_EMAIL}>`,
+      to: process.env.YOUR_EMAIL,
+      replyTo: email,
+      subject: `New Contact Form Submission from ${name}`,
+      text: `You have a new message from:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    };
+
     await transporter.sendMail(mailOptions);
-    res.status(200).send('Email sent successfully!');
+    res.status(200).json({ message: 'Email sent successfully!' });
+
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).send('Failed to send email.');
+    console.error('Error during reCAPTCHA verification or email sending:', error);
+    // Provide a generic error message to the user
+    res.status(500).json({ message: 'An internal server error occurred.' });
   }
 });
-
     app.get('/', (req, res) => {
       res.send('Hello from Express!');
     });

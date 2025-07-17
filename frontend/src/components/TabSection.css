@@ -12,38 +12,51 @@
 /* --- Tab List (the bar that holds the tabs) --- */
 .custom-tabs-list {
   display: flex;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle line under the tabs */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1.5rem;
   color: white;
+  /* FIX: Allow horizontal scrolling on smaller screens */
+  overflow-x: auto;
+  /* Optional: Hide the scrollbar for a cleaner look */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+.custom-tabs-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
 
 /* --- Individual Tab Styling --- */
 .custom-tab {
+  /* Moved styles from the span to the parent tab element */
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 12px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #389bff; /* Default color for inactive tabs */
+  color: #a3c9ff; /* Default color for INACTIVE tabs */
   position: relative;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease;
   white-space: nowrap; /* Prevent tab text from wrapping */
+  flex-shrink: 0; /* Prevent tabs from shrinking */
 }
 
 /* --- Tab Hover State --- */
 .custom-tab:hover {
-  color: #e0e0e0;
+  color: #389bff;
 }
 
 /* --- ACTIVE TAB HIGHLIGHT --- */
-.custom-tab[data-active] {
+/* FIX: This selector now correctly targets the active tab */
+.custom-tab[data-active="true"] {
   color: #389bff; /* A strong, clear blue for the active tab text */
   font-weight: 700;
 }
 
 /* --- Active Tab Indicator (the line underneath) --- */
-.custom-tab[data-active]::after {
+/* FIX: This selector now correctly targets the active tab */
+.custom-tab[data-active="true"]::after {
   content: '';
   position: absolute;
   bottom: -2px; /* Aligns perfectly with the parent's border-bottom */
@@ -184,20 +197,4 @@
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-  .tab-content-container {
-    padding-left: 0;
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .tab-footer {
-    flex-wrap: wrap;
-  }
-  .skills-section {
-    flex-basis: 100%;
-  }
-  .tab-navigation-buttons {
-    margin-left: auto;
-  }
-}
+  .tab-cont

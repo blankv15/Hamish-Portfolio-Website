@@ -3,6 +3,7 @@
     "id": "the-phone-mason",
     "title": "The Phone Mason",
     "summary": "A business website for a phone and computer repair shop, focusing on local SEO and lead generation.",
+    "buttonText":"Learn More",
     "images": [
       "/images/features/the-phone-mason/1.png",
       "/images/features/the-phone-mason/2.png",
@@ -17,6 +18,8 @@
     "id": "kiwikandy",
     "title": "Kiwi Kandy",
     "summary": "An e-commerce store built to sell classic New Zealand confectionery to Kiwis living and working overseas.",
+        "buttonText":"Learn More",
+
     "images": [
       "/images/features/kiwi-kandy/1.png",
       "/images/features/kiwi-kandy/2.png",
@@ -31,6 +34,8 @@
     "id": "social-meetup-app",
     "title": "WEDO IOS/Android App",
     "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
+        "buttonText":"Learn More",
+
     "images": [
       "/images/features/we-do/2.png",
       "/images/features/we-do/1.jpeg"
@@ -44,6 +49,8 @@
     "id": "ai-content-generator",
     "title": "AI Content Generator",
     "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
+        "buttonText":"Fork Me",
+
     "images": [
       "/images/features/blogwriter/1.png"
     ],
@@ -56,6 +63,8 @@
     "id": "simple-stopwatch-react",
     "title": "React Stopwatch",
     "summary": "A clean and functional stopwatch application built with React, featuring start, stop, and reset capabilities.",
+        "buttonText":"Try Me",
+
     "images": [
       "/images/features/stopwatch/1.png"
     ],
@@ -69,6 +78,8 @@
     "id": "simple-todo-app-react",
     "title": "React To-Do",
     "summary": "A classic to-do list application built to demonstrate fundamental React concepts like state management and event handling.",
+            "buttonText":"Try Me",
+
     "images": [
       "/images/features/todo/1.png"
     ],

@@ -16,6 +16,7 @@ import About from "./components/About";
 
 // Import styles
 import "./App.css";
+import ContactSection from "./components/ContactSection";
 
 // Define the base URL of your Express server
 const API_URL = import.meta.env.VITE_API_URL;
@@ -23,7 +24,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 // --- Helper Component for Rendering Projects ---
 // This component encapsulates all the logic for fetching and displaying projects.
 function ProjectGrid({ onProjectClick }) {
-  const { data: projectsData, loading, error } = useFetch(`${API_URL}data/projectsData.json`);
+  const { data: projectsData, loading, error } = useFetch(`${API_URL}api/projects`);
 
   // 1. If loading, return ONLY the loader.
   if (loading) {
@@ -54,7 +55,7 @@ function ProjectGrid({ onProjectClick }) {
             imageUrl={`${API_URL}${project.images[0]}`}
             badgeText={project.technologies[0]}
             description={project.summary}
-            buttonText="Learn More"
+            buttonText={project.buttonText}
           />
         </div>
       ))}
@@ -89,7 +90,7 @@ function App() {
         <img src={`${API_URL}/images/hero/hero3.png`} alt="Hamish Chhagan" />
         <h1 className="heroText">
           Welcome to my Website,{" "}
-          <span className="name">I'm a FullStack Developer</span>. Check out my things
+          <span className="name">I'm a FullStack Developer</span>. Check out my thing.
         </h1>
       </div>
 
@@ -112,10 +113,12 @@ function App() {
         </h2>
         <About />
       </div>
+      <GoogleReCaptchaProvider>
 
-      <div id="contact" className="contact">
-        <GetInTouchSimple />
-      </div>
+        <ContactSection />
+
+      </GoogleReCaptchaProvider>
+
 
       <Modal
         opened={modalOpened}

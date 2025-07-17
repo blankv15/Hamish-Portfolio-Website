@@ -2,7 +2,7 @@
   {
     "value": "frontend-development",
     "label": "Front-End",
-    "image": "../src/assets/tabs/frontend/1.png",
+    "image": "images/tabs/frontend/1.png",
     "title": "Front-End Development",
     "description": "With a strong foundation in core web technologies, I build modern, accessible, and high-performance user interfaces.",
     "points": [
@@ -34,7 +34,7 @@
   {
     "value": "backend-development",
     "label": "Back-End",
-    "image": "../src/assets/tabs/backend/3.png",
+    "image": "images/tabs/backend/1.png",
     "title": "Back-End Development",
     "description": "I develop robust server-side logic and APIs to power web applications, using a range of languages and frameworks.",
     "points": [
@@ -43,7 +43,7 @@
       "Designing and implementing RESTful APIs to handle client-server communication.",
       "Working with both SQL and NoSQL databases to manage application data."
     ],
-    "tech": ["Wordpress CMS", "Node.js", "Python", "REST APIs", "SQL","postgressSQL","AWS","CPanel"]
+    "tech": ["Wordpress CMS","Flask", "Node.js", "Python", "REST APIs", "SQL","postgressSQL",".Net","AWS","CPanel"]
   },
 
   {
@@ -55,10 +55,10 @@
     "points": [
       "Developing and deploying full-stack applications on cloud platforms, with strong experience in AWS.",
       "Using Docker to create consistent, portable environments for development and deployment.",
-      "Utilising CI/CD tools like Jenkins to automate the deployment of containerised applications.",
-      "Comfortable working in Linux environments and writing Bash scripts for automation."
+      "Utilising CI/CD tools like Github Actions to automate the deployment of containerised applications.",
+      "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
     ],
-    "tech": ["AWS", "Docker", "Jenkins", "CI/CD", "Linux", "Bash"]
+    "tech": ["AWS", "Docker", "Github Actions", "CI/CD", "Linux", "Bash", "Proxmox VE","OpenWrt","Ubuntu", "Debian", "DNS","DHCP" ]
   },
 
   {
@@ -73,6 +73,6 @@
       "Using Python as a primary language for AI scripting and API integration.",
       "Actively exploring and experimenting with new AI models and their practical applications."
     ],
-    "tech": ["OpenAI API", "Gemini", "Python", "Automation", "Workflows"]
+    "tech": ["OpenAI API", "Gemini", "Python", "Automation", "Workflows",""]
   }
 ]
