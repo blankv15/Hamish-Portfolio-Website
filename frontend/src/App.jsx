@@ -4,6 +4,7 @@ import { IconAlertCircle } from '@tabler/icons-react';
 
 // Helper hook for fetching data
 import useFetch from "./hooks/useFetch"; 
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 // Import components
 import TabSection from "./components/TabSection";
@@ -20,6 +21,8 @@ import ContactSection from "./components/ContactSection";
 
 // Define the base URL of your Express server
 const API_URL = import.meta.env.VITE_API_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
 
 // --- Helper Component for Rendering Projects ---
 // This component encapsulates all the logic for fetching and displaying projects.
