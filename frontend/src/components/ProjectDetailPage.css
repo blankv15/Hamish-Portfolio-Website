@@ -18,6 +18,13 @@
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.7;
   margin-bottom: 2rem;
+  color: white ;
+}
+.pdp-description p{
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: white ;
 }
 
 .pdp-tech-section {

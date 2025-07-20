@@ -5,20 +5,20 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const axios = require('axios');
 
 // Load environment variables from a .env file
 require('dotenv').config();
 
 // --- 2. INITIALIZE EXPRESS APP ---
 const app = express();
-const PORT = process.env.PORT || 5001; // Use port from .env or default to 5000
+const PORT = process.env.PORT || 5001;
 
 // --- 3. NODEMAILER TRANSPORTER SETUP ---
-// This configures the email sending service using credentials from your .env file.
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
-  secure: process.env.SMTP_SECURE === 'true', // `secure: true` for port 465, false for others
+  secure: process.env.SMTP_SECURE === 'true',
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -26,25 +26,21 @@ const transporter = nodemailer.createTransport({
 });
 
 // --- 4. MIDDLEWARE ---
-// Enable CORS (Cross-Origin Resource Sharing) for all routes
 app.use(cors());
-
-// Enable Express to parse JSON in request bodies (for the /send-email endpoint)
 app.use(express.json());
 
-// Serve static files (images, CSS, your PDF, etc.) from the "public" directory.
-// This is the most efficient way to serve assets. Any file in the 'public' folder
-// will be accessible at its root path. e.g., 'public/HamishChhaganCV.pdf' -> '/HamishChhaganCV.pdf'
+// Serve static assets like images from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// FIX: Serve the static React build files from the 'public/react' directory
+app.use(express.static(path.join(__dirname, 'public/react')));
 
 
 // --- 5. API ENDPOINTS ---
 
 app.post('/api/send-email', async (req, res) => {
-  // Destructure name, email, message, AND the new token
   const { name, email, message, token } = req.body;
 
-  // --- reCAPTCHA Verification Step ---
   try {
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
@@ -52,12 +48,10 @@ app.post('/api/send-email', async (req, res) => {
     const response = await axios.post(verificationURL);
     const { success, score } = response.data;
 
-    // Check if verification failed or the score is too low
     if (!success || score < 0.5) {
       return res.status(400).json({ message: 'reCAPTCHA verification failed. Please try again.' });
     }
 
-    // --- If verification succeeds, proceed to send the email ---
     if (!name || !email || !message) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
@@ -75,17 +69,13 @@ app.post('/api/send-email', async (req, res) => {
 
   } catch (error) {
     console.error('Error during reCAPTCHA verification or email sending:', error);
-    // Provide a generic error message to the user
     res.status(500).json({ message: 'An internal server error occurred.' });
   }
 });
-    app.get('/', (req, res) => {
-      res.send('Hello from Express!');
-    });
 
-// Endpoint to get project data from a JSON file
 app.get('/api/projects', (req, res) => {
-  const projectsDataPath = path.join(__dirname, 'data', 'projectsData.json');
+  // FIX: Pointing to the correct 'projects.json' file.
+  const projectsDataPath = path.join(__dirname, 'data', 'projects.json');
   res.sendFile(projectsDataPath, (err) => {
     if (err) {
       console.error('Error sending projects.json:', err);
@@ -95,23 +85,25 @@ app.get('/api/projects', (req, res) => {
 });
 
 app.get('/api/tabs', (req, res) => {
-  const projectsDataPath = path.join(__dirname, 'data', 'tabData.json');
-  res.sendFile(projectsDataPath, (err) => {
+  const tabsDataPath = path.join(__dirname, 'data', 'tabData.json');
+  res.sendFile(tabsDataPath, (err) => {
     if (err) {
-      console.error('Error sending projects.json:', err);
-      res.status(404).send('Project data not found');
+      console.error('Error sending tabData.json:', err);
+      res.status(404).send('Tab data not found');
     }
   });
 });
 
 
-// Note: You no longer need a separate endpoint for your PDF file.
-// Because you're using `app.use(express.static('public'))`, if you place
-// 'HamishChhaganCV.pdf' inside the 'public' folder, it will be automatically
-// available at http://your-server-address/HamishChhaganCV.pdf
+// --- 6. SERVE REACT APP ---
+// FIX: This catch-all route is essential for serving your React app and enabling client-side routing.
+// It must come AFTER your API routes.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/react', 'index.html'));
+});
 
 
-// --- 6. START THE SERVER ---
+// --- 7. START THE SERVER ---
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

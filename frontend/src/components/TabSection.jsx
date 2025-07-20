@@ -121,6 +121,8 @@ function TabSection() {
           value={activeTab}
           onChange={setActiveTab}
           rightSection={<IconSelector size={14} />}
+          // FIX: This prop prevents the user from deselecting the current item
+          allowDeselect={false}
         />
       ) : (
         <Tabs.List className="custom-tabs-list">

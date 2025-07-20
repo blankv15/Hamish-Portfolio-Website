@@ -3,14 +3,24 @@
     "id": "the-phone-mason",
     "title": "The Phone Mason",
     "summary": "A business website for a phone and computer repair shop, focusing on local SEO and lead generation.",
-    "buttonText":"Learn More",
+    "buttonText": "Learn More",
     "images": [
       "/images/features/the-phone-mason/1.png",
       "/images/features/the-phone-mason/2.png",
       "/images/features/the-phone-mason/3.png"
     ],
-    "description": "I developed and deployed a comprehensive business website for The Phone Mason, a device repair specialist based in Howick, Auckland. The primary objective was to generate a steady stream of local leads. To achieve this, I implemented a robust local SEO strategy and performed extensive on-page optimisation. These efforts significantly boosted their visibility in organic search results, effectively converting website visitors into valuable customers for their repair services.",
-    "technologies": ["WordPress", "Elementor", "AWS", "Google Analytics", "Ahrefs", "Photoshop", "HTML", "CSS", "JavaScript"],
+    "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO.</p><h4>Key Objectives</h4><ul><li>To generate a consistent stream of qualified local customer leads.</li><li>To establish a strong, professional online presence in the Howick, Auckland area.</li><li>To rank highly in local search results for key device repair services.</li></ul><h4>My Contribution</h4><ul><li>Led the end-to-end development and deployment of the WordPress website.</li><li>Implemented a robust local SEO strategy, including Google Business Profile optimisation.</li><li>Performed extensive on-page optimisation focused on relevant keywords and user experience.</li></ul><h4>Outcomes</h4><ul><li>Achieved a significant boost in organic search visibility within the local market.</li><li>The website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "AWS",
+      "Google Analytics",
+      "Ahrefs",
+      "Photoshop",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "githubUrl": "",
     "liveUrl": "https://thephonemason.nz/"
   },
@@ -18,56 +28,73 @@
     "id": "kiwikandy",
     "title": "Kiwi Kandy",
     "summary": "An e-commerce store built to sell classic New Zealand confectionery to Kiwis living and working overseas.",
-        "buttonText":"Learn More",
-
+    "buttonText": "Learn More",
     "images": [
       "/images/features/kiwi-kandy/1.png",
       "/images/features/kiwi-kandy/2.png",
       "/images/features/kiwi-kandy/3.png"
     ],
-    "description": "I developed a full-scale e-commerce website for KiwiKandy, a business dedicated to selling iconic New Zealand sweets and treats to customers abroad. The site was built on WordPress using the powerful WooCommerce plugin to handle all aspects of online sales. Key features included setting up international shipping zones, integrating secure payment gateways like Stripe. Creating a user-friendly product catalogue. The primary goal was to provide a seamless shopping experience for homesick Kiwis wanting a taste of home.",
-    "technologies": ["WordPress", "WooCommerce", "Stripe", "Elementor", "HTML", "CSS", "JavaScript"],
+    "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas.</p><h4>Key Objectives</h4><ul><li>Provide a seamless and enjoyable shopping experience for homesick Kiwis abroad.</li><li>Establish a secure and reliable platform for handling international payments and shipping.</li><li>Showcase a wide range of products in a well-organised, user-friendly catalogue.</li></ul><h4>Features & Implementation</h4><ul><li>Built on a robust WordPress foundation using the powerful WooCommerce plugin to manage all online sales.</li><li>Configured complex international shipping zones and rates to handle global deliveries.</li><li>Integrated secure payment gateways, including Stripe, for safe and reliable transactions.</li><li>Designed a user-friendly product catalogue that is easy to browse and navigate.</li></ul>",
+    "technologies": [
+      "WordPress",
+      "WooCommerce",
+      "Stripe",
+      "Elementor",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "githubUrl": "",
     "liveUrl": "https://www.kiwikandy.com"
   },
-  {
-    "id": "social-meetup-app",
-    "title": "WEDO IOS/Android App",
-    "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
-        "buttonText":"Learn More",
-
-    "images": [
-      "/images/features/we-do/2.png",
-      "/images/features/we-do/1.jpeg"
-    ],
-    "description": "For university capstone project, my team and I developed \"WeDo,\" a comprehensive social connection app for both iOS and Android. The platform allows users to create, discover, and join a wide range of events, from sports and volunteering to online gaming. The project involved building a React Native front-end and a Node.js back-end running on AWS serverless architecture. Key features include personalised event recommendations, event search with filtering, and a personal calendar to track activities. The primary goal was to foster community engagement and help users build meaningful connections.",
-    "technologies": ["React Native", "Node.js", "Express.js", "AWS Lambda", "AWS Cognito", "API Gateway", "S3", "DynamoDB", "JavaScript"],
-    "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
-    "liveUrl": ""
-  },
-  {
-    "id": "ai-content-generator",
-    "title": "AI Content Generator",
-    "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
-        "buttonText":"Fork Me",
-
-    "images": [
-      "/images/features/blogwriter/1.png"
-    ],
-    "description": "I developed an AI-powered content assistant to help bloggers, marketers, and website owners streamline their writing process. The application integrates Google's Gemini Pro API to generate coherent and context-aware content, such as \"About\" pages and full-length blog posts. I built the user interface with Streamlit, creating a clean and interactive experience. A key feature allows users to input their website's context to ensure the generated content aligns perfectly with their brand voice, helping to overcome writer's block and produce quality content efficiently.",
-    "technologies": ["Python", "Google Gemini Pro", "Streamlit"],
-    "githubUrl": "https://github.com/blankv15/ai-content-generator",
-    "liveUrl": ""
-  },
+{
+  "id": "social-meetup-app",
+  "title": "WEDO IOS/Android App",
+  "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
+  "buttonText": "Learn More",
+  "images": [
+    "/images/features/we-do/2.png",
+    "/images/features/we-do/1.jpeg"
+  ],
+  "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li>Personalised event recommendations tailored to user interests.</li><li>Advanced event search with robust filtering options.</li><li>An integrated personal calendar to easily track upcoming activities.</li><li>Functionality for users to create and manage their own events.</li></ul><h4>Technical Architecture</h4><ul><li>A cross-platform front-end built with <strong>React Native</strong> for a consistent iOS and Android experience.</li><li>A scalable back-end powered by <strong>Node.js</strong> and <strong>Express.js</strong>.</li><li>A fully <strong>serverless architecture</strong> leveraging a suite of AWS services including Lambda, API Gateway, and DynamoDB.</li></ul>",
+  "technologies": [
+    "React Native",
+    "Node.js",
+    "Express.js",
+    "AWS Lambda",
+    "AWS Cognito",
+    "API Gateway",
+    "S3",
+    "DynamoDB",
+    "JavaScript"
+  ],
+  "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
+  "liveUrl": ""
+},
+{
+  "id": "ai-content-generator",
+  "title": "AI Content Generator",
+  "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
+  "buttonText": "Fork Me",
+  "images": [
+    "/images/features/blogwriter/1.png"
+  ],
+  "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content.</p><h4>Core Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's needs.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong>.</li><li>Generates a variety of content types, including full-length blog posts and 'About Us' pages.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned.</li><li>Designed to streamline the entire content creation process, from idea to publication.</li></ul>",
+  "technologies": [
+    "Python",
+    "Google Gemini Pro",
+    "Streamlit"
+  ],
+  "githubUrl": "https://github.com/blankv15/ai-content-generator",
+  "liveUrl": ""
+},
   {
     "id": "simple-stopwatch-react",
     "title": "React Stopwatch",
     "summary": "A clean and functional stopwatch application built with React, featuring start, stop, and reset capabilities.",
-        "buttonText":"Try Me",
+    "buttonText": "Try Me",
 
-    "images": [
-      "/images/features/stopwatch/1.png"
-    ],
+    "images": ["/images/features/stopwatch/1.png"],
     "description": "I built this stopwatch to demonstrate my understanding of core React concepts, particularly state management with hooks. The entire logic for starting, stopping, and resetting is handled cleanly within a single, reusable component. Below is the actual functioning component rendered directly into the page. [Embedded Stopwatch Component]",
     "technologies": ["React", "JavaScript", "HTML", "CSS", "Vite"],
     "githubUrl": "https://github.com/blankv15/Simple-Stop-Watch-React-App",
@@ -78,15 +105,35 @@
     "id": "simple-todo-app-react",
     "title": "React To-Do",
     "summary": "A classic to-do list application built to demonstrate fundamental React concepts like state management and event handling.",
-            "buttonText":"Try Me",
+    "buttonText": "Try Me",
 
-    "images": [
-      "/images/features/todo/1.png"
-    ],
+    "images": ["/images/features/todo/1.png"],
     "description": "I developed this clean and responsive to-do list application as a practical exercise in core React principles. The app allows users to add new tasks, mark them as complete, and delete them from the list. The project relies heavily on the `useState` hook to manage the list of tasks and is structured with reusable components for the input form and the individual task items. It's a strong demonstration of component-based architecture and managing state within a modern front-end framework.",
     "technologies": ["React", "JavaScript", "HTML", "CSS"],
     "githubUrl": "https://github.com/blankv15/Simple-To-Do-App-Built-with-React",
     "liveUrl": "",
     "embeddedComponent": "ToDoList"
-  }
+  },
+  {
+  "id": "portfolio-website",
+  "title": "Personal Portfolio Website",
+  "summary": "A dynamic portfolio built with React to showcase my projects, skills, and professional background.",
+  "buttonText": "View Source",
+  "images": [
+    "/images/features/portfolio/1.png",
+    "/images/features/portfolio/2.png"
+  ],
+  "description": "<h4>Project Overview</h4><p>This portfolio was built from the ground up as a dynamic, single-page application using React. The primary goal was to create a modern, easily updatable platform to showcase my skills and projects to potential employers and clients.</p><h4>Architecture & Design</h4><ul><li>Built with a <strong>component-based architecture</strong>, ensuring each section (hero, projects, skills) is modular and reusable.</li><li>Content is <strong>data-driven</strong>, pulled from a central JSON file. This allows me to add or update projects without touching the core application logic.</li><li>Project details are displayed in a <strong>modal window</strong>, creating a seamless user experience without needing to navigate to separate pages.</li></ul><h4>Key Features</h4><ul><li><strong>Dynamic Project Rendering:</strong> Project cards and detail pages are generated automatically from the central data source.</li><li><strong>Interactive Skills Section:</strong> A custom tab component displays different skill sets, providing detailed information in a clean, organised way.</li><li><strong>Embedded React Components:</strong> The site can render live, functional React components (like the Stopwatch) directly within a project's description, offering a truly interactive showcase.</li></ul>",
+  "technologies": [
+    "React",
+    "JavaScript",
+    "HTML5",
+    "CSS3",
+    "Vite",
+    "Mantine",
+    "Git"
+  ],
+  "githubUrl": "https://github.com/your-username/your-portfolio-repo",
+  "liveUrl": ""
+}
 ]
