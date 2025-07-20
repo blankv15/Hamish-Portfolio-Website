@@ -15,57 +15,84 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1.5rem;
   color: white;
-  /* FIX: Allow horizontal scrolling on smaller screens */
   overflow-x: auto;
-  /* Optional: Hide the scrollbar for a cleaner look */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .custom-tabs-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none;
 }
-
 
 /* --- Individual Tab Styling --- */
 .custom-tab {
-  /* Moved styles from the span to the parent tab element */
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 12px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #a3c9ff; /* Default color for INACTIVE tabs */
+  color: #a3c9ff;
   position: relative;
   transition: color 0.3s ease;
-  white-space: nowrap; /* Prevent tab text from wrapping */
-  flex-shrink: 0; /* Prevent tabs from shrinking */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* --- Tab Hover State --- */
 .custom-tab:hover {
-  color: #389bff;
+  color: #e0e0e0;
 }
 
-/* --- ACTIVE TAB HIGHLIGHT --- */
-/* FIX: This selector now correctly targets the active tab */
 .custom-tab[data-active="true"] {
-  color: #389bff; /* A strong, clear blue for the active tab text */
+  color: #389bff;
   font-weight: 700;
 }
 
-/* --- Active Tab Indicator (the line underneath) --- */
-/* FIX: This selector now correctly targets the active tab */
 .custom-tab[data-active="true"]::after {
   content: '';
   position: absolute;
-  bottom: -2px; /* Aligns perfectly with the parent's border-bottom */
+  bottom: -2px;
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #389bff; /* Match the active text color */
+  background-color: #389bff;
   border-radius: 2px;
 }
+
+/* --- NEW: Mobile Select Dropdown Styles --- */
+.mobile-tabs-select {
+  margin-bottom: 1.5rem;
+}
+
+.mobile-tabs-select .mantine-Select-input {
+  background-color: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(56, 119, 238, 0.4);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mobile-tabs-select .mantine-Select-input:focus {
+  border-color: #389bff;
+}
+
+.mobile-tabs-select .mantine-Select-dropdown {
+  background-color: #0a192f;
+  border-color: rgba(56, 119, 238, 0.4);
+}
+
+.mobile-tabs-select .mantine-Select-option {
+  color: #a3c9ff;
+}
+
+.mobile-tabs-select .mantine-Select-option:hover {
+  background-color: rgba(56, 119, 238, 0.2);
+}
+
+.mobile-tabs-select .mantine-Select-option[data-selected] {
+  background-color: rgba(56, 119, 238, 0.3);
+  color: white;
+}
+
 
 /* =================================================================
    2. TabPanelContent STYLES (Content inside each tab)
@@ -76,7 +103,6 @@
   color: #e0e0e0;
 }
 
-/* --- Image Section --- */
 .tab-image-container {
   height: 100%;
 }
@@ -89,7 +115,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- Content Section --- */
 .tab-content-container {
   display: flex;
   flex-direction: column;
@@ -115,7 +140,6 @@
   margin-bottom: 2rem;
 }
 
-/* --- Highlighted Points --- */
 .points-list {
   margin-bottom: 2rem;
 }
@@ -149,7 +173,6 @@
   color: #e0e0e0;
 }
 
-/* --- Footer Layout --- */
 .tab-footer {
   display: flex;
   justify-content: space-between;
@@ -160,7 +183,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- Skills Section (inside footer) --- */
 .skills-title {
   font-size: 1rem;
   color: #a0a0a0;
@@ -186,15 +208,29 @@
   font-weight: 500;
 }
 
-/* --- Navigation Buttons --- */
-.nav-arrow-button {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  font-size: 1.8rem;
-  line-height: 1;
+.tab-navigation-buttons {
+  flex-shrink: 0;
 }
 
-/* --- Responsive Adjustments --- */
+.nav-arrow-button {
+  width: 80px;
+}
+
 @media (max-width: 992px) {
-  .tab-cont
+  .tab-content-container {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-footer {
+    flex-wrap: wrap;
+  }
+  .skills-section {
+    flex-basis: 100%;
+  }
+  .tab-navigation-buttons {
+    margin-left: auto;
+  }
+}
