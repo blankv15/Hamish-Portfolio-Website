@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
     <MantineProvider >
       <>
         <Navbar />
-      <Notifications/ >
+        <Notifications/ >
 
         <BrowserRouter>
           <Routes>
