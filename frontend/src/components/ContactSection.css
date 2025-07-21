@@ -1,13 +1,11 @@
 .contact-section-wrapper {
   padding: 4rem 0;
-  /* The background is now transparent to blend with your page's gradient */
   background-color: transparent;
 }
 
 .contact-inner {
   position: relative;
   overflow: hidden;
-  /* Applying a new gradient based on your provided color scheme */
   background: linear-gradient(145deg, #2c265a 0%, #121029 100%);
   padding: 3rem;
   border-radius: 12px;
@@ -15,7 +13,7 @@
 }
 
 .contact-info {
-  color: #ccd6f6;a
+  color: #ccd6f6;
   border-right: 1px solid rgba(56, 119, 238, 0.2);
   padding-right: 2.5rem;
 }
@@ -27,7 +25,6 @@
 }
 
 .contact-info .contact-icon {
-  /* Keeping the blue accent color as requested */
   color: #389bff; 
 }
 
@@ -39,19 +36,18 @@
 }
 
 .submit-button {
-  /* Keeping the blue accent for the button */
   background-color: #389bff;
   border: none;
   transition: background-color 0.2s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
 .submit-button:hover {
-  background-color: #4c9ee9; /* A slightly lighter blue on hover */
+  background-color: #4c9ee9;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(56, 155, 255, 0.3);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .contact-info {
     border-right: none;
@@ -65,26 +61,19 @@
   }
 }
 
-
-/* ... (keep all your existing styles) ... */
-
-
-/* --- NEW STYLES FOR FORM STATUS --- */
-
-/* This container ensures the form or the success message takes up the same space */
 .contact-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 400px; /* Adjust as needed to match your form's height */
+  min-height: 400px; 
 }
 
-/* Styles for the success message container */
+
 .form-status-message.success {
   text-align: center;
   padding: 2rem;
-  color: #c3e6cb; /* Light green text */
-  background-color: rgba(34, 139, 230, 0.1); /* Faint blue background */
+  color: #c3e6cb; 
+  background-color: rgba(34, 139, 230, 0.1);
   border: 1px solid #2b7a78;
   border-radius: 8px;
   display: flex;
@@ -97,7 +86,7 @@
   color: #fff;
 }
 
-/* Styles for the inline error message */
+
 .form-status-message.error {
   text-align: left;
   padding: 0.5rem 0;

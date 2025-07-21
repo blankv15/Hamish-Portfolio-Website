@@ -18,7 +18,6 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
-  // New state to track form submission status (success, error, or null)
   const [formStatus, setFormStatus] = useState(null);
 
   const form = useForm({
@@ -32,9 +31,9 @@ export function ContactSection() {
 
   const handleSubmit = async (values) => {
     setLoading(true);
-    setFormStatus(null); // Reset status on new submission
+    setFormStatus(null); 
     try {
-      // FIX: The URL was missing '/api/'. It should match your server endpoint.
+
       const response = await fetch(`${API_URL}send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,23 +41,19 @@ export function ContactSection() {
       });
 
       if (!response.ok) {
-        // Throw an error to be caught by the catch block
         throw new Error('An error occurred on the server. Please try again.');
       }
       
-      // On success, update the status and reset the form
       setFormStatus({ status: 'success', message: 'Message sent! Thank you for reaching out.' });
       form.reset();
 
     } catch (error) {
-      // On failure, update the status with an error message
       setFormStatus({ status: 'error', message: 'Failed to send message. Please check your connection and try again.' });
     } finally {
       setLoading(false);
     }
   };
 
-  // Function to reset the form and show it again
   const handleSendAnother = () => {
     setFormStatus(null);
   };
@@ -69,7 +64,6 @@ export function ContactSection() {
         <Paper shadow="md" radius="lg">
           <div className="contact-inner">
             <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
-              {/* Left Column: Contact Info (Unchanged) */}
               <div className="contact-info">
                 <Title order={2} className="contact-title">Get in touch</Title>
                 <Text mt="sm" mb={30}>
@@ -98,9 +92,7 @@ export function ContactSection() {
                 </Group>
               </div>
 
-              {/* Right Column: Form */}
               <div className="contact-form-container">
-                {/* If the form was submitted successfully, show the success message */}
                 {formStatus?.status === 'success' ? (
                   <div className="form-status-message success">
                     <IconCheck size={48} stroke={1.5} />
@@ -111,7 +103,6 @@ export function ContactSection() {
                     </Button>
                   </div>
                 ) : (
-                  // Otherwise, show the form
                   <form className="contact-form" onSubmit={form.onSubmit(handleSubmit)}>
                     <TextInput
                       required
@@ -138,7 +129,6 @@ export function ContactSection() {
                       {...form.getInputProps('message')}
                     />
                     
-                    {/* Display the error message right above the button */}
                     {formStatus?.status === 'error' && (
                       <Text c="red" size="sm" mt="sm" className="form-status-message error">
                         <IconX size={16} style={{ marginRight: '8px', verticalAlign: 'middle' }} />

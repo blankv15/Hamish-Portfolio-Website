@@ -1,20 +1,14 @@
-// server.js
-
-// --- 1. IMPORTS & INITIAL SETUP ---
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const axios = require('axios');
 
-// Load environment variables from a .env file
 require('dotenv').config();
 
-// --- 2. INITIALIZE EXPRESS APP ---
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// --- 3. NODEMAILER TRANSPORTER SETUP ---
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
@@ -25,18 +19,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// --- 4. MIDDLEWARE ---
 app.use(cors());
 app.use(express.json());
 
-// Serve static assets like images from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
-
-// FIX: Serve the static React build files from the 'public/react' directory
 app.use(express.static(path.join(__dirname, 'public/react')));
 
 
-// --- 5. API ENDPOINTS ---
 
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message, token } = req.body;
@@ -49,7 +38,7 @@ app.post('/api/send-email', async (req, res) => {
     const { success, score } = response.data;
 
     if (!success || score < 0.5) {
-      return res.status(400).json({ message: 'reCAPTCHA verification failed. Please try again.' });
+      return res.status(400).json({ message: 'reCAPTCHA verification failed.' });
     }
 
     if (!name || !email || !message) {
@@ -68,14 +57,13 @@ app.post('/api/send-email', async (req, res) => {
     res.status(200).json({ message: 'Email sent successfully!' });
 
   } catch (error) {
-    console.error('Error during reCAPTCHA verification or email sending:', error);
+    console.error('Error during reCAPTCHA or email sending:', error);
     res.status(500).json({ message: 'An internal server error occurred.' });
   }
 });
 
 app.get('/api/projects', (req, res) => {
-  // FIX: Pointing to the correct 'projects.json' file.
-  const projectsDataPath = path.join(__dirname, 'data', 'projects.json');
+  const projectsDataPath = path.join(__dirname, 'data', 'projectsData.json');
   res.sendFile(projectsDataPath, (err) => {
     if (err) {
       console.error('Error sending projects.json:', err);
@@ -95,15 +83,12 @@ app.get('/api/tabs', (req, res) => {
 });
 
 
-// --- 6. SERVE REACT APP ---
-// FIX: This catch-all route is essential for serving your React app and enabling client-side routing.
-// It must come AFTER your API routes.
-app.get('*', (req, res) => {
+
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'public/react', 'index.html'));
 });
 
 
-// --- 7. START THE SERVER ---
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

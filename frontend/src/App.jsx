@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Modal, Loader, Alert } from "@mantine/core";
 import { IconAlertCircle } from '@tabler/icons-react';
 
-// Helper hook for fetching data
 import useFetch from "./hooks/useFetch"; 
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
-// Import components
 import TabSection from "./components/TabSection";
 import MantineCard from "./components/MantineCard";
 import GetInTouchSimple from "./components/GetInTouchSimple";
@@ -15,26 +13,21 @@ import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
 
-// Import styles
 import "./App.css";
 import ContactSection from "./components/ContactSection";
 
-// Define the base URL of your Express server
 const API_URL = import.meta.env.VITE_API_URL;
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 
-// --- Helper Component for Rendering Projects ---
-// This component encapsulates all the logic for fetching and displaying projects.
+
 function ProjectGrid({ onProjectClick }) {
   const { data: projectsData, loading, error } = useFetch(`${API_URL}api/projects`);
 
-  // 1. If loading, return ONLY the loader.
   if (loading) {
     return <Loader size="xl" />;
   }
 
-  // 2. If there's an error, return ONLY the error alert.
   if (error) {
     return (
       <Alert icon={<IconAlertCircle size="1rem" />} title="Error!" color="red">
@@ -43,7 +36,6 @@ function ProjectGrid({ onProjectClick }) {
     );
   }
 
-  // 3. If everything is successful, return ONLY the grid of projects.
   return (
     <div className="featured-grid">
       {projectsData && projectsData.map((project) => (
@@ -68,7 +60,6 @@ function ProjectGrid({ onProjectClick }) {
 
 
 function App() {
-  // State for the modal
   const [modalOpened, setModalOpened] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -77,7 +68,6 @@ function App() {
     setModalOpened(true);
   };
 
-  // Map component names from JSON to actual imported components
   const componentMap = {
     Stopwatch: Stopwatch,
     ToDoList: ToDoList,
@@ -90,7 +80,7 @@ function App() {
   return (
     <>
       <div className="hero">
-        <img src={`${API_URL}/images/hero/hero3.png`} alt="Hamish Chhagan" />
+        <img src={`${API_URL}/images/hero/hero.png`} alt="Hamish Chhagan" />
         <h1 className="heroText">
           Welcome to my Website,{" "}
           <span className="name">I'm a FullStack Developer</span>. Check out my thing.
@@ -99,7 +89,6 @@ function App() {
 
       <div className="featured-projects" id="projects">
         <h2>Featured Projects</h2>
-        {/* Use the new, self-contained ProjectGrid component */}
         <ProjectGrid onProjectClick={handleOpenModal} />
       </div>
 

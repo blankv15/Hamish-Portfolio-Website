@@ -97,7 +97,7 @@ const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
           ))}
         </div>
       </div>
-<div className="pdp-description" dangerouslySetInnerHTML={{ __html: project.description }} />
+<div className="description" dangerouslySetInnerHTML={{ __html: project.description }} />
 
       {hasLinks && (
         <div className="pdp-links-section">

@@ -9,22 +9,20 @@
   text-align: left;
   color: white;
   display: inline-block;
-  font-size: 1.8rem; /* Smaller font size for mobile */
-  line-height: 1.2; /* Improves readability for wrapped text */
+  font-size: 1.8rem; 
+  line-height: 1.2; 
 }
 
-/* --- Tablet and larger screens (e.g., > 768px) --- */
 @media (min-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem; /* A larger size for tablets */
+    font-size: 2.5rem;
     margin: 10px 100px 0px 100px;
   }
 }
 
-/* --- Large desktop screens (e.g., > 1024px) --- */
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 2.986rem; /* Your original large size for desktops */
+    font-size: 2.986rem; 
   }
 }
 .hero span {
@@ -63,56 +61,38 @@
 
 .featured-grid {
   display: grid;
-  /* This is the key to making the grid responsive.
-    - `repeat(auto-fit, ...)`: Creates as many columns as can fit in the available space.
-    - `minmax(280px, 1fr)`: Each column will have a minimum width of 280px and can grow to fill the space (1fr). 
-    When there isn't enough space for another 280px column, items will wrap to the next row.
-  */
+  
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: 1fr;
 
-  /* Adds a gap between grid items for better spacing */
   gap: 2rem;
 }
 
 .featured-grid-item {
-  /* I've used a valid color here for the background */
-  border-radius: 8px; /* Added for a softer look */
+  border-radius: 8px;
 }
-/* --- Default (Mobile) Styles --- */
 
 .contact-form {
-  /* On mobile, use padding for spacing instead of percentage margins */
   padding: 1.5rem;
 }
 
-.contact-grid {
-  /* On mobile, the grid items will stack vertically by default */
-}
 
-/* Add some space below the text when it's stacked on top of the form */
 .contact-text {
   margin-bottom: 2rem;
 }
 
-/* This code only runs when the screen width is 992px or more */
 @media (min-width: 992px) {
   .contact-form {
-    /* Keep the 10% outer margin on left/right for desktop alignment */
     margin: 3rem 10%;
-    padding: 0; /* Remove padding since margin is used */
+    padding: 0; 
   }
 
   .contact-grid {
-    /* Activate the grid layout on desktop */
     display: grid;
-    /* Create a 20% / 80% split (1fr is 1 part, 4fr is 4 parts) */
     grid-template-columns: 1fr 4fr;
-    /* Add space between the text column and the form column */
-    gap: 3rem; /* Adjust gap as needed */
+    gap: 3rem; 
   }
 
-  /* No bottom margin needed on desktop as elements are side-by-side */
   .contact-text {
     margin-bottom: 0;
   }

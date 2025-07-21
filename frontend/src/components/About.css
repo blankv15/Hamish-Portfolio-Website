@@ -1,23 +1,15 @@
-/* --- Main Section Container --- */
 .about-contact-section {
   margin: 1rem auto;
   color: #e0e0e0;
 }
 
-/* --- Grid Layout --- */
 .about-contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 3rem; /* Space between the columns */
-  /* 
-    background-color: rgba(255, 255, 255, 0.03);
+  grid-template-columns: 1fr 1fr; 
+  gap: 3rem; 
 
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1); 
-  */
 }
 
-/* --- About Me Content (Left Column) --- */
 .about-me-content .section-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: white;
@@ -27,7 +19,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* Adds a small accent line under the title */
 .about-me-content .section-title::after {
   content: '';
   position: absolute;
@@ -44,7 +35,6 @@
   color: #c0c0c0;
 }
 
-/* --- Contact Form (Right Column) --- */
 .contact-form-container {
   display: flex;
   flex-direction: column;
@@ -62,10 +52,9 @@
   margin-bottom: 1.5rem;
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
   .about-contact-grid {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    grid-template-columns: 1fr; 
     padding: 2rem;
   }
 }
@@ -94,24 +83,23 @@
 .about-image {
   width: 100%;
   height: 100%;
-  max-height: 500px; /* Optional: Prevents the image from being too tall */
-  object-fit: cover; /* This is key: it prevents the image from stretching */
-  border-radius: 12px; /* Optional: adds nice rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  max-height: 500px; 
+  object-fit: cover; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
-/* --- Ensure your grid is responsive --- */
-/* You might already have something like this, but if not, it's important */
+
 .about-contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 3rem; /* Space between columns */
+  grid-template-columns: 1fr 1fr;  
+  gap: 3rem; 
   align-items: center;
 }
 
-/* On smaller screens, stack the columns */
+
 @media (max-width: 800px) {
   .about-contact-grid {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr; 
   }
 }

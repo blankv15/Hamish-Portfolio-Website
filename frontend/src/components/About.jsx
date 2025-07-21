@@ -1,7 +1,4 @@
 import React from "react";
-// 1. IMPORT YOUR IMAGE
-// Make sure to place your image file in your project (e.g., in the src/assets folder)
-// and update the path below accordingly.
 import "./About.css";
 
 function About() {
@@ -11,7 +8,6 @@ function About() {
   return (
     <div className="about-contact-section" id="about">
       <div className="about-contact-grid">
-        {/* --- Left Column: About Me (This part is unchanged) --- */}
         <div className="about-me-content">
 
           <p>
@@ -37,7 +33,6 @@ function About() {
           </p>
         </div>
 
-        {/* --- Right Column: Replaced with an Image --- */}
         <div className="about-image-container">
           <img 
             src={`${API_URL}/images/profile/profile.png`} 
