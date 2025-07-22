@@ -25,50 +25,6 @@ jobs:
           push: true
           build-args: |
             VITE_API_URL=${{ secrets.VITE_API_URL_PROD }}
-          tags: ${{ secrets.DOCKER_USERNAME }}/your-portfolio-app:latest
-
-      - name: Deploy to Lightsail
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.LIGHTSAIL_HOST }}
-          username: ${{ secrets.LIGHTSAIL_USER }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-          script: |
-            # Navigate to the project directory
-            cd ~/your-project-directory
-            
-            # Pull the latest image from Docker Hub
-            docker-compose pull
-            
-            # Stop the current container and start the new one
-            docker-compose up -d
-name: Deploy to AWS Lightsail
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          build-args: |
-            VITE_API_URL=${{ secrets.VITE_API_URL_PROD }}
             VITE_RECAPTCHA_SITE_KEY=${{ secrets.VITE_RECAPTCHA_SITE_KEY_PROD }}
           tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
 
