@@ -1,3 +1,7 @@
+/* =================================================================
+   CONTACT SECTION STYLES
+   ================================================================= */
+
 .contact-section-wrapper {
   padding: 4rem 0;
   background-color: transparent;
@@ -47,20 +51,6 @@
   box-shadow: 0 4px 15px rgba(56, 155, 255, 0.3);
 }
 
-
-@media (max-width: 768px) {
-  .contact-info {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(56, 119, 238, 0.2);
-    padding-bottom: 2rem;
-  }
-  .contact-inner {
-    padding: 2rem;
-  }
-}
-
 .contact-form-container {
   display: flex;
   flex-direction: column;
@@ -93,4 +83,35 @@
   font-weight: 500;
   display: flex;
   align-items: center;
+}
+
+
+/* =================================================================
+   MOBILE RESPONSIVE STYLES
+   ================================================================= */
+
+@media (max-width: 768px) {
+  .contact-inner {
+    padding: 2rem;
+  }
+  
+  .contact-info {
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(56, 119, 238, 0.2);
+    padding-bottom: 2rem;
+    /* FIX: Center align all text in the info block */
+    text-align: center;
+  }
+
+  /* FIX: Justify the info groups to the center */
+  .contact-info .mantine-Group-root {
+    justify-content: center;
+  }
+
+  .contact-form {
+    /* FIX: Add some space above the form on mobile */
+    margin-top: 2rem;
+  }
 }

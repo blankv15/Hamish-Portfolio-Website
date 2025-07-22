@@ -1,63 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Faculty+Glyphic&family=Julius+Sans+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/* =================================================================
+   1. FONT IMPORT
+   - It's best practice to only import the specific fonts and weights you need.
+   - Loading one or two font families is much better for performance.
+   ================================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700&display=swap");
 
+/* =================================================================
+   2. GLOBAL STYLES & RESETS
+   ================================================================= */
 
+/* A modern CSS reset for better layout consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+}
 
 body {
   font-family: "Questrial", sans-serif;
+  color: #e0e0e0; /* A good default text color for a dark theme */
   background-image: linear-gradient(
     to top,
-    hsl(0, 0%, 0%),
-
+    #000000,
     #2c265a
   );
-
+  min-height: 100vh;
 }
-h1 {
-  font-size: 2.986rem;
+
+/* =================================================================
+   3. TYPOGRAPHY
+   - Consolidating all heading styles for easier management.
+   ================================================================= */
+
+h1, h2, h3, h4, h5, h6 {
   color: white;
+  font-family: "Poppins", sans-serif; /* A slightly bolder font for headings */
+  font-weight: 700;
 }
-h2 {
-  font-size: 2.488rem;
-    color: white;
 
-}
-h3 {
-  font-size: 2.074rem;
-    color: white;
-
-}
-h4 {
-  font-size: 1.728rem;
-    color: white;
-
-}
-h5 {
-  font-size: 1.44rem;
-    color: white;
-
-}
-h6 {
-  font-size: 1.2rem;
-    color: white;
-
-}
+h1 { font-size: 2.986rem; }
+h2 { font-size: 2.488rem; }
+h3 { font-size: 2.074rem; }
+h4 { font-size: 1.728rem; }
+h5 { font-size: 1.44rem; }
+h6 { font-size: 1.2rem; }
 
 p {
   font-size: 1rem;
-    color: white;
-    color:#6356c2;
-
+  line-height: 1.7; /* Added line-height for better readability */
+  color: #c0c0c0; /* A slightly softer white for paragraphs */
 }
 
+/* =================================================================
+   4. MANTINE COMPONENT OVERRIDES
+   ================================================================= */
 
+.mantine-Modal-body,
+.mantine-Modal-header {
+  background-color: #2c265a;
+  color: white;
+}
 
-
-
-
-	.mantine-Modal-body{
-    background-color: #2c265a;
-  }
-  .mantine-Modal-header	{
-        background-color: #2c265a;
-
-  }
+.mantine-Modal-title {
+    color: white;
+}

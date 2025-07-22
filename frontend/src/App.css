@@ -1,7 +1,15 @@
+/* =================================================================
+   HERO SECTION STYLES
+   ================================================================= */
 .hero {
   text-align: center;
   padding: 5.5rem;
   margin: 5% 10% 10% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Give the hero section more height */
 }
 
 .hero h1 {
@@ -13,10 +21,65 @@
   line-height: 1.2; 
 }
 
+.hero span {
+  color: #e67319;
+}
+
+.hero img {
+  height: auto;
+  max-width: 60%;
+  margin-bottom: 2rem;
+}
+
+/* =================================================================
+   GENERAL LAYOUT STYLES
+   ================================================================= */
+
+/* NEW: This class creates uniform spacing for all content sections */
+.content-section {
+  padding: 4rem 10%; /* Vertical and horizontal padding */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.section-title span {
+  color: #e67319;
+}
+
+/* REMOVED: The individual margins are no longer needed */
+/*
+.featured-projects,
+.skills,
+.about,
+.contact {
+  margin: 10%;
+}
+*/
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+}
+
+.featured-grid-item {
+  border-radius: 8px;
+}
+
+
+/* =================================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================================= */
+
+/* --- Desktop Hero --- */
 @media (min-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
-    margin: 10px 100px 0px 100px;
   }
 }
 
@@ -25,75 +88,42 @@
     font-size: 2.986rem; 
   }
 }
-.hero span {
-  color: #e67319;
-}
-.hero img {
-  height: auto;
-  max-width: 60%;
-}
 
-.current-projects {
-  padding-top: 10%;
-}
+/* --- Mobile Hero Styles --- */
+@media (max-width: 768px) {
+  .hero {
+    /* Reset margins and remove horizontal padding for full width */
+    margin: 0;
+    padding: 4rem 0;
+    min-height: 60vh;
+  }
 
-.featured-projects {
-  margin: 10%;
-}
+  .hero img {
+    /* Ensure the whole image is visible and not cut off */
+    max-width: 200px;
+    width: 60%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: none;
+    object-fit: contain; /* This ensures the whole image is displayed */
+  }
 
-.skills {
-  margin: 10%;
-}
-
-.skills span {
-}
-
-.about {
-  margin: 10%;
-}
-.about span {
-  color: #e67319;
-}
-
-.contact {
-  margin: 10%;
-}
-
-.featured-grid {
-  display: grid;
+  .hero h1 {
+    /* Adjust text for mobile readability */
+    font-size: 2rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 1.5rem; /* Add padding here to keep text from touching edges */
+  }
   
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 1fr;
-
-  gap: 2rem;
-}
-
-.featured-grid-item {
-  border-radius: 8px;
-}
-
-.contact-form {
-  padding: 1.5rem;
-}
-
-
-.contact-text {
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 992px) {
-  .contact-form {
-    margin: 3rem 10%;
-    padding: 0; 
+  /* Adjust section padding for mobile to be full-width */
+  .content-section {
+    padding: 3rem 1.5rem; /* Re-added padding for content sections */
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 3rem; 
-  }
-
-  .contact-text {
-    margin-bottom: 0;
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
   }
 }
