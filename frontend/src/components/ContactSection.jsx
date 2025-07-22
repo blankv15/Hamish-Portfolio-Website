@@ -23,7 +23,7 @@ import {
 } from "@tabler/icons-react";
 import "./ContactSection.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
@@ -44,7 +44,7 @@ export function ContactSection() {
     setLoading(true);
     setFormStatus(null);
     try {
-      const response = await fetch(`${API_URL}send-email`, {
+      const response = await fetch(`${API_URL}/api/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -60,10 +60,10 @@ export function ContactSection() {
       });
       form.reset();
     } catch (error) {
+
       setFormStatus({
         status: "error",
-        message:
-          "Failed to send message. Please check your connection and try again.",
+        message: error.message || "Failed to send message. Please check your connection and try again.",
       });
     } finally {
       setLoading(false);
