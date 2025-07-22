@@ -1,4 +1,4 @@
-FROM node:20-alpine AS frontend-builder
+FROM node:22-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
@@ -9,7 +9,7 @@ ARG VITE_RECAPTCHA_SITE_KEY
 
 RUN VITE_API_URL=${VITE_API_URL} VITE_RECAPTCHA_SITE_KEY=${VITE_RECAPTCHA_SITE_KEY} npm run build
 
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY backend/package*.json ./
 RUN npm install --omit=dev
