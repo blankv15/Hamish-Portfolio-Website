@@ -31,37 +31,6 @@
     ]
   },
 
-<<<<<<< HEAD
-  {
-    "value": "backend-development",
-    "label": "Back-End",
-    "image": "/images/tabs/backend/4.png",
-    "title": "Back-End Development",
-    "description": "I develop robust server-side logic and APIs to power web applications, using a range of languages and frameworks.",
-    "points": [
-      "Building robust web applications and APIs.",
-      "Developing server-side logic and services using both NodeJS and Python.",
-      "Designing and implementing RESTful APIs to handle client-server communication.",
-      "Working with both SQL and NoSQL databases to manage application data."
-    ],
-    "tech": ["Wordpress CMS","Flask", "Node.js", "Python", "REST APIs", "SQL","postgressSQL",".Net","AWS","CPanel"]
-  },
-
-  {
-    "value": "devops-cloud",
-    "label": "DevOps & Cloud",
-    "image": "/images/tabs/devops/1.png",
-    "title": "DevOps & Cloud Infrastructure",
-    "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
-    "points": [
-      "Developing and deploying full-stack applications on cloud platforms, with strong experience in AWS.",
-      "Using Docker to create consistent, portable environments for development and deployment.",
-      "Utilising CI/CD tools like Github Actions to automate the deployment of containerised applications.",
-      "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
-    ],
-    "tech": ["AWS", "Docker", "Github Actions", "CI/CD", "Linux", "Bash", "Proxmox VE","OpenWrt","Ubuntu", "Debian", "DNS","DHCP" ]
-  },
-=======
 {
   "value": "backend-development",
   "label": "Back-End",
@@ -91,7 +60,7 @@
 {
   "value": "devops-cloud",
   "label": "DevOps & Cloud",
-  "image": "/images/tabs/backend/1.png",
+  "image": "/images/tabs/devops/1.png",
   "title": "DevOps & Cloud Infrastructure",
   "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
   "points": [
@@ -113,7 +82,6 @@
     "DNS"
   ]
 },
->>>>>>> main
 
   {
     "value": "ai-automation",
@@ -127,6 +95,6 @@
       "Using Python as a primary language for AI scripting and API integration.",
       "Actively exploring and experimenting with new AI models and their practical applications."
     ],
-    "tech": ["OpenAI API", "Gemini", "Python", "Automation", "Workflows",""]
+    "tech": ["OpenAI API", "Gemini API", "Python", "Automation", "Workflows","N8N"]
   }
 ]

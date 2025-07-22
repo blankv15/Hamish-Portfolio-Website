@@ -1,63 +1,81 @@
 .pdp-container {
-  padding: 1px 1rem 1rem 1rem;
-  color: #3877ee1a;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
   font-family: "Questrial", sans-serif;
-  background-color: #3877ee1a;
+  background-color: #121029; /* A darker, less purple background for better contrast */
   border-radius: 12px;
 }
 
 .pdp-title {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
-  margin-bottom: 1rem;
-  border-bottom: 2px solid white;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
   color: white;
 }
 
-.pdp-description {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-  line-height: 1.7;
-  margin-bottom: 2rem;
+/* --- Improved Text Styles --- */
+.description h4 {
+  font-size: 1.25rem;
   color: white;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
-.pdp-description p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+
+.description p {
+  font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 2rem;
-  color: white;
+  margin-bottom: 1rem;
+  color: #c0c0c0; /* Softer white for better readability */
 }
+
+.description p strong {
+  color: #a3c9ff; /* Highlight color for bold text */
+  font-weight: 600;
+}
+
+/* --- NEW: Styles for List Elements --- */
+.description ul {
+  list-style-position: inside; /* Keeps bullets aligned with text */
+  padding-left: 0.5rem; /* Indent the list slightly */
+  margin-bottom: 1rem;
+}
+
+.description li {
+  color: #c0c0c0; /* Same color as paragraphs for consistency */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem; /* Space between list items */
+}
+
 
 .pdp-tech-section {
-  margin-bottom: 2.5rem;
-}
-
-.pdp-tech-header {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: white;
+  margin: 2.5rem 0;
 }
 
 .pdp-tech-badge-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.01rem;
+  gap: 0.5rem;
 }
 
 .pdp-tech-badge {
   background-color: rgba(56, 119, 238, 0.1);
-  color: white;
-  border: 1px solid #1c7ed6;
+  color: #a3c9ff;
+  border: 1px solid #3877ee4d;
   padding: 6px 14px;
   border-radius: 16px;
   font-size: 0.9rem;
   font-weight: 500;
-  margin: 4px;
 }
 
 .pdp-links-section {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pdp-link-button {
@@ -89,7 +107,7 @@
 .pdp-carousel {
   height: 500px;
   position: relative;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
 }
 
 .pdp-carousel-slide {
@@ -160,11 +178,14 @@
 @media (max-width: 480px) {
   .pdp-carousel {
     height: 250px;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
     border-radius: 0;
   }
   .pdp-carousel-slide {
     border-radius: 0;
+  }
+  .pdp-container {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
   }
 }

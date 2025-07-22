@@ -114,26 +114,32 @@
     "liveUrl": "",
     "embeddedComponent": "ToDoList"
   },
-  {
+{
   "id": "portfolio-website",
-  "title": "Personal Portfolio Website",
-  "summary": "A dynamic portfolio built with React to showcase my projects, skills, and professional background.",
+  "title": "Full-Stack Portfolio & CI/CD Pipeline",
+  "summary": "A full-stack portfolio website featuring a complete CI/CD pipeline for automated builds and deployments to a cloud server.",
   "buttonText": "View Source",
   "images": [
     "/images/features/portfolio/1.png",
     "/images/features/portfolio/2.png"
   ],
-  "description": "<h4>Project Overview</h4><p>This portfolio was built from the ground up as a dynamic, single-page application using React. The primary goal was to create a modern, easily updatable platform to showcase my skills and projects to potential employers and clients.</p><h4>Architecture & Design</h4><ul><li>Built with a <strong>component-based architecture</strong>, ensuring each section (hero, projects, skills) is modular and reusable.</li><li>Content is <strong>data-driven</strong>, pulled from a central JSON file. This allows me to add or update projects without touching the core application logic.</li><li>Project details are displayed in a <strong>modal window</strong>, creating a seamless user experience without needing to navigate to separate pages.</li></ul><h4>Key Features</h4><ul><li><strong>Dynamic Project Rendering:</strong> Project cards and detail pages are generated automatically from the central data source.</li><li><strong>Interactive Skills Section:</strong> A custom tab component displays different skill sets, providing detailed information in a clean, organised way.</li><li><strong>Embedded React Components:</strong> The site can render live, functional React components (like the Stopwatch) directly within a project's description, offering a truly interactive showcase.</li></ul>",
+  "description": "<h4>Project Overview</h4><p>This portfolio is a full-stack application built from the ground up to serve as a dynamic showcase of my work. More than just a frontend, it features a complete DevOps pipeline that automates the entire process from a `git push` to a live deployment on a cloud server, demonstrating a holistic approach to modern web development.</p><h4>Full-Stack Architecture</h4><ul><li>The <strong>frontend</strong> is a responsive single-page application built with <strong>React</strong> and Vite, using the <strong>Mantine</strong> component library for a clean and modern UI.</li><li>The <strong>backend</strong> is a lightweight <strong>Node.js</strong> and <strong>Express</strong> server that serves the static React files and provides a REST API for dynamic content like project data and skills.</li></ul><h4>CI/CD & DevOps Pipeline</h4><ul><li>The entire application is containerized using a multi-stage <strong>Dockerfile</strong>, which builds the frontend and bundles it with the backend into a single, optimized image.</li><li>A <strong>GitHub Actions</strong> workflow automatically triggers on every push to the `main` branch.</li><li>The workflow builds the Docker image, pushes it to <strong>Docker Hub</strong>, and then securely connects to an <strong>AWS Lightsail</strong> instance via SSH.</li><li>On the server, <strong>Docker Compose</strong> pulls the new image and seamlessly redeploys the container, ensuring zero downtime.</li></ul><h4>Key Features & Design Choices</h4><ul><li><strong>Modular Architecture:</strong> The entire frontend is built on a component-based architecture, with each section (Navbar, Hero, Projects, etc.) refactored into its own reusable and maintainable file.</li><li><strong>Responsive & Mobile-First Design:</strong> Significant effort was made to ensure a seamless mobile experience, including a responsive navbar that collapses into an animated dropdown, skills tabs that convert to a select menu, and \"Read More\" functionality to keep layouts clean on smaller screens.</li><li><strong>Secure Contact Form:</strong> The form is protected from spam by <strong>Google reCAPTCHA v3</strong>. Submissions are securely sent via a backend endpoint that uses <strong>Nodemailer</strong> to dispatch emails, with clear success or error messages displayed to the user.</li></ul>",
   "technologies": [
     "React",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "Vite",
+    "Node.js",
+    "Express.js",
+    "Docker",
+    "GitHub Actions",
+    "CI/CD",
+    "AWS Lightsail",
     "Mantine",
-    "Git"
+    "Nodemailer",
+    "reCAPTCHA",
+    "JavaScript",
+    "CSS3",
+    "Vite"
   ],
-  "githubUrl": "https://github.com/your-username/your-portfolio-repo",
-  "liveUrl": ""
+  "githubUrl": "https://github.com/blankv15/website-good",
+  "liveUrl": "https://hamishc.nz"
 }
 ]
