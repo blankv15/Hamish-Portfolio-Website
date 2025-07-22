@@ -23,17 +23,12 @@ import {
 } from "@tabler/icons-react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import "./ContactSection.css";
-<<<<<<< HEAD
-
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
-=======
-    import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
     const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
->>>>>>> dev
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);

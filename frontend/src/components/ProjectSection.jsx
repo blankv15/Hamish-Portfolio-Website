@@ -3,7 +3,7 @@ import { Loader, Alert, Center, Button, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertCircle } from '@tabler/icons-react';
 import useFetch from '../hooks/useFetch';
-import MantineCard from './MantineCard';
+import ProjectCard from './ProjectCard';
 import './ProjectSection.css';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -44,7 +44,7 @@ function ProjectSection({ onProjectClick }) {
             onClick={() => onProjectClick(project)}
             style={{ cursor: "pointer" }}
           >
-            <MantineCard
+            <ProjectCard
               title={project.title}
               imageUrl={`${API_URL}${project.images[0]}`}
               badgeText={project.technologies[0]}
