@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Modal, Loader, Alert } from "@mantine/core";
+import { Modal, Loader, Alert, Title, Text } from "@mantine/core";
 import { IconAlertCircle } from '@tabler/icons-react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import useFetch from "./hooks/useFetch"; 
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import TabSection from "./components/TabSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
@@ -11,14 +11,12 @@ import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
 import ProjectCard from "./components/ProjectCard";
+import ContactSection from "./components/ContactSection";
 
 import "./App.css";
-import ContactSection from "./components/ContactSection";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-
-
 
 function ProjectGrid({ onProjectClick }) {
   const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
@@ -44,19 +42,18 @@ function ProjectGrid({ onProjectClick }) {
           onClick={() => onProjectClick(project)}
           style={{ cursor: "pointer" }}
         >
-          <Mantinecard
+          <ProjectCard
             title={project.title}
             imageUrl={`${API_URL}${project.images[0]}`}
             badgeText={project.technologies[0]}
             description={project.summary}
-            buttonText={project.buttonText}
+            buttonText={project.buttonText || "Learn More"}
           />
         </div>
       ))}
     </div>
   );
 }
-
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -76,13 +73,23 @@ function App() {
     ? componentMap[selectedProject.embeddedComponent]
     : null;
 
+  if (!RECAPTCHA_SITE_KEY) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <Title order={3}>Configuration Error</Title>
+        <Text>VITE_RECAPTCHA_SITE_KEY is missing. Please check your environment variables.</Text>
+      </div>
+    );
+  }
+
   return (
-    <>
+   
+    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <div className="hero">
         <img src={`${API_URL}/images/hero/hero.png`} alt="Hamish Chhagan" />
         <h1 className="heroText">
           Welcome to my Website,{" "}
-          <span className="name">I'm a FullStack Developer</span>. Check out my thing.
+          <span className="name">I'm a FullStack Developer</span>.
         </h1>
       </div>
 
@@ -93,7 +100,7 @@ function App() {
 
       <div className="skills" id="skills">
         <h2>
-          My <span>Skills</span>.
+          <span>Skills</span>.
         </h2>
         <TabSection />
       </div>
@@ -104,12 +111,8 @@ function App() {
         </h2>
         <About />
       </div>
-      <GoogleReCaptchaProvider>
-
-        <ContactSection />
-
-      </GoogleReCaptchaProvider>
-
+      
+      <ContactSection />
 
       <Modal
         opened={modalOpened}
@@ -129,7 +132,7 @@ function App() {
           />
         )}
       </Modal>
-    </>
+    </GoogleReCaptchaProvider>
   );
 }
 
