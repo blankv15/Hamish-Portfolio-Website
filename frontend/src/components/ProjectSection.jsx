@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Loader, Alert, Center, Button } from '@mantine/core';
+import { Loader, Alert, Center, Button, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertCircle } from '@tabler/icons-react';
 import useFetch from '../hooks/useFetch';
@@ -21,6 +21,12 @@ function ProjectSection({ onProjectClick }) {
     return <Alert icon={<IconAlertCircle size="1rem" />} title="Error!" color="red">Failed to load project data: {error}</Alert>;
   }
 
+  // FIX: Add a check to ensure projectsData is not null or empty before rendering.
+  // This prevents the "Cannot read properties of null" error.
+  if (!projectsData) {
+    return <Center><Text>No projects to display.</Text></Center>;
+  }
+
   // On mobile, show only 3 projects unless expanded. On desktop, show all.
   const projectsToShow = isMobile && !isExpanded ? projectsData.slice(0, 3) : projectsData;
 
@@ -31,7 +37,7 @@ function ProjectSection({ onProjectClick }) {
   return (
     <>
       <div className="featured-grid">
-        {projectsToShow && projectsToShow.map((project) => (
+        {projectsToShow.map((project) => (
           <div
             key={project.id}
             className="featured-grid-item"
@@ -50,7 +56,7 @@ function ProjectSection({ onProjectClick }) {
       </div>
       
       {/* This button only appears on mobile if there are more than 3 projects */}
-      {isMobile && projectsData && projectsData.length > 3 && (
+      {isMobile && projectsData.length > 3 && (
         <Center mt="xl">
           <button onClick={toggleExpanded} className="view-more-button">
             {isExpanded ? 'View Less' : 'View More'}

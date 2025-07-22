@@ -80,6 +80,16 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <a href="#" className="navbar-logo">Hamish Chhagan</a>
 
+                    {/* New container for mobile-only actions */}
+                    <div className="nav-actions-mobile">
+                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
+                            <GitHubIcon className="github-icon" />
+                        </a>
+                        <a href="/HamishChhaganCV.pdf" download className="cv-button">
+                            CV
+                        </a>
+                    </div>
+
                     <div className="nav-links-desktop">
                         <a href="#projects" className="nav-link">Projects</a>
                         <a href="#skills" className="nav-link">Skills</a>
@@ -98,6 +108,7 @@ const Navbar = () => {
 
                     <div className="mobile-menu-toggle">
                         <button onClick={toggleMenu} aria-label="Toggle menu">
+                            {/* This line conditionally renders the correct icon */}
                             {isMenuOpen ? <CloseIcon className="menu-icon" /> : <MenuIcon className="menu-icon" />}
                         </button>
                     </div>

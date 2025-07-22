@@ -25,7 +25,8 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* High z-index to stay on top */
+  /* FIX: Give the navbar the HIGHEST z-index */
+  z-index: 1001; 
   padding: 0 1rem;
   transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out;
 }
@@ -100,10 +101,14 @@ button {
 /* =================================================================
    MOBILE MENU STYLES
    ================================================================= */
+.nav-actions-mobile {
+  display: none; /* Hidden on desktop by default */
+}
+
 .mobile-menu-toggle {
   display: flex;
   align-items: center;
-  z-index: 1001; /* Ensure toggle is above the menu */
+  z-index: 1001; 
 }
 .menu-icon {
   height: 1.5rem;
@@ -118,6 +123,8 @@ button {
   height: 100%;
   background-color: #121029;
   padding-top: 5rem;
+  /* FIX: Give the menu a lower z-index than the navbar */
+  z-index: 1000;
   
   /* Animation setup */
   transform: translateY(-100%);
@@ -171,8 +178,28 @@ button {
 }
 
 /* =================================================================
-   DESKTOP RESPONSIVE STYLES
+   DESKTOP & MOBILE RESPONSIVE STYLES
    ================================================================= */
+@media (max-width: 767px) {
+  /* Hide the main logo on mobile */
+  .navbar-logo {
+    display: none;
+  }
+
+  /* Show the mobile action buttons */
+  .nav-actions-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between GitHub and CV buttons */
+  }
+
+  /* Make the mobile CV button smaller */
+  .nav-actions-mobile .cv-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar {
     padding: 0 1.5rem;
