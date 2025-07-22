@@ -23,6 +23,7 @@
   display: none;
 }
 
+
 /* --- Individual Tab Styling --- */
 .custom-tab {
   background-color: transparent;
@@ -31,22 +32,25 @@
   padding: 12px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #a3c9ff;
+  color: #a3c9ff; 
   position: relative;
   transition: color 0.3s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
+/* --- Tab Hover State --- */
 .custom-tab:hover {
   color: #e0e0e0;
 }
 
+/* --- ACTIVE TAB HIGHLIGHT --- */
 .custom-tab[data-active="true"] {
-  color: #389bff;
+  color: #389bff; 
   font-weight: 700;
 }
 
+/* --- Active Tab Indicator (the line underneath) --- */
 .custom-tab[data-active="true"]::after {
   content: '';
   position: absolute;
@@ -58,7 +62,7 @@
   border-radius: 2px;
 }
 
-/* --- NEW: Mobile Select Dropdown Styles --- */
+/* --- Mobile Select Dropdown Styles --- */
 .mobile-tabs-select {
   margin-bottom: 1.5rem;
 }
@@ -103,6 +107,7 @@
   color: #e0e0e0;
 }
 
+/* --- Image Section --- */
 .tab-image-container {
   height: 100%;
 }
@@ -115,6 +120,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* --- Content Section --- */
 .tab-content-container {
   display: flex;
   flex-direction: column;
@@ -140,6 +146,7 @@
   margin-bottom: 2rem;
 }
 
+/* --- Highlighted Points --- */
 .points-list {
   margin-bottom: 2rem;
 }
@@ -173,6 +180,7 @@
   color: #e0e0e0;
 }
 
+/* --- Footer Layout --- */
 .tab-footer {
   display: flex;
   justify-content: space-between;
@@ -183,6 +191,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* --- Skills Section (inside footer) --- */
 .skills-title {
   font-size: 1rem;
   color: #a0a0a0;
@@ -208,6 +217,7 @@
   font-weight: 500;
 }
 
+/* --- Navigation Buttons --- */
 .tab-navigation-buttons {
   flex-shrink: 0;
 }
@@ -215,6 +225,10 @@
 .nav-arrow-button {
   width: 80px;
 }
+
+/* =================================================================
+   3. RESPONSIVE ADJUSTMENTS
+   ================================================================= */
 
 @media (max-width: 992px) {
   .tab-content-container {
@@ -224,13 +238,25 @@
 }
 
 @media (max-width: 768px) {
+  /* Reduce title size on mobile */
+  .tab-title {
+    font-size: 2rem;
+  }
+  
+  /* Stack footer items vertically and align them left */
   .tab-footer {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .skills-section {
-    flex-basis: 100%;
-  }
+
+  /* Make the button group take full width */
   .tab-navigation-buttons {
-    margin-left: auto;
+    width: 100%;
+    margin-top: 1rem; /* Add some space above the buttons */
+  }
+
+  /* Make the Back and Next buttons grow to fill the available space */
+  .nav-arrow-button {
+    flex-grow: 1;
   }
 }

@@ -80,7 +80,7 @@ function App() {
   return (
     <>
       <div className="hero">
-        <img src={`${API_URL}/images/hero/hero.png`} alt="Hamish Chhagan" />
+        <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
         <h1 className="heroText">
           Welcome to my Website,{" "}
           <span className="name">I'm a FullStack Developer</span>. Check out my thing.
