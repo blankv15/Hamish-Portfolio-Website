@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import "./Navbar.css";
 
-import "./Navbar.css"
+// --- SVG Icon Components ---
 
-// GitHub Icon Component
 const GitHubIcon = ({ className }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -20,7 +20,6 @@ const GitHubIcon = ({ className }) => (
     </svg>
 );
 
-// Mobile Menu Icon Component
 const MenuIcon = ({ className }) => (
     <svg 
         className={className} 
@@ -34,6 +33,19 @@ const MenuIcon = ({ className }) => (
     </svg>
 );
 
+const CloseIcon = ({ className }) => (
+    <svg 
+        className={className} 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        strokeWidth="2" 
+        stroke="currentColor"
+    >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+);
+
 
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -41,11 +53,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 50);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -54,60 +62,66 @@ const Navbar = () => {
     const toggleMenu = () => setMenuOpen(!isMenuOpen);
     const closeMenu = () => setMenuOpen(false);
 
-    const navId = isScrolled ? 'navbar scrolled' : 'navbar';
-    const mobileMenuClasses = isMenuOpen ? 'mobile-menu' : 'mobile-menu hidden';
+    // Add a class to the body to prevent scrolling when the mobile menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }, [isMenuOpen]);
+
+    const navClasses = `navbar ${isScrolled ? 'scrolled' : ''}`;
+    const mobileMenuClasses = `mobile-menu ${isMenuOpen ? 'open' : ''}`;
 
     return (
-        <>
-            <nav id={navId}>
+        <header>
+            <nav className={navClasses}>
                 <div className="navbar-content">
-                    
-
+                    <a href="#" className="navbar-logo">Hamish Chhagan</a>
 
                     <div className="nav-links-desktop">
-                        <a href="#projects" className="nav-link">Project's</a>
-                        <a href="#skills" className="nav-link">Skill's</a>
+                        <a href="#projects" className="nav-link">Projects</a>
+                        <a href="#skills" className="nav-link">Skills</a>
                         <a href="#about" className="nav-link">About</a>
-                                                <a href="#contact" className="nav-link">Contact</a>
-
+                        <a href="#contact" className="nav-link">Contact</a>
                     </div>
 
                     <div className="nav-actions-desktop">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
                             <GitHubIcon className="github-icon" />
                         </a>
-                        <a href="/path-to-your-cv.pdf" download className="cv-button">
+                        <a href="/HamishChhaganCV.pdf" download className="cv-button">
                             Download CV
                         </a>
                     </div>
 
                     <div className="mobile-menu-toggle">
-                        <button onClick={toggleMenu}>
-                            <MenuIcon className="menu-icon" />
+                        <button onClick={toggleMenu} aria-label="Toggle menu">
+                            {isMenuOpen ? <CloseIcon className="menu-icon" /> : <MenuIcon className="menu-icon" />}
                         </button>
-                    </div>
-
-                </div>
-
-                <div className={mobileMenuClasses}>
-                    <div className="mobile-menu-content">
-                        <a href="#projects" onClick={closeMenu}>My Work</a>
-                        <a href="#skills" onClick={closeMenu}>Skill's</a>
-                        <a href="#contact" onClick={closeMenu}>About Me</a>
-                        <div className="mobile-menu-divider"></div>
-                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
-                            GitHub
-                            <GitHubIcon/>
-                        </a>
-                        <a href="/path-to-your-cv.pdf" download onClick={closeMenu} className="cv-button mobile-menu-cv-button">
-                            View CV
-                        </a>
                     </div>
                 </div>
             </nav>
-        </>
+
+            <div className={mobileMenuClasses}>
+                <div className="mobile-menu-content">
+                    <a href="#projects" onClick={closeMenu}>Projects</a>
+                    <a href="#skills" onClick={closeMenu}>Skills</a>
+                    <a href="#about" onClick={closeMenu}>About</a>
+                    <a href="#contact" onClick={closeMenu}>Contact</a>
+                    <div className="mobile-menu-divider"></div>
+                    <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
+                        GitHub
+                        <GitHubIcon/>
+                    </a>
+                    <a href="/HamishChhaganCV.pdf" download onClick={closeMenu} className="cv-button mobile-menu-cv-button">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </header>
     );
 };
-
 
 export default Navbar;

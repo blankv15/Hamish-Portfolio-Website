@@ -1,209 +1,201 @@
-    /* Basic Reset & Font */
-    body {
-        font-family: 'Inter', sans-serif; /* Example font, adjust as needed */
-        margin: 0;
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    button {
-        border: none;
-        background: none;
-        cursor: pointer;
-        padding: 0;
-    }
+/* =================================================================
+   BASE STYLES
+   ================================================================= */
+body.no-scroll {
+  overflow: hidden; /* Prevents background scroll when mobile menu is open */
+}
 
-    /* Navbar Container */
-    #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-        padding: 0 1rem;
-        transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out;
-    }
-    
-    .navbar-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 5rem; /* 80px */
-        max-width: 1280px;
-        margin: 0 auto;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* Scrolled State */
-    #navbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    #navbar.scrolled .nav-link,
-    #navbar.scrolled .navbar-logo {
-        color: #1f2937;
-    }
-    #navbar.scrolled .github-icon {
-        stroke: #1f2937;
-    }
-    #navbar.scrolled .menu-icon line {
-        stroke: #1f2937;
-    }
-    #navbar.scrolled .cv-button {
-        background-color: #1f2937;
-        color: #ffffff;
-    }
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
 
+/* =================================================================
+   NAVBAR STYLES
+   ================================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to stay on top */
+  padding: 0 1rem;
+  transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out;
+}
 
-    /* Logo */
-    .navbar-logo {
-        flex-shrink: 0;
-        font-size: 1.5rem; /* 24px */
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        color: #ffffff;
-    }
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
-    /* Desktop Navigation */
-    .nav-links-desktop {
-        display: none; /* Hidden on mobile */
-    }
-    .nav-links-desktop a {
-        color: #ffffff;
-        font-weight: 500;
-        letter-spacing: 0.025em;
-    }
-    .nav-links-desktop a:hover {
-        color: #e5e7eb;
-    }
-    #navbar.scrolled .nav-links-desktop a:hover {
-        color: #000000;
-    }
+/* --- Scrolled State --- */
+.navbar.scrolled {
+  background-color: rgba(18, 16, 41, 0.8); /* Darker, glassy background on scroll */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    /* Desktop Actions */
-    .nav-actions-desktop {
-        display: none; /* Hidden on mobile */
-    }
-    .github-icon {
-        stroke: #ffffff;
-    }
-    .github-icon:hover {
-        stroke: #e5e7eb;
-    }
-    #navbar.scrolled .github-icon:hover {
-        stroke: #000000;
-    }
+/* Text and icons are always light, as the background is always dark */
+.navbar-logo,
+.nav-links-desktop a,
+.github-icon,
+.menu-icon {
+  color: #ffffff;
+  stroke: #ffffff;
+}
 
-    .cv-button {
-        background-color: #ffffff;
-        color: #111827;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        transition: background-color 0.2s;
-    }
-    .cv-button:hover {
-        background-color: #f3f4f6;
-    }
-     #navbar.scrolled .cv-button:hover {
-        background-color: #000000;
-    }
+.navbar-logo {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
 
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-        display: flex;
-        align-items: center;
-    }
-    .menu-icon {
-        height: 1.5rem;
-        width: 1.5rem;
-        stroke: #ffffff;
-    }
-    
-    /* Mobile Menu */
-    .mobile-menu {
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding-top: 5rem;
-        text-align: center;
-    }
-    .mobile-menu.hidden {
-        display: none;
-    }
-    .mobile-menu-content > * + * {
-        margin-top: 0.25rem;
-    }
-    .mobile-menu a {
-        display: block;
-        padding: 1rem 0.75rem;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #1f2937;
-        border-radius: 0.375rem;
-    }
-    .mobile-menu a:hover {
-        background-color: #e5e7eb;
-    }
-    .mobile-menu-divider {
-        border-top: 1px solid #d1d5db;
-        margin: 1rem 2rem;
-    }
-    .mobile-menu-github-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .mobile-menu-github-link svg {
-        margin-left: 0.5rem;
-        width: 1.75rem;
-        height: 1.75rem;
-    }
-    .mobile-menu-cv-button {
-        width: 75%;
-        margin: 1rem auto 0 auto;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #ffffff;
-        background-color: #1f2937;
-    }
-    .mobile-menu-cv-button:hover {
-        background-color: #000000;
-    }
+/* --- Desktop Links & Actions --- */
+.nav-links-desktop {
+  display: none; /* Hidden on mobile */
+}
+.nav-links-desktop a {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: color 0.2s;
+}
+.nav-links-desktop a:hover {
+  color: #a3c9ff; /* Highlight color on hover */
+}
 
-    /* Responsive Breakpoints */
-    @media (min-width: 768px) {
-        #navbar {
-            padding: 0 1.5rem;
-        }
-        .nav-links-desktop {
-            display: flex;
-            align-items: center;
-        }
-        .nav-links-desktop > * + * {
-            margin-left: 2rem;
-        }
-        .nav-actions-desktop {
-            display: flex;
-            align-items: center;
-        }
-        .nav-actions-desktop > * + * {
-            margin-left: 1.25rem;
-        }
-        .mobile-menu-toggle {
-            display: none;
-        }
-        .mobile-menu {
-            display: none;
-        }
-    }
-    @media (min-width: 1024px) {
-        #navbar {
-            padding: 0 2rem;
-        }
-    }
+.nav-actions-desktop {
+  display: none; /* Hidden on mobile */
+}
+.github-icon:hover {
+  stroke: #a3c9ff;
+}
+
+.cv-button {
+  background-color: #389bff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s;
+}
+.cv-button:hover {
+  background-color: #4c9ee9;
+}
+
+/* =================================================================
+   MOBILE MENU STYLES
+   ================================================================= */
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure toggle is above the menu */
+}
+.menu-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121029;
+  padding-top: 5rem;
+  
+  /* Animation setup */
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.mobile-menu a {
+  padding: 1rem 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.mobile-menu-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 80%;
+  margin: 1rem 0;
+}
+
+.mobile-menu-github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.mobile-menu-github-link svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.mobile-menu-cv-button {
+  margin-top: 1.5rem;
+  width: 80%;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+}
+
+/* =================================================================
+   DESKTOP RESPONSIVE STYLES
+   ================================================================= */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  .nav-links-desktop,
+  .nav-actions-desktop {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links-desktop > * + * {
+    margin-left: 2rem;
+  }
+  .nav-actions-desktop > * + * {
+    margin-left: 1.25rem;
+  }
+  .mobile-menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0 2rem;
+  }
+}

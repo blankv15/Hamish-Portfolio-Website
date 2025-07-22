@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Loader, Alert } from "@mantine/core";
+import { Modal, Loader, Alert, Center } from "@mantine/core";
 import { IconAlertCircle } from '@tabler/icons-react';
 
 import useFetch from "./hooks/useFetch"; 
@@ -7,25 +7,23 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import TabSection from "./components/TabSection";
 import MantineCard from "./components/MantineCard";
-import GetInTouchSimple from "./components/GetInTouchSimple";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
+import ContactSection from "./components/ContactSection";
 
 import "./App.css";
-import ContactSection from "./components/ContactSection";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
-
-
 function ProjectGrid({ onProjectClick }) {
-  const { data: projectsData, loading, error } = useFetch(`${API_URL}api/projects`);
+  // FIX: Added a forward slash to the API endpoint
+  const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
 
   if (loading) {
-    return <Loader size="xl" />;
+    return <Center style={{ minHeight: '300px' }}><Loader size="xl" /></Center>;
   }
 
   if (error) {
@@ -50,7 +48,7 @@ function ProjectGrid({ onProjectClick }) {
             imageUrl={`${API_URL}${project.images[0]}`}
             badgeText={project.technologies[0]}
             description={project.summary}
-            buttonText={project.buttonText}
+            buttonText="Learn More"
           />
         </div>
       ))}
@@ -78,59 +76,60 @@ function App() {
     : null;
 
   return (
-    <>
-      <div className="hero">
-        <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
-        <h1 className="heroText">
-          Welcome to my Website,{" "}
-          <span className="name">I'm a FullStack Developer</span>. Check out my thing.
-        </h1>
-      </div>
+    // Wrap the entire app in the reCAPTCHA provider
+      <main>
+        <section className="hero">
+          <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
+          <h1 className="heroText">
+            Welcome to my Website,{" "}
+            <span className="name">I'm a FullStack Developer</span>.
+          </h1>
+        </section>
 
-      <div className="featured-projects" id="projects">
-        <h2>Featured Projects</h2>
-        <ProjectGrid onProjectClick={handleOpenModal} />
-      </div>
+        <section id="projects" className="content-section">
+          <h2 className="section-title">Featured Projects</h2>
+          <ProjectGrid onProjectClick={handleOpenModal} />
+        </section>
 
-      <div className="skills" id="skills">
-        <h2>
-          My <span>Skills</span>.
-        </h2>
-        <TabSection />
-      </div>
+        <section id="skills" className="content-section">
+          <h2 className="section-title">
+            My <span>Skills</span>.
+          </h2>
+          <TabSection />
+        </section>
 
-      <div className="about">
-        <h2>
-          Who is <span>Hamish Chhagan</span>.
-        </h2>
-        <About />
-      </div>
-      <GoogleReCaptchaProvider>
+        <section id="about" className="content-section">
+          <h2 className="section-title">
+            Who is <span>Hamish Chhagan</span>.
+          </h2>
+          <About />
+        </section>
+            <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
 
-        <ContactSection />
+        <section id="contact" className="content-section">
+           <ContactSection />
+        </section>
+    </GoogleReCaptchaProvider>
 
-      </GoogleReCaptchaProvider>
-
-
-      <Modal
-        opened={modalOpened}
-        onClose={() => setModalOpened(false)}
-        title={selectedProject?.title || ""}
-        size="xl"
-        centered
-        overlayProps={{
-          backgroundOpacity: 0.55,
-          blur: 3,
-        }}
-      >
-        {selectedProject && (
-          <ProjectDetailPage
-            project={selectedProject}
-            EmbeddedComponent={ComponentToEmbed}
-          />
-        )}
-      </Modal>
-    </>
+        <Modal
+          opened={modalOpened}
+          onClose={() => setModalOpened(false)}
+          title={selectedProject?.title || ""}
+          size="xl"
+          centered
+          overlayProps={{
+            backgroundOpacity: 0.55,
+            blur: 3,
+          }}
+        >
+          {selectedProject && (
+            <ProjectDetailPage
+              project={selectedProject}
+              EmbeddedComponent={ComponentToEmbed}
+            />
+          )}
+        </Modal>
+      </main>
   );
 }
 

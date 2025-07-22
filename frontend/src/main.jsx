@@ -7,7 +7,6 @@ import "./index.css";
 import Navbar from "./components/Navbar.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
-import { Notifications } from '@mantine/notifications';
 
 
 createRoot(document.getElementById("root")).render(
@@ -15,7 +14,6 @@ createRoot(document.getElementById("root")).render(
     <MantineProvider >
       <>
         <Navbar />
-      <Notifications/ >
 
         <BrowserRouter>
           <Routes>

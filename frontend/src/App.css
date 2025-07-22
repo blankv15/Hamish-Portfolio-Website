@@ -5,6 +5,11 @@
   text-align: center;
   padding: 5.5rem;
   margin: 5% 10% 10% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Give the hero section more height */
 }
 
 .hero h1 {
@@ -23,26 +28,37 @@
 .hero img {
   height: auto;
   max-width: 60%;
+  margin-bottom: 2rem;
 }
 
 /* =================================================================
    GENERAL LAYOUT STYLES
    ================================================================= */
 
-.current-projects {
-  padding-top: 10%;
+/* NEW: This class creates uniform spacing for all content sections */
+.content-section {
+  padding: 4rem 10%; /* Vertical and horizontal padding */
 }
 
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.section-title span {
+  color: #e67319;
+}
+
+/* REMOVED: The individual margins are no longer needed */
+/*
 .featured-projects,
 .skills,
 .about,
 .contact {
   margin: 10%;
 }
-
-.about span {
-  color: #e67319;
-}
+*/
 
 .featured-grid {
   display: grid;
@@ -55,17 +71,6 @@
   border-radius: 8px;
 }
 
-/* =================================================================
-   CONTACT SECTION STYLES
-   ================================================================= */
-
-.contact-form {
-  padding: 1.5rem;
-}
-
-.contact-text {
-  margin-bottom: 2rem;
-}
 
 /* =================================================================
    RESPONSIVE ADJUSTMENTS
@@ -75,7 +80,6 @@
 @media (min-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
-    margin: 10px 100px 0px 100px;
   }
 }
 
@@ -85,53 +89,41 @@
   }
 }
 
-/* --- Desktop Contact Form --- */
-@media (min-width: 992px) {
-  .contact-form {
-    margin: 3rem 10%;
-    padding: 0; 
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 3rem; 
-  }
-
-  .contact-text {
-    margin-bottom: 0;
-  }
-}
-
-/* --- NEW: Mobile Hero Styles --- */
+/* --- Mobile Hero Styles --- */
 @media (max-width: 768px) {
   .hero {
-    /* Reset margins and padding for mobile */
+    /* Reset margins and remove horizontal padding for full width */
     margin: 0;
-    padding: 4rem 1.5rem;
-    
-    /* Use flexbox for better control */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 4rem 0;
+    min-height: 60vh;
   }
 
   .hero img {
-    /* Make the image larger with rounded corners */
-    max-width: none; /* Override the desktop max-width */
-    width: 150px;
-    height: 150px;
-    border-radius: 12px; /* Replaced circular border with rounded corners */
+    /* Ensure the whole image is visible and not cut off */
+    max-width: 200px;
+    width: 60%;
+    height: auto;
+    border-radius: 12px;
     margin-bottom: 2rem;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    object-fit: cover; /* Ensures the image doesn't stretch */
+    border: none;
+    object-fit: contain; /* This ensures the whole image is displayed */
   }
 
   .hero h1 {
     /* Adjust text for mobile readability */
-    font-size: 2rem; /* Scaled down text slightly */
+    font-size: 2rem;
     line-height: 1.4;
+    text-align: center;
+    padding: 0 1.5rem; /* Add padding here to keep text from touching edges */
+  }
+  
+  /* Adjust section padding for mobile to be full-width */
+  .content-section {
+    padding: 3rem 1.5rem; /* Re-added padding for content sections */
+  }
+
+  .section-title {
+    font-size: 2rem;
     text-align: center;
   }
 }

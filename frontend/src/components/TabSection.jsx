@@ -68,7 +68,7 @@ const TabPanelContent = ({ tab, onBack, onNext }) => {
 // --- Main TabSection Component ---
 
 function TabSection() {
-  const { data: tabData, loading, error } = useFetch(`${API_URL}api/tabs`);
+  const { data: tabData, loading, error } = useFetch(`${API_URL}/api/tabs`);
   const [activeTab, setActiveTab] = useState(null);
 
   // Hook to detect if the screen is mobile-sized
