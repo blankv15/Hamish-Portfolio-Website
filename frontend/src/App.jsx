@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "@mantine/core";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
+// Import all your components
+import Hero from "./components/Hero"; 
 import ProjectSection from "./components/ProjectSection"; 
 import TabSection from "./components/TabSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
@@ -12,8 +13,6 @@ import ContactSection from "./components/ContactSection";
 
 import "./App.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -34,16 +33,11 @@ function App() {
     : null;
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <main>
-        <section className="hero">
-          <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
-          <h1 className="heroText">
-            Welcome to my Website,{" "}
-            <span className="name">I'm a FullStack Developer</span>.
-          </h1>
-        </section>
+        {/* Use the self-contained Hero component */}
+        <Hero />
 
+        {/* Each part of your page is now a clearly defined section */}
         <section id="projects" className="content-section">
           <h2 className="section-title">Featured Projects</h2>
           <ProjectSection onProjectClick={handleOpenModal} />
@@ -73,7 +67,6 @@ function App() {
           title={selectedProject?.title || ""}
           size="xl"
           centered
-          // FIX: Give the modal a higher z-index than the navbar
           zIndex={2000}
           overlayProps={{
             backgroundOpacity: 0.55,
@@ -88,7 +81,6 @@ function App() {
           )}
         </Modal>
       </main>
-    </GoogleReCaptchaProvider>
   );
 }
 
