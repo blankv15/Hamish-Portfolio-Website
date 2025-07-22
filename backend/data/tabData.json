@@ -31,35 +31,57 @@
     ]
   },
 
-  {
-    "value": "backend-development",
-    "label": "Back-End",
-    "image": "/images/tabs/backend/1.png",
-    "title": "Back-End Development",
-    "description": "I develop robust server-side logic and APIs to power web applications, using a range of languages and frameworks.",
-    "points": [
-      "Building robust web applications and APIs.",
-      "Developing server-side logic and services using both NodeJS and Python.",
-      "Designing and implementing RESTful APIs to handle client-server communication.",
-      "Working with both SQL and NoSQL databases to manage application data."
-    ],
-    "tech": ["Wordpress CMS","Flask", "Node.js", "Python", "REST APIs", "SQL","postgressSQL",".Net","AWS","CPanel"]
-  },
+{
+  "value": "backend-development",
+  "label": "Back-End",
+  "image": "/images/tabs/backend/4.png",
+  "title": "Back-End Development",
+  "description": "I design and build robust, scalable server-side applications and APIs to power the frontend.",
+  "points": [
+    "Developing RESTful APIs with Node.js and Express for seamless data communication.",
+    "Integrating with third-party services and APIs, such as payment gateways and AI models.",
+    "Writing unit and integration tests for APIs to ensure code quality and reliability.",
+    "Using ORM (Object-Relational Mapping) libraries to efficiently interact with databases."
+  ],
+  "tech": [
+    "Node.js",
+    "Express.js",
+    "Python",
+    "Flask",
+    "REST APIs",
+    "PostgreSQL",
+    "Unit Testing",
+    "ORM",
+    "Postman",
+    ".Net"
+  ]
+},
 
-  {
-    "value": "devops-cloud",
-    "label": "DevOps & Cloud",
-    "image": "/images/tabs/backend/1.png",
-    "title": "DevOps & Cloud Infrastructure",
-    "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
-    "points": [
-      "Developing and deploying full-stack applications on cloud platforms, with strong experience in AWS.",
-      "Using Docker to create consistent, portable environments for development and deployment.",
-      "Utilising CI/CD tools like Github Actions to automate the deployment of containerised applications.",
-      "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
-    ],
-    "tech": ["AWS", "Docker", "Github Actions", "CI/CD", "Linux", "Bash", "Proxmox VE","OpenWrt","Ubuntu", "Debian", "DNS","DHCP" ]
-  },
+{
+  "value": "devops-cloud",
+  "label": "DevOps & Cloud",
+  "image": "/images/tabs/backend/1.png",
+  "title": "DevOps & Cloud Infrastructure",
+  "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
+  "points": [
+    "Deploying full-stack applications to cloud platforms, with strong experience in AWS Lightsail.",
+    "Using Docker and Docker Compose to create consistent, portable environments for development and deployment.",
+    "Authoring CI/CD pipelines with GitHub Actions to automate the build, push, and deployment of containerized applications.",
+    "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
+  ],
+  "tech": [
+    "AWS",
+    "Docker",
+    "Docker Compose",
+    "GitHub Actions",
+    "CI/CD",
+    "Linux",
+    "NGINX",
+    "Proxmox VE",
+    "OpenWrt",
+    "DNS"
+  ]
+},
 
   {
     "value": "ai-automation",
