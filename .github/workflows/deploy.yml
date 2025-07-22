@@ -26,7 +26,7 @@ jobs:
           build-args: |
             VITE_API_URL=${{ secrets.VITE_API_URL_PROD }}
             VITE_RECAPTCHA_SITE_KEY=${{ secrets.VITE_RECAPTCHA_SITE_KEY_PROD }}
-          tags: ${{ secrets.DOCKER_USERNAME }}/hamish-portfolio-website:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/your-portfolio-app:latest
 
       - name: Deploy to Lightsail
         uses: appleboy/ssh-action@v1.0.3
@@ -36,10 +36,10 @@ jobs:
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           script: |
             # Navigate to the project directory
-            cd ~/portfolio-app
+            cd ~/your-project-directory
             
-            # Pull the latest image from Docker Hub
-            sudo docker-compose pull
+            # Pull the latest image from Docker Hub using the full path to docker-compose
+            sudo /usr/local/bin/docker-compose pull
             
-            # Stop the current container and start the new one
-            sudo docker-compose up -d
+            # Stop the current container and start the new one using the full path
+            sudo /usr/local/bin/docker-compose up -d
