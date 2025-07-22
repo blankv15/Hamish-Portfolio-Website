@@ -6,12 +6,11 @@ import useFetch from "./hooks/useFetch";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import TabSection from "./components/TabSection";
-import MantineCard from "./components/MantineCard";
-import GetInTouchSimple from "./components/GetInTouchSimple";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
+import Mantinecard from "./components/MantineCard";
 
 import "./App.css";
 import ContactSection from "./components/ContactSection";
@@ -45,7 +44,7 @@ function ProjectGrid({ onProjectClick }) {
           onClick={() => onProjectClick(project)}
           style={{ cursor: "pointer" }}
         >
-          <MantineCard
+          <Mantinecard
             title={project.title}
             imageUrl={`${API_URL}${project.images[0]}`}
             badgeText={project.technologies[0]}

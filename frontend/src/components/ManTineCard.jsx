@@ -1,23 +1,22 @@
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
-import "./MantineCard.css"
-function MantineCard(props) {
+import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import "./Mantinecard.css";
 
+
+
+function Mantinecard(props) {
   const SkillBadge = ({ skill }) => (
-  <span className="skill-badge">{skill}</span>
-);
+    <span className="skill-badge">{skill}</span>
+  );
 
   return (
-    <Card 
-    className="project-card"
-      shadow="sm" 
-      padding="lg" 
-      radius="md" 
+    <Card
+      className="project-card"
+      shadow="sm"
+      padding="lg"
+      radius="md"
       bc
-      bg="#3877ee1a" 
-    
-      
-      // 1. Make the Card a flex container that fills the height of its grid cell.
-      style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+      bg="#3877ee1a"
+      style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
       <Card.Section>
         <Image
@@ -28,20 +27,24 @@ function MantineCard(props) {
       </Card.Section>
 
       <Group justify="space-between" mt="md" mb="xs">
-        <Text c="white" fw={500}>{props.title}</Text>
-        <SkillBadge className='skill-badge' color="pink" skill={props.badgeText}/>
+        <Text c="white" fw={500}>
+          {props.title}
+        </Text>
+        <SkillBadge
+          className="skill-badge"
+          color="pink"
+          skill={props.badgeText}
+        />
       </Group>
 
-      {/* 2. Allow the description Text to grow and fill available space. */}
-      <Text size="sm" c="white"  style={{ flexGrow: 1 }}>
+      <Text size="sm" c="white" style={{ flexGrow: 1 }}>
         {props.description}
       </Text>
 
-      {/* 3. The button will now be pushed to the bottom of the card. */}
-      <Button bg="#2c265a"    fullWidth mt="md" radius="md">
+      <Button bg="#2c265a" fullWidth mt="md" radius="md">
         {props.buttonText}
       </Button>
     </Card>
   );
 }
-export default MantineCard;
+export default Mantinecard;
