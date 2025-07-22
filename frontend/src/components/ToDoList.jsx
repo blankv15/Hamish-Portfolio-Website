@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ToDoList.css"; // Link to the new CSS file
+import "./ToDoList.css"; 
 
 function ToDoList() {
     const [tasks, setTasks] = useState(["Try Me!","Add A Task"]);
