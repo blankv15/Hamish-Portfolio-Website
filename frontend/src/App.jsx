@@ -21,7 +21,7 @@ const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 
 function ProjectGrid({ onProjectClick }) {
-  const { data: projectsData, loading, error } = useFetch(`${API_URL}api/projects`);
+  const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
 
   if (loading) {
     return <Loader size="xl" />;
