@@ -21,13 +21,16 @@ import {
   IconCheck,
   IconX,
 } from "@tabler/icons-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import "./ContactSection.css";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm({
     initialValues: { name: "", email: "", message: "" },
@@ -43,15 +46,30 @@ export function ContactSection() {
   const handleSubmit = async (values) => {
     setLoading(true);
     setFormStatus(null);
+
+    if (!executeRecaptcha) {
+      setFormStatus({
+        status: "error",
+        message: "reCAPTCHA not ready. Please try again.",
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
+      const token = await executeRecaptcha("contact_form");
+
       const response = await fetch(`${API_URL}/api/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, token }),
       });
 
       if (!response.ok) {
-        throw new Error("An error occurred on the server. Please try again.");
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || "An error occurred on the server."
+        );
       }
 
       setFormStatus({
@@ -60,11 +78,7 @@ export function ContactSection() {
       });
       form.reset();
     } catch (error) {
-
-      setFormStatus({
-        status: "error",
-        message: error.message || "Failed to send message. Please check your connection and try again.",
-      });
+      setFormStatus({ status: "error", message: error.message });
     } finally {
       setLoading(false);
     }
@@ -218,5 +232,3 @@ export function ContactSection() {
     </div>
   );
 }
-
-export default ContactSection;
