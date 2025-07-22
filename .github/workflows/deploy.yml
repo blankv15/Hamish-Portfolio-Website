@@ -35,11 +35,8 @@ jobs:
           username: ${{ secrets.LIGHTSAIL_USER }}
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           script: |
-            # Navigate to the project directory
             cd ~/portfolio-app
             
-            # Pull the latest image from Docker Hub using the full path to docker-compose
-            sudo /usr/local/bin/docker-compose pull
+            sudo docker compose pull
             
-            # Stop the current container and start the new one using the full path
-            sudo /usr/local/bin/docker-compose up -d
+            sudo docker compose up -d
