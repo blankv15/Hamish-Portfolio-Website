@@ -1,5 +1,5 @@
 .pdp-container {
-  padding: 1px 1rem 1rem 1rem; 
+  padding: 1px 1rem 1rem 1rem;
   color: #3877ee1a;
   font-family: "Questrial", sans-serif;
   background-color: #3877ee1a;
@@ -18,13 +18,13 @@
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.7;
   margin-bottom: 2rem;
-  color: white ;
+  color: white;
 }
-.pdp-description p{
+.pdp-description p {
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.7;
   margin-bottom: 2rem;
-  color: white ;
+  color: white;
 }
 
 .pdp-tech-section {
@@ -37,8 +37,8 @@
   color: white;
 }
 
-.pdp-tech-badge-container{
-    display: flex;
+.pdp-tech-badge-container {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.01rem;
 }
@@ -52,7 +52,6 @@
   font-size: 0.9rem;
   font-weight: 500;
   margin: 4px;
-
 }
 
 .pdp-links-section {
@@ -87,8 +86,6 @@
   transform: translateY(-2px);
 }
 
-
-/* --- Image Carousel --- */
 .pdp-carousel {
   height: 500px;
   position: relative;

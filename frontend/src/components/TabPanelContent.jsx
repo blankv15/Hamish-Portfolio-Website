@@ -1,32 +1,27 @@
 import React from 'react';
 import { Grid, Button, Group } from '@mantine/core';
-import './TabSection.css'; // Make sure this CSS file is imported
+import './TabSection.css'; 
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL;
 
-// A simple, reusable badge component
 const SkillBadge = ({ skill }) => (
   <span className="skill-badge">{skill}</span>
 );
 
-// The restyled TabPanelContent component
 function TabPanelContent({ tab, onBack, onNext }) {
   const { image, title, description, points, tech } = tab;
 
-  // Construct the full image URL by prepending the API_URL
   const fullImageUrl = `${API_URL}${image}`;
 
   return (
     <div className="tab-panel-container">
       <Grid grow align="stretch">
-        {/* Image Column */}
         <Grid.Col span={{ base: 12, md: 4 }}>
           <div className="tab-image-container">
             <img src={fullImageUrl} alt={title} className="tab-image" />
           </div>
         </Grid.Col>
 
-        {/* Content Column */}
         <Grid.Col span={{ base: 12, md: 8 }}>
           <div className="tab-content-container">
             <div className="tab-header">
@@ -44,7 +39,6 @@ function TabPanelContent({ tab, onBack, onNext }) {
               ))}
             </div>
 
-            {/* Footer section to align skills and buttons */}
             <div className="tab-footer">
               <div className="skills-section">
                 <h4 className="skills-title">Related Skills</h4>
@@ -54,7 +48,6 @@ function TabPanelContent({ tab, onBack, onNext }) {
                   ))}
                 </div>
               </div>
-              {/* Buttons now use icons and have a new class for styling */}
               <Group className="tab-navigation-buttons" gap="xs">
                 <Button color="#6356c2" onClick={onBack}  className="nav-arrow-button">
                   Back
@@ -71,7 +64,3 @@ function TabPanelContent({ tab, onBack, onNext }) {
   );
 }
 export default TabPanelContent;
-
-// You would typically export the main component of the file, 
-// but since this is a snippet, we are showing the component you asked for.
-// In your TabSection.js file, you would just define this component without exporting it.
