@@ -23,7 +23,7 @@ import {
 } from "@tabler/icons-react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import "./ContactSection.css";
-    import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";

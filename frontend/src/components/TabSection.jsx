@@ -7,7 +7,6 @@ import './TabSection.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-// --- Reusable Child Components ---
 
 const SkillBadge = ({ skill }) => (
   <span className="skill-badge">{skill}</span>
@@ -65,13 +64,11 @@ const TabPanelContent = ({ tab, onBack, onNext }) => {
 };
 
 
-// --- Main TabSection Component ---
 
 function TabSection() {
   const { data: tabData, loading, error } = useFetch(`${API_URL}/api/tabs`);
   const [activeTab, setActiveTab] = useState(null);
 
-  // Hook to detect if the screen is mobile-sized
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
@@ -104,7 +101,6 @@ function TabSection() {
     setActiveTab(tabData[nextIndex].value);
   };
 
-  // Prepare data for the Select component
   const selectData = tabData.map(tab => ({ value: tab.value, label: tab.label }));
 
   return (
@@ -113,7 +109,6 @@ function TabSection() {
       value={activeTab} 
       onChange={setActiveTab} 
     >
-      {/* Conditionally render either Tabs or Select based on screen size */}
       {isMobile ? (
         <Select
           className="mobile-tabs-select"
@@ -121,7 +116,6 @@ function TabSection() {
           value={activeTab}
           onChange={setActiveTab}
           rightSection={<IconSelector size={14} />}
-          // FIX: This prop prevents the user from deselecting the current item
           allowDeselect={false}
         />
       ) : (

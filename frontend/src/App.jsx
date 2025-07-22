@@ -13,6 +13,8 @@ import ContactSection from "./components/ContactSection";
 
 import "./App.css";
 
+import "./App.css";
+
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -31,6 +33,8 @@ function App() {
   const ComponentToEmbed = selectedProject
     ? componentMap[selectedProject.embeddedComponent]
     : null;
+
+
 
   return (
       <main>

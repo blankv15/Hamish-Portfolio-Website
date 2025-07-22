@@ -1,10 +1,9 @@
 import React from 'react';
-import * as Di from 'react-icons/di'; // Import all DevIcons
+import * as Di from 'react-icons/di'; 
 
-// A helper component to dynamically render the correct icon
 const Icon = ({ iconName }) => {
   const IconComponent = Di[iconName];
-  if (!IconComponent) return null; // Or return a default icon
+  if (!IconComponent) return null; 
   return <IconComponent size="2em" />;
 };
 
