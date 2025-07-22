@@ -39,7 +39,7 @@ jobs:
             cd ~/portfolio-app
             
             # Pull the latest image from Docker Hub
-            docker-compose pull
+            sudo docker-compose pull
             
             # Stop the current container and start the new one
-            docker-compose up -d
+            sudo docker-compose up -d
