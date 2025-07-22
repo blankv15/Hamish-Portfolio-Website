@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "@mantine/core";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
-// Import the new ProjectSection component
 import ProjectSection from "./components/ProjectSection"; 
-
 import TabSection from "./components/TabSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import Stopwatch from "./components/Stopwatch";
@@ -14,6 +13,7 @@ import ContactSection from "./components/ContactSection";
 import "./App.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -34,7 +34,7 @@ function App() {
     : null;
 
   return (
-    // It's best practice to wrap the entire app in the provider
+    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <main>
         <section className="hero">
           <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
@@ -43,12 +43,11 @@ function App() {
             <span className="name">I'm a FullStack Developer</span>.
           </h1>
         </section>
+
         <section id="projects" className="content-section">
           <h2 className="section-title">Featured Projects</h2>
-          {/* Use the new, self-contained component here */}
           <ProjectSection onProjectClick={handleOpenModal} />
         </section>
-
 
         <section id="skills" className="content-section">
           <h2 className="section-title">
@@ -66,7 +65,6 @@ function App() {
         
         <section id="contact" className="content-section">
            <ContactSection />
-
         </section>
 
         <Modal
@@ -75,6 +73,8 @@ function App() {
           title={selectedProject?.title || ""}
           size="xl"
           centered
+          // FIX: Give the modal a higher z-index than the navbar
+          zIndex={2000}
           overlayProps={{
             backgroundOpacity: 0.55,
             blur: 3,
@@ -88,6 +88,7 @@ function App() {
           )}
         </Modal>
       </main>
+    </GoogleReCaptchaProvider>
   );
 }
 

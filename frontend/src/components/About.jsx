@@ -27,10 +27,11 @@ function About() {
             <p>
               As a <span>full-stack developer</span>, I bring a unique perspective
               shaped by years of experience in{" "}
-              <span>technical customer support</span> and business. This
+              technical customer support and business. This
               background gives me a practical, first-hand understanding of the
               relationship between User Experience, Design, and business goals.
             </p>
+
             <p>
               My experience ranges from building lead generation websites to, more
               recently, developing AI-powered tools for workflow automation.

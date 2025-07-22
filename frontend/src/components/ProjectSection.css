@@ -1,33 +1,170 @@
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 2rem;
+.pdp-container {
+  padding: 1px 1rem 1rem 1rem;
+  color: #3877ee1a;
+  font-family: "Questrial", sans-serif;
+  background-color: #3877ee1a;
+  border-radius: 12px;
 }
 
-.featured-grid-item {
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featured-grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.view-more-button {
-  background-color: transparent;
-  border: 2px solid #e67319;
-  color: #e67319;
-  padding: 10px 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.view-more-button:hover {
-  background-color: #e67319;
+.pdp-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
   color: white;
+}
+
+.pdp-description {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: white;
+}
+.pdp-description p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.pdp-tech-section {
+  margin-bottom: 2.5rem;
+}
+
+.pdp-tech-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.pdp-tech-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.01rem;
+}
+
+.pdp-tech-badge {
+  background-color: rgba(56, 119, 238, 0.1);
+  color: white;
+  border: 1px solid #1c7ed6;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 4px;
+}
+
+.pdp-links-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pdp-link-button {
+  display: inline-block;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pdp-link-button.github {
+  background-color: #1c7ed6;
+}
+.pdp-link-button.github:hover {
+  background-color: #155a9a;
+  transform: translateY(-2px);
+}
+
+.pdp-link-button.live {
+  background-color: #555;
+}
+.pdp-link-button.live:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.pdp-carousel {
+  height: 500px;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.pdp-carousel-slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.pdp-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  line-height: 45px;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+.pdp-carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.pdp-carousel-arrow.left {
+  left: 15px;
+}
+.pdp-carousel-arrow.right {
+  right: 15px;
+}
+
+.pdp-dots-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.pdp-dot {
+  margin: 0 5px;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+}
+.pdp-dot.active {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .pdp-carousel {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdp-carousel {
+    height: 250px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+  .pdp-carousel-slide {
+    border-radius: 0;
+  }
 }

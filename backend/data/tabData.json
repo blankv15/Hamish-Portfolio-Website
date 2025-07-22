@@ -2,7 +2,7 @@
   {
     "value": "frontend-development",
     "label": "Front-End",
-    "image": "images/tabs/frontend/1.png",
+    "image": "/images/tabs/frontend/1.png",
     "title": "Front-End Development",
     "description": "With a strong foundation in core web technologies, I build modern, accessible, and high-performance user interfaces.",
     "points": [
@@ -34,7 +34,7 @@
   {
     "value": "backend-development",
     "label": "Back-End",
-    "image": "images/tabs/backend/1.png",
+    "image": "/images/tabs/backend/1.png",
     "title": "Back-End Development",
     "description": "I develop robust server-side logic and APIs to power web applications, using a range of languages and frameworks.",
     "points": [
@@ -49,7 +49,7 @@
   {
     "value": "devops-cloud",
     "label": "DevOps & Cloud",
-    "image": "https://picsum.photos/403/400",
+    "image": "/images/tabs/backend/1.png",
     "title": "DevOps & Cloud Infrastructure",
     "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
     "points": [
@@ -64,7 +64,7 @@
   {
     "value": "ai-automation",
     "label": "AI & Automation",
-    "image": "https://picsum.photos/404/400",
+    "image": "/images/tabs/backend/1.png",
     "title": "AI & Automation",
     "description": "I have a keen interest and growing experience in leveraging emerging AI tools to build smarter applications and workflows.",
     "points": [
