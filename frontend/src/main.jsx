@@ -9,8 +9,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
 
 
+
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+
+
     <MantineProvider >
       <>
         <Navbar />
@@ -24,5 +28,6 @@ createRoot(document.getElementById("root")).render(
 
       </>
     </MantineProvider>
+
   </StrictMode>
 );
