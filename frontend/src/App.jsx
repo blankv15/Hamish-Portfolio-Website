@@ -10,7 +10,7 @@ import ProjectDetailPage from "./components/ProjectDetailPage";
 import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
-import Mantinecard from "./components/MantineCard";
+import ProjectCard from "./components/ProjectCard";
 
 import "./App.css";
 import ContactSection from "./components/ContactSection";

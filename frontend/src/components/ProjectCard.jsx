@@ -1,9 +1,9 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
-import "./Mantinecard.css";
+import "./ProjectCard.css";
 
 
 
-function Mantinecard(props) {
+function ProjectCard(props) {
   const SkillBadge = ({ skill }) => (
     <span className="skill-badge">{skill}</span>
   );
@@ -47,4 +47,4 @@ function Mantinecard(props) {
     </Card>
   );
 }
-export default Mantinecard;
+export default ProjectCard;
