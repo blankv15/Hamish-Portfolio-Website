@@ -9,11 +9,11 @@ import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import "./App.css";
 
-import "./App.css";
-
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 function App() {
   const [modalOpened, setModalOpened] = useState(false);
@@ -36,6 +36,8 @@ function App() {
 
 
   return (
+        <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
+
       <main>
         <Hero />
 
@@ -84,6 +86,8 @@ function App() {
           )}
         </Modal>
       </main>
+            </GoogleReCaptchaProvider>
+
   );
 }
 
