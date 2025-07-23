@@ -43,20 +43,22 @@ function App() {
 
         {/* Each part of your page is now a clearly defined section */}
         <section id="projects" className="content-section">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">
+             My <span>Projects</span>
+          </h2>
           <ProjectSection onProjectClick={handleOpenModal} />
         </section>
 
         <section id="skills" className="content-section">
           <h2 className="section-title">
-            My <span>Skills</span>.
+            My <span>Skills</span>
           </h2>
           <TabSection />
         </section>
 
         <section id="about" className="content-section">
           <h2 className="section-title">
-            Who is <span>Hamish Chhagan</span>.
+            Who is <span>Hamish Chhagan</span>?
           </h2>
           <About />
         </section>

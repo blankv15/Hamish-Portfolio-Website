@@ -10,8 +10,8 @@ function About() {
   };
 
   return (
-    <div className="about-contact-section" id="about">
-      <div className="about-contact-grid">
+    <div className="about-section">
+      <div className="about-grid">
         {/* The image container is now first in the code for easier mobile ordering */}
         <div className="about-image-container">
           <img
@@ -22,22 +22,24 @@ function About() {
         </div>
 
         <div className="about-me-content">
-          {/* This new wrapper helps manage the collapsed state and the overlay */}
-          <div className={`text-wrapper ${isExpanded ? "expanded" : ""}`}>
-            <p>
-              As a <span>full-stack developer</span>, I bring a unique perspective
-              shaped by years of experience in{" "}
-              technical customer support and business. This
-              background gives me a practical, first-hand understanding of the
-              relationship between User Experience, Design, and business goals.
-            </p>
+          <p>
+            A full-stack developer, I bring a unique perspective
+            shaped by years of experience in and business. This
+            background gives me a practical, first-hand understanding of the
+            relationship between User Experience, Design, and business goals.
+          </p>
+          <br/>
 
+          {/* This div will smoothly expand and collapse on mobile */}
+          <div className={`collapsible-text ${isExpanded ? "expanded" : ""}`}>
             <p>
               My experience ranges from building lead generation websites to, more
               recently, developing AI-powered tools for workflow automation.
               Working on both personal projects and with business owners has given
               me a deep, practical understanding of user intent.
             </p>
+                      <br/>
+
             <p>
               As a lifelong learner, my curiosity doesn't stop when the workday
               ends. I'm constantly diving into personal projects that allow me to
@@ -49,12 +51,10 @@ function About() {
             </p>
           </div>
           
-          {/* The button is now positioned with CSS relative to the text wrapper */}
-          {!isExpanded && (
-            <button onClick={toggleReadMore} className="read-more-button">
-              Read More
-            </button>
-          )}
+          {/* A single button that toggles the text and changes its label */}
+          <button onClick={toggleReadMore} className="read-more-button">
+            {isExpanded ? "Read Less" : "Read More"}
+          </button>
         </div>
       </div>
     </div>

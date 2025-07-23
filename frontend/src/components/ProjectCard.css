@@ -1,5 +1,52 @@
+/* =================================================================
+   PROJECT CARD STYLES (using universal variables)
+   ================================================================= */
 
+.project-card {
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
 
-.open-card-button{
-        color: white;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* This ensures the content below the image fills the remaining space */
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.project-card-title {
+  color: var(--text-primary);
+}
+
+.project-card-description {
+  color: var(--text-muted);
+}
+
+.project-skill-badge {
+  background-color: var(--background-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.project-card-button {
+  background-color: var(--accent-orange);
+  color: var(--text-primary);
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.project-card-button:hover {
+  background-color: var(--accent-orange-hover);
 }

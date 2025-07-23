@@ -1,15 +1,24 @@
 /* =================================================================
-   1. FONT IMPORT
-   - It's best practice to only import the specific fonts and weights you need.
-   - Loading one or two font families is much better for performance.
+   1. GLOBAL COLOR PALETTE & FONT IMPORT
    ================================================================= */
+:root {
+  --background-dark: #111111;
+  --background-light: #1a202c;
+  --background-card: #2d3748;
+  --accent-orange: #e67319;
+  --accent-orange-hover: #dd6b20;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #a0aec0;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700&display=swap");
 
 /* =================================================================
    2. GLOBAL STYLES & RESETS
    ================================================================= */
 
-/* A modern CSS reset for better layout consistency */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,29 +26,27 @@
 }
 
 html, body {
-  /* Prevent horizontal scrolling */
   overflow-x: hidden;
 }
 
 body {
   font-family: "Questrial", sans-serif;
-  color: #e0e0e0; /* A good default text color for a dark theme */
+  color: var(--text-secondary);
   background-image: linear-gradient(
     to top,
-    #000000,
-    #2c265a
+    var(--background-dark),
+    var(--background-light)
   );
   min-height: 100vh;
 }
 
 /* =================================================================
    3. TYPOGRAPHY
-   - Consolidating all heading styles for easier management.
    ================================================================= */
 
 h1, h2, h3, h4, h5, h6 {
-  color: white;
-  font-family: "Poppins", sans-serif; /* A slightly bolder font for headings */
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 
@@ -52,8 +59,8 @@ h6 { font-size: 1.2rem; }
 
 p {
   font-size: 1rem;
-  line-height: 1.7; /* Added line-height for better readability */
-  color: #c0c0c0; /* A slightly softer white for paragraphs */
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
 /* =================================================================
@@ -62,10 +69,10 @@ p {
 
 .mantine-Modal-body,
 .mantine-Modal-header {
-  background-color: #2c265a;
-  color: white;
+  background-color: var(--background-light);
+  color: var(--text-primary);
 }
 
 .mantine-Modal-title {
-    color: white;
+    color: var(--text-primary);
 }

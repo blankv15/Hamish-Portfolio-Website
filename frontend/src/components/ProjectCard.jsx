@@ -1,21 +1,19 @@
-import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import { Card, Image, Text, Button, Group } from "@mantine/core";
 import "./ProjectCard.css";
-
-
 
 function ProjectCard(props) {
   const SkillBadge = ({ skill }) => (
-    <span className="skill-badge">{skill}</span>
+    <span className="project-skill-badge">{skill}</span>
   );
 
   return (
     <Card
-      className="project-card"
       shadow="sm"
       padding="lg"
       radius="md"
-      bc
-      bg="#3877ee1a"
+      // Use the 'bg' prop with a CSS variable for the background color
+      bg="var(--background-light)"
+      className="project-card" // Keep the class for hover effects
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
       <Card.Section>
@@ -26,24 +24,31 @@ function ProjectCard(props) {
         />
       </Card.Section>
 
-      <Group justify="space-between" mt="md" mb="xs">
-        <Text c="white" fw={500}>
-          {props.title}
+      <div className="project-card-content">
+        <Group justify="space-between" mt="md" mb="xs">
+          {/* Use the 'c' prop for text color */}
+          <Text fw={500} c="var(--text-primary)">
+            {props.title}
+          </Text>
+          <SkillBadge skill={props.badgeText} />
+        </Group>
+
+        <Text size="sm" c="var(--text-muted)" style={{ flexGrow: 1 }}>
+          {props.description}
         </Text>
-        <SkillBadge
-          className="skill-badge"
-          color="pink"
-          skill={props.badgeText}
-        />
-      </Group>
 
-      <Text size="sm" c="white" style={{ flexGrow: 1 }}>
-        {props.description}
-      </Text>
-
-      <Button bg="#2c265a" fullWidth mt="md" radius="md">
-        {props.buttonText}
-      </Button>
+        <Button 
+          fullWidth 
+          mt="md" 
+          radius="md" 
+          // Use the 'bg' prop for the button's background
+          bg="var(--accent-orange)"
+          // Add a hover effect directly
+          styles={{ root: { '&:hover': { backgroundColor: 'var(--accent-orange-hover)' } } }}
+        >
+          {props.buttonText}
+        </Button>
+      </div>
     </Card>
   );
 }

@@ -1,22 +1,23 @@
 .pdp-container {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   font-family: "Questrial", sans-serif;
-  background-color: #121029; /* A darker, less purple background for better contrast */
+  /* Use the universal background color from your index.css */
+  background-color: var(--background-light); 
   border-radius: 12px;
 }
 
 .pdp-title {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 /* --- Improved Text Styles --- */
 .description h4 {
   font-size: 1.25rem;
-  color: white;
+  color: var(--text-primary);
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -26,26 +27,25 @@
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
-  color: #c0c0c0; /* Softer white for better readability */
+  color: var(--text-muted); /* Use the universal muted text color */
 }
 
 .description p strong {
-  color: #a3c9ff; /* Highlight color for bold text */
+  color: var(--text-secondary); /* Use a brighter text color for emphasis */
   font-weight: 600;
 }
 
-/* --- NEW: Styles for List Elements --- */
 .description ul {
-  list-style-position: inside; /* Keeps bullets aligned with text */
-  padding-left: 0.5rem; /* Indent the list slightly */
+  list-style-position: inside;
+  padding-left: 0.5rem;
   margin-bottom: 1rem;
 }
 
 .description li {
-  color: #c0c0c0; /* Same color as paragraphs for consistency */
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 0.5rem; /* Space between list items */
+  margin-bottom: 0.5rem;
 }
 
 
@@ -60,9 +60,9 @@
 }
 
 .pdp-tech-badge {
-  background-color: rgba(56, 119, 238, 0.1);
-  color: #a3c9ff;
-  border: 1px solid #3877ee4d;
+  background-color: var(--background-card); /* Use the card background color */
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
   padding: 6px 14px;
   border-radius: 16px;
   font-size: 0.9rem;
@@ -75,13 +75,13 @@
   gap: 1rem;
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
 }
 
 .pdp-link-button {
   display: inline-block;
   padding: 12px 24px;
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
@@ -89,10 +89,10 @@
 }
 
 .pdp-link-button.github {
-  background-color: #1c7ed6;
+  background-color: var(--accent-orange);
 }
 .pdp-link-button.github:hover {
-  background-color: #155a9a;
+  background-color: var(--accent-orange-hover);
   transform: translateY(-2px);
 }
 
