@@ -11,11 +11,12 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX } from '@tabler/icons-react';
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// FIX: Removed the unnecessary import of GoogleReCaptchaProvider
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+
 import './ContactSection.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 
 export function ContactSection() {
@@ -70,7 +71,6 @@ export function ContactSection() {
   };
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <div className="contact-card">
         {/* Left Column: Contact Info */}
         <div className="contact-info">
@@ -146,8 +146,5 @@ export function ContactSection() {
           )}
         </div>
       </div>
-      </GoogleReCaptchaProvider>
   );
 }
-
-export default ContactSection;

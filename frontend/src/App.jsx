@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "@mantine/core";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import Hero from "./components/Hero"; 
 import ProjectSection from "./components/ProjectSection"; 
@@ -9,7 +10,6 @@ import Stopwatch from "./components/Stopwatch";
 import ToDoList from "./components/ToDoList";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import "./App.css";
 
@@ -33,11 +33,9 @@ function App() {
     ? componentMap[selectedProject.embeddedComponent]
     : null;
 
-
-
   return (
-        <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
-
+    // FIX: The provider now wraps the entire application, allowing it to initialize correctly.
+    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <main>
         <Hero />
 
@@ -86,8 +84,7 @@ function App() {
           )}
         </Modal>
       </main>
-            </GoogleReCaptchaProvider>
-
+    </GoogleReCaptchaProvider>
   );
 }
 
