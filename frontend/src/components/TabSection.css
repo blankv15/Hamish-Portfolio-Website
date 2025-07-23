@@ -6,7 +6,8 @@
 .custom-tabs-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   margin: 2rem auto;
-  padding: 1rem;
+  /* FIX: Removed horizontal padding to prevent overflow within the parent section */
+  padding: 1rem 0;
 }
 
 /* --- Tab List (the bar that holds the tabs) --- */

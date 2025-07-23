@@ -1,6 +1,9 @@
 /* =================================================================
    1. GLOBAL COLOR PALETTE & FONT IMPORT
    ================================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700&display=swap");
+
+
 :root {
   --background-dark: #111111;
   --background-light: #1a202c;
@@ -13,7 +16,6 @@
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@400;500;600;700&display=swap");
 
 /* =================================================================
    2. GLOBAL STYLES & RESETS
@@ -26,7 +28,10 @@
 }
 
 html, body {
+  /* FIX: This is the key change. It prevents any element from
+     causing horizontal scrolling on the page. */
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
