@@ -48,17 +48,18 @@
 @media (max-width: 768px) {
   .hero {
     margin: 0;
-    padding: 4rem 0;
+    /* FIX: Increased top padding to add more space below the navbar */
     min-height: 60vh;
   }
 
   .hero img {
-    max-width: 200px;
-    width: 60%;
+    /* FIX: Made the image larger and more prominent */
+    max-width: 400px; 
+    width: 100%;
     height: auto;
     border-radius: 12px;
-    margin-bottom: 2rem;
-    border: none;
+    margin-bottom: 2.5rem; /* Increased space below the image */
+    margin-top: 3rem;
     object-fit: contain;
   }
 
@@ -66,6 +67,6 @@
     font-size: 2rem;
     line-height: 1.4;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }

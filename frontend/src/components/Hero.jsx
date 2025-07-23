@@ -6,7 +6,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function Hero() {
   return (
     <section className="hero">
-      <img src={`${API_URL}/images/hero/hero5.png`} alt="Hamish Chhagan" />
+      <img src={`${API_URL}/images/hero/hero8.png`} alt="Hamish Chhagan" />
       <h1 className="heroText">
         Welcome to my Website,{" "}
         <span className="name">I'm a FullStack Developer</span>.

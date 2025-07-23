@@ -1,5 +1,53 @@
 [
   {
+    "id": "portfolio-website",
+    "title": "Full-Stack Portfolio & CI/CD Pipeline",
+    "summary": "A full-stack portfolio website featuring a complete CI/CD pipeline for automated builds and deployments to a cloud server.",
+    "buttonText": "View Source",
+    "images": [
+      "/images/features/portfolio/1.png",
+      "/images/features/portfolio/2.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>This portfolio is a full-stack application built from the ground up to serve as a dynamic showcase of my work. More than just a frontend, it features a complete DevOps pipeline that automates the entire process from a `git push` to a live deployment on a cloud server, demonstrating a holistic approach to modern web development.</p><h4>Full-Stack Architecture</h4><ul><li>The <strong>frontend</strong> is a responsive single-page application built with <strong>React</strong> and Vite, using the <strong>Mantine</strong> component library for a clean and modern UI.</li><li>The <strong>backend</strong> is a lightweight <strong>Node.js</strong> and <strong>Express</strong> server that serves the static React files and provides a REST API for dynamic content like project data and skills.</li></ul><h4>CI/CD & DevOps Pipeline</h4><ul><li>The entire application is containerized using a multi-stage <strong>Dockerfile</strong>, which builds the frontend and bundles it with the backend into a single, optimized image.</li><li>A <strong>GitHub Actions</strong> workflow automatically triggers on every push to the `main` branch.</li><li>The workflow builds the Docker image, pushes it to <strong>Docker Hub</strong>, and then securely connects to an <strong>AWS Lightsail</strong> instance via SSH.</li><li>On the server, <strong>Docker Compose</strong> pulls the new image and seamlessly redeploys the container, ensuring zero downtime.</li></ul>",
+    "technologies": [
+      "React", "Node.js", "Express.js", "Docker", "GitHub Actions", "CI/CD", "AWS Lightsail", "Mantine", "Nodemailer", "reCAPTCHA", "JavaScript", "CSS3", "Vite"
+    ],
+    "githubUrl": "https://github.com/blankv15/website-good",
+    "liveUrl": "https://hamishc.nz"
+  },
+
+  {
+    "id": "ai-content-generator",
+    "title": "AI Content Generator",
+    "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
+    "buttonText": "Fork Me",
+    "images": [
+      "/images/features/blogwriter/1.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content.</p><h4>Core Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's needs.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong>.</li><li>Generates a variety of content types, including full-length blog posts and 'About Us' pages.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned.</li></ul>",
+    "technologies": ["Python", "Google Gemini Pro", "Streamlit"],
+    "githubUrl": "https://github.com/blankv15/ai-content-generator",
+    "liveUrl": ""
+  },
+
+  {
+    "id": "social-meetup-app",
+    "title": "WEDO IOS/Android App",
+    "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
+    "buttonText": "Learn More",
+    "images": [
+      "/images/features/we-do/2.png",
+      "/images/features/we-do/1.jpeg"
+    ],
+    "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li>Personalised event recommendations tailored to user interests.</li><li>Advanced event search with robust filtering options.</li><li>An integrated personal calendar to easily track upcoming activities.</li><li>Functionality for users to create and manage their own events.</li></ul><h4>Technical Architecture</h4><ul><li>A cross-platform front-end built with <strong>React Native</strong> for a consistent iOS and Android experience.</li><li>A scalable back-end powered by <strong>Node.js</strong> and <strong>Express.js</strong>.</li><li>A fully <strong>serverless architecture</strong> leveraging a suite of AWS services including Lambda, API Gateway, and DynamoDB.</li></ul>",
+    "technologies": [
+      "React Native", "Node.js", "Express.js", "AWS Lambda", "AWS Cognito", "API Gateway", "S3", "DynamoDB", "JavaScript"
+    ],
+    "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
+    "liveUrl": ""
+  },
+
+  {
     "id": "the-phone-mason",
     "title": "The Phone Mason",
     "summary": "A business website for a phone and computer repair shop, focusing on local SEO and lead generation.",
@@ -11,15 +59,7 @@
     ],
     "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO.</p><h4>Key Objectives</h4><ul><li>To generate a consistent stream of qualified local customer leads.</li><li>To establish a strong, professional online presence in the Howick, Auckland area.</li><li>To rank highly in local search results for key device repair services.</li></ul><h4>My Contribution</h4><ul><li>Led the end-to-end development and deployment of the WordPress website.</li><li>Implemented a robust local SEO strategy, including Google Business Profile optimisation.</li><li>Performed extensive on-page optimisation focused on relevant keywords and user experience.</li></ul><h4>Outcomes</h4><ul><li>Achieved a significant boost in organic search visibility within the local market.</li><li>The website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
     "technologies": [
-      "WordPress",
-      "Elementor",
-      "AWS",
-      "Google Analytics",
-      "Ahrefs",
-      "Photoshop",
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "WordPress", "Elementor", "AWS", "Google Analytics", "Ahrefs", "Photoshop", "HTML", "CSS", "JavaScript"
     ],
     "githubUrl": "",
     "liveUrl": "https://thephonemason.nz/"
@@ -36,66 +76,18 @@
     ],
     "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas.</p><h4>Key Objectives</h4><ul><li>Provide a seamless and enjoyable shopping experience for homesick Kiwis abroad.</li><li>Establish a secure and reliable platform for handling international payments and shipping.</li><li>Showcase a wide range of products in a well-organised, user-friendly catalogue.</li></ul><h4>Features & Implementation</h4><ul><li>Built on a robust WordPress foundation using the powerful WooCommerce plugin to manage all online sales.</li><li>Configured complex international shipping zones and rates to handle global deliveries.</li><li>Integrated secure payment gateways, including Stripe, for safe and reliable transactions.</li><li>Designed a user-friendly product catalogue that is easy to browse and navigate.</li></ul>",
     "technologies": [
-      "WordPress",
-      "WooCommerce",
-      "Stripe",
-      "Elementor",
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "WordPress", "WooCommerce", "Stripe", "Elementor", "HTML", "CSS", "JavaScript"
     ],
     "githubUrl": "",
     "liveUrl": "https://www.kiwikandy.com"
   },
-{
-  "id": "social-meetup-app",
-  "title": "WEDO IOS/Android App",
-  "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
-  "buttonText": "Learn More",
-  "images": [
-    "/images/features/we-do/2.png",
-    "/images/features/we-do/1.jpeg"
-  ],
-  "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li>Personalised event recommendations tailored to user interests.</li><li>Advanced event search with robust filtering options.</li><li>An integrated personal calendar to easily track upcoming activities.</li><li>Functionality for users to create and manage their own events.</li></ul><h4>Technical Architecture</h4><ul><li>A cross-platform front-end built with <strong>React Native</strong> for a consistent iOS and Android experience.</li><li>A scalable back-end powered by <strong>Node.js</strong> and <strong>Express.js</strong>.</li><li>A fully <strong>serverless architecture</strong> leveraging a suite of AWS services including Lambda, API Gateway, and DynamoDB.</li></ul>",
-  "technologies": [
-    "React Native",
-    "Node.js",
-    "Express.js",
-    "AWS Lambda",
-    "AWS Cognito",
-    "API Gateway",
-    "S3",
-    "DynamoDB",
-    "JavaScript"
-  ],
-  "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
-  "liveUrl": ""
-},
-{
-  "id": "ai-content-generator",
-  "title": "AI Content Generator",
-  "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
-  "buttonText": "Fork Me",
-  "images": [
-    "/images/features/blogwriter/1.png"
-  ],
-  "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content.</p><h4>Core Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's needs.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong>.</li><li>Generates a variety of content types, including full-length blog posts and 'About Us' pages.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned.</li><li>Designed to streamline the entire content creation process, from idea to publication.</li></ul>",
-  "technologies": [
-    "Python",
-    "Google Gemini Pro",
-    "Streamlit"
-  ],
-  "githubUrl": "https://github.com/blankv15/ai-content-generator",
-  "liveUrl": ""
-},
   {
     "id": "simple-stopwatch-react",
     "title": "React Stopwatch",
     "summary": "A clean and functional stopwatch application built with React, featuring start, stop, and reset capabilities.",
     "buttonText": "Try Me",
-
     "images": ["/images/features/stopwatch/1.png"],
-    "description": "I built this stopwatch to demonstrate my understanding of core React concepts, particularly state management with hooks. The entire logic for starting, stopping, and resetting is handled cleanly within a single, reusable component. Below is the actual functioning component rendered directly into the page. [Embedded Stopwatch Component]",
+    "description": "<h4>Project Overview</h4><p>A straightforward stopwatch application built to demonstrate a solid understanding of core React concepts, particularly state management with hooks like <code>useState</code> and <code>useEffect</code>.</p><h4>Key Feature</h4><p>The entire logic for starting, stopping, and resetting the timer is handled cleanly within a single, reusable component, highlighting a component-based approach to building interactive UIs.</p><h4>Interactive Demo</h4><p>The actual functioning component is rendered directly below for you to try.</p>",
     "technologies": ["React", "JavaScript", "HTML", "CSS", "Vite"],
     "githubUrl": "https://github.com/blankv15/Simple-Stop-Watch-React-App",
     "liveUrl": "",
@@ -106,40 +98,11 @@
     "title": "React To-Do",
     "summary": "A classic to-do list application built to demonstrate fundamental React concepts like state management and event handling.",
     "buttonText": "Try Me",
-
     "images": ["/images/features/todo/1.png"],
-    "description": "I developed this clean and responsive to-do list application as a practical exercise in core React principles. The app allows users to add new tasks, mark them as complete, and delete them from the list. The project relies heavily on the `useState` hook to manage the list of tasks and is structured with reusable components for the input form and the individual task items. It's a strong demonstration of component-based architecture and managing state within a modern front-end framework.",
+    "description": "<h4>Project Overview</h4><p>A classic to-do list application built as a practical exercise to demonstrate fundamental React skills in state management and component architecture.</p><h4>Core Functionality</h4><ul><li>Add new tasks to the list.</li><li>Mark tasks as complete with a visual indicator.</li><li>Remove tasks from the list.</li></ul><h4>Technical Implementation</h4><p>The application's state is managed efficiently with the <code>useState</code> hook. The UI is structured with reusable components for the input form and individual task items.</p><h4>Interactive Demo</h4><p>The live application is embedded below for you to try.</p>",
     "technologies": ["React", "JavaScript", "HTML", "CSS"],
     "githubUrl": "https://github.com/blankv15/Simple-To-Do-App-Built-with-React",
     "liveUrl": "",
     "embeddedComponent": "ToDoList"
-  },
-{
-  "id": "portfolio-website",
-  "title": "Full-Stack Portfolio & CI/CD Pipeline",
-  "summary": "A full-stack portfolio website featuring a complete CI/CD pipeline for automated builds and deployments to a cloud server.",
-  "buttonText": "View Source",
-  "images": [
-    "/images/features/portfolio/1.png",
-    "/images/features/portfolio/2.png"
-  ],
-  "description": "<h4>Project Overview</h4><p>This portfolio is a full-stack application built from the ground up to serve as a dynamic showcase of my work. More than just a frontend, it features a complete DevOps pipeline that automates the entire process from a `git push` to a live deployment on a cloud server, demonstrating a holistic approach to modern web development.</p><h4>Full-Stack Architecture</h4><ul><li>The <strong>frontend</strong> is a responsive single-page application built with <strong>React</strong> and Vite, using the <strong>Mantine</strong> component library for a clean and modern UI.</li><li>The <strong>backend</strong> is a lightweight <strong>Node.js</strong> and <strong>Express</strong> server that serves the static React files and provides a REST API for dynamic content like project data and skills.</li></ul><h4>CI/CD & DevOps Pipeline</h4><ul><li>The entire application is containerized using a multi-stage <strong>Dockerfile</strong>, which builds the frontend and bundles it with the backend into a single, optimized image.</li><li>A <strong>GitHub Actions</strong> workflow automatically triggers on every push to the `main` branch.</li><li>The workflow builds the Docker image, pushes it to <strong>Docker Hub</strong>, and then securely connects to an <strong>AWS Lightsail</strong> instance via SSH.</li><li>On the server, <strong>Docker Compose</strong> pulls the new image and seamlessly redeploys the container, ensuring zero downtime.</li></ul><h4>Key Features & Design Choices</h4><ul><li><strong>Modular Architecture:</strong> The entire frontend is built on a component-based architecture, with each section (Navbar, Hero, Projects, etc.) refactored into its own reusable and maintainable file.</li><li><strong>Responsive & Mobile-First Design:</strong> Significant effort was made to ensure a seamless mobile experience, including a responsive navbar that collapses into an animated dropdown, skills tabs that convert to a select menu, and \"Read More\" functionality to keep layouts clean on smaller screens.</li><li><strong>Secure Contact Form:</strong> The form is protected from spam by <strong>Google reCAPTCHA v3</strong>. Submissions are securely sent via a backend endpoint that uses <strong>Nodemailer</strong> to dispatch emails, with clear success or error messages displayed to the user.</li></ul>",
-  "technologies": [
-    "React",
-    "Node.js",
-    "Express.js",
-    "Docker",
-    "GitHub Actions",
-    "CI/CD",
-    "AWS Lightsail",
-    "Mantine",
-    "Nodemailer",
-    "reCAPTCHA",
-    "JavaScript",
-    "CSS3",
-    "Vite"
-  ],
-  "githubUrl": "https://github.com/blankv15/website-good",
-  "liveUrl": "https://hamishc.nz"
-}
+  }
 ]
