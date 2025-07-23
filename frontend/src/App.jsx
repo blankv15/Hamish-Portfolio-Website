@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "@mantine/core";
 
-// Import all your components
 import Hero from "./components/Hero"; 
 import ProjectSection from "./components/ProjectSection"; 
 import TabSection from "./components/TabSection";
@@ -38,10 +37,8 @@ function App() {
 
   return (
       <main>
-        {/* Use the self-contained Hero component */}
         <Hero />
 
-        {/* Each part of your page is now a clearly defined section */}
         <section id="projects" className="content-section">
           <h2 className="section-title">
              My <span>Projects</span>
