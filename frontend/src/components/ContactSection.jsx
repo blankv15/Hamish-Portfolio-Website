@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX } from '@tabler/icons-react';
-// FIX: Removed the unnecessary import of GoogleReCaptchaProvider
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import './ContactSection.css';
@@ -148,3 +147,4 @@ export function ContactSection() {
       </div>
   );
 }
+export default ContactSection;
