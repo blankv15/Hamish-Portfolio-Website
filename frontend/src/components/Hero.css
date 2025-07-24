@@ -57,6 +57,7 @@
     height: auto;
     border-radius: 12px;
     margin-bottom: 2rem;
+    margin-top: 4%;
     border: none;
     object-fit: contain; 
   }
