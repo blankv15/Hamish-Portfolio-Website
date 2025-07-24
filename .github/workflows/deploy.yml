@@ -37,5 +37,5 @@ jobs:
           script: |
             cd ~/portfolio-app
             
-            docker-compose pull
-            docker-compose up -d
+            docker compose pull
+            docker compose up -d
