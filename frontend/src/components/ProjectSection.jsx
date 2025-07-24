@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Loader, Alert, Center, Button, Text } from '@mantine/core';
+import React, { useState, useRef } from 'react';
+import { Loader, Alert, Center, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertCircle } from '@tabler/icons-react';
 import useFetch from '../hooks/useFetch';
@@ -12,6 +12,8 @@ function ProjectSection({ onProjectClick }) {
   const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
   const [isExpanded, setIsExpanded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  // Create a separate ref for the button container
+  const buttonRef = useRef(null); 
 
   if (loading) {
     return <Center style={{ minHeight: '300px' }}><Loader size="xl" /></Center>;
@@ -21,21 +23,25 @@ function ProjectSection({ onProjectClick }) {
     return <Alert icon={<IconAlertCircle size="1rem" />} title="Error!" color="red">Failed to load project data: {error}</Alert>;
   }
 
-  // FIX: Add a check to ensure projectsData is not null or empty before rendering.
-  // This prevents the "Cannot read properties of null" error.
   if (!projectsData) {
     return <Center><Text>No projects to display.</Text></Center>;
   }
 
-  // On mobile, show only 3 projects unless expanded. On desktop, show all.
   const projectsToShow = isMobile && !isExpanded ? projectsData.slice(0, 3) : projectsData;
 
   const toggleExpanded = () => {
+    // If we are about to collapse the view, scroll back to the button itself
+    if (isExpanded && buttonRef.current) {
+      // A short timeout allows the DOM to update before we scroll
+      setTimeout(() => {
+        buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
     setIsExpanded(!isExpanded);
   };
 
   return (
-    <>
+    <div>
       <div className="featured-grid">
         {projectsToShow.map((project) => (
           <div
@@ -55,15 +61,15 @@ function ProjectSection({ onProjectClick }) {
         ))}
       </div>
       
-      {/* This button only appears on mobile if there are more than 3 projects */}
       {isMobile && projectsData.length > 3 && (
-        <Center mt="xl">
+        // Attach the new ref to the button's container
+        <Center mt="xl" ref={buttonRef}>
           <button onClick={toggleExpanded} className="view-more-button">
             {isExpanded ? 'View Less' : 'View More'}
           </button>
         </Center>
       )}
-    </>
+    </div>
   );
 }
 

@@ -28,8 +28,6 @@
 }
 
 html, body {
-  /* FIX: This is the key change. It prevents any element from
-     causing horizontal scrolling on the page. */
   overflow-x: hidden;
   width: 100%;
 }

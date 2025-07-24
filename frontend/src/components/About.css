@@ -9,18 +9,24 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 5rem;
   align-items: center;
 }
 
 .about-me-content p {
   font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text-muted);
+  line-height: 1.8; 
+  color: var(--text-secondary); 
+  margin-bottom: 1.5rem;
+}
+
+.about-me-content p:last-of-type {
+  margin-bottom: 0;
 }
 
 .about-me-content span {
   color: var(--accent-orange);
+  font-weight: 600;
 }
 
 .about-image-container {
@@ -31,18 +37,20 @@
 
 .about-image {
   width: 100%;
-  max-width: 400px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Hide the "Read More" button on desktop */
+.about-image:hover {
+  transform: scale(1.03);
+}
+
 .read-more-button {
   display: none;
 }
 
-/* On desktop, the collapsible text is always visible */
 .collapsible-text {
   display: block;
 }
@@ -53,30 +61,27 @@
    ================================================================= */
 @media (max-width: 800px) {
   .about-grid {
-    grid-template-columns: 1fr; /* Stack the columns */
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
   }
 
-  /* Move the image to the top on mobile */
   .about-image-container {
-    order: -1; /* This moves it before the text content */
-    margin-bottom: 2rem;
+    order: -1; 
+    margin-bottom: 0;
   }
   
-  /* --- NEW "Read More" functionality for mobile --- */
+  
 
-  /* Hide the collapsible text by default using max-height */
   .collapsible-text {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
   }
 
-  /* Set a large max-height to show the text when expanded */
   .collapsible-text.expanded {
-    max-height: 1000px; /* A large value to ensure all content is visible */
+    max-height: 1000px;
   }
 
-  /* Show and style the "Read More" button on mobile */
   .read-more-button {
     display: inline-block;
     background-color: transparent;
@@ -87,7 +92,7 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 

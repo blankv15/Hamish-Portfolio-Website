@@ -5,12 +5,24 @@
     "summary": "A full-stack portfolio website featuring a complete CI/CD pipeline for automated builds and deployments to a cloud server.",
     "buttonText": "View Source",
     "images": [
-      "/images/features/portfolio/3.png",
+      "/images/features/portfolio/4.png",
       "/images/features/portfolio/2.png"
     ],
-    "description": "<h4>Project Overview</h4><p>This portfolio is a full-stack application built from the ground up to serve as a dynamic showcase of my work. More than just a frontend, it features a complete DevOps pipeline that automates the entire process from a `git push` to a live deployment on a cloud server, demonstrating a holistic approach to modern web development.</p><h4>Full-Stack Architecture</h4><ul><li>The <strong>frontend</strong> is a responsive single-page application built with <strong>React</strong> and Vite, using the <strong>Mantine</strong> component library for a clean and modern UI.</li><li>The <strong>backend</strong> is a lightweight <strong>Node.js</strong> and <strong>Express</strong> server that serves the static React files and provides a REST API for dynamic content like project data and skills.</li></ul><h4>CI/CD & DevOps Pipeline</h4><ul><li>The entire application is containerized using a multi-stage <strong>Dockerfile</strong>, which builds the frontend and bundles it with the backend into a single, optimized image.</li><li>A <strong>GitHub Actions</strong> workflow automatically triggers on every push to the `main` branch.</li><li>The workflow builds the Docker image, pushes it to <strong>Docker Hub</strong>, and then securely connects to an <strong>AWS Lightsail</strong> instance via SSH.</li><li>On the server, <strong>Docker Compose</strong> pulls the new image and seamlessly redeploys the container, ensuring zero downtime.</li></ul>",
+    "description": "<h4>Project Overview</h4><p>This portfolio is a full-stack application built from the ground up to serve as a dynamic showcase of my work. More than just a frontend, it features a complete DevOps pipeline that automates the entire process from a `git push` to a live deployment on a cloud server, demonstrating a holistic approach to modern web development.</p><h4>Full-Stack Architecture</h4><ul><li>The <strong>frontend</strong> is a responsive single-page application built with <strong>React</strong> and Vite, using the <strong>Mantine</strong> component library for a clean and modern UI.</li><li>The <strong>backend</strong> is a lightweight <strong>Node.js</strong> and <strong>Express</strong> server that serves the static React files and provides a REST API for dynamic content like project data and skills.</li></ul><h4>CI/CD & DevOps Pipeline</h4><ul><li>The entire application is containerised using a multi-stage <strong>Dockerfile</strong>, which builds the frontend and bundles it with the backend into a single, optimised image.</li><li>A <strong>GitHub Actions</strong> workflow automatically triggers on every push to the `main` branch.</li><li>The workflow builds the Docker image, pushes it to <strong>Docker Hub</strong>, and then securely connects to an <strong>AWS Lightsail</strong> instance via SSH.</li><li>On the server, <strong>Docker Compose</strong> pulls the new image and seamlessly redeploys the container, ensuring zero downtime.</li></ul>",
     "technologies": [
-      "React", "Node.js", "Express.js", "Docker", "GitHub Actions", "CI/CD", "AWS Lightsail", "Mantine", "Nodemailer", "reCAPTCHA", "JavaScript", "CSS3", "Vite"
+      "React",
+      "Node.js",
+      "Express.js",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "AWS Lightsail",
+      "Mantine",
+      "Nodemailer",
+      "reCAPTCHA",
+      "JavaScript",
+      "CSS3",
+      "Vite"
     ],
     "githubUrl": "https://github.com/blankv15/website-good",
     "liveUrl": "https://hamishc.nz"
@@ -22,7 +34,11 @@
     "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
     "buttonText": "Fork Me",
     "images": [
-      "/images/features/blogwriter/1.png"
+      "/images/features/blogwriter/3.png",
+      "/images/features/blogwriter/4.png",
+      "/images/features/blogwriter/5.png",
+      "/images/features/blogwriter/6.png",
+      "/images/features/blogwriter/7.png"
     ],
     "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content.</p><h4>Core Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's needs.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong>.</li><li>Generates a variety of content types, including full-length blog posts and 'About Us' pages.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned.</li></ul>",
     "technologies": ["Python", "Google Gemini Pro", "Streamlit"],
@@ -35,13 +51,18 @@
     "title": "WEDO IOS/Android App",
     "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
     "buttonText": "Learn More",
-    "images": [
-      "/images/features/we-do/2.png",
-      "/images/features/we-do/1.jpeg"
-    ],
+    "images": ["/images/features/we-do/2.png", "/images/features/we-do/1.jpeg"],
     "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li>Personalised event recommendations tailored to user interests.</li><li>Advanced event search with robust filtering options.</li><li>An integrated personal calendar to easily track upcoming activities.</li><li>Functionality for users to create and manage their own events.</li></ul><h4>Technical Architecture</h4><ul><li>A cross-platform front-end built with <strong>React Native</strong> for a consistent iOS and Android experience.</li><li>A scalable back-end powered by <strong>Node.js</strong> and <strong>Express.js</strong>.</li><li>A fully <strong>serverless architecture</strong> leveraging a suite of AWS services including Lambda, API Gateway, and DynamoDB.</li></ul>",
     "technologies": [
-      "React Native", "Node.js", "Express.js", "AWS Lambda", "AWS Cognito", "API Gateway", "S3", "DynamoDB", "JavaScript"
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "AWS Lambda",
+      "AWS Cognito",
+      "API Gateway",
+      "S3",
+      "DynamoDB",
+      "JavaScript"
     ],
     "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
     "liveUrl": ""
@@ -59,7 +80,15 @@
     ],
     "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO.</p><h4>Key Objectives</h4><ul><li>To generate a consistent stream of qualified local customer leads.</li><li>To establish a strong, professional online presence in the Howick, Auckland area.</li><li>To rank highly in local search results for key device repair services.</li></ul><h4>My Contribution</h4><ul><li>Led the end-to-end development and deployment of the WordPress website.</li><li>Implemented a robust local SEO strategy, including Google Business Profile optimisation.</li><li>Performed extensive on-page optimisation focused on relevant keywords and user experience.</li></ul><h4>Outcomes</h4><ul><li>Achieved a significant boost in organic search visibility within the local market.</li><li>The website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
     "technologies": [
-      "WordPress", "Elementor", "AWS", "Google Analytics", "Ahrefs", "Photoshop", "HTML", "CSS", "JavaScript"
+      "WordPress",
+      "Elementor",
+      "AWS",
+      "Google Analytics",
+      "Ahrefs",
+      "Photoshop",
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
     "githubUrl": "",
     "liveUrl": "https://thephonemason.nz/"
@@ -76,7 +105,13 @@
     ],
     "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas.</p><h4>Key Objectives</h4><ul><li>Provide a seamless and enjoyable shopping experience for homesick Kiwis abroad.</li><li>Establish a secure and reliable platform for handling international payments and shipping.</li><li>Showcase a wide range of products in a well-organised, user-friendly catalogue.</li></ul><h4>Features & Implementation</h4><ul><li>Built on a robust WordPress foundation using the powerful WooCommerce plugin to manage all online sales.</li><li>Configured complex international shipping zones and rates to handle global deliveries.</li><li>Integrated secure payment gateways, including Stripe, for safe and reliable transactions.</li><li>Designed a user-friendly product catalogue that is easy to browse and navigate.</li></ul>",
     "technologies": [
-      "WordPress", "WooCommerce", "Stripe", "Elementor", "HTML", "CSS", "JavaScript"
+      "WordPress",
+      "WooCommerce",
+      "Stripe",
+      "Elementor",
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
     "githubUrl": "",
     "liveUrl": "https://www.kiwikandy.com"

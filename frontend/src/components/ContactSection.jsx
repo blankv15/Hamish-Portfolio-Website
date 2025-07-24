@@ -10,7 +10,7 @@ import {
   Container,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX } from '@tabler/icons-react';
+import { IconUser, IconAt, IconMessageCircle, IconMapPin, IconLanguage, IconLicense, IconCheck, IconX ,IconSchool} from '@tabler/icons-react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import './ContactSection.css';
@@ -71,11 +71,10 @@ export function ContactSection() {
 
   return (
       <div className="contact-card">
-        {/* Left Column: Contact Info */}
         <div className="contact-info">
           <Title order={2} className="contact-title">Get in touch</Title>
           <Text className="contact-subtitle">
-            Have a project, a question, or just want to connect? Fill out the form, and I’ll get back to you as soon as possible.
+            Have a project, a question, or just want to connect?
           </Text>
           <div className="contact-details">
             <Group wrap="nowrap" gap="xl" mt="xl">
@@ -92,17 +91,20 @@ export function ContactSection() {
                 <Text size="lg" fw={500}>English</Text>
               </div>
             </Group>
-            <Group wrap="nowrap" gap="xl" mt="xl">
-              <IconLicense stroke={1.5} size="1.5rem" className="contact-icon" />
+              <Group wrap="nowrap" gap="xl" mt="xl">
+              <IconSchool stroke={1.5} size="1.5rem" className="contact-icon" />
               <div>
-                <Text size="xs" tt="uppercase" fw={700} c="dimmed">Licence</Text>
-                <Text size="lg" fw={500}>Full NZ Driver's Licence</Text>
+                <Text size="xs" tt="uppercase" fw={700} c="dimmed">Education</Text>
+                <Text size="lg" fw={500}>Bachelor of Science, Computer Science</Text>
+                <Text size="md" c="dimmed">University of Auckland</Text>
               </div>
             </Group>
+            
+            
+
           </div>
         </div>
 
-        {/* Right Column: Form */}
         <div className="contact-form-container">
           {formStatus?.status === 'success' ? (
             <div className="form-status-message success">

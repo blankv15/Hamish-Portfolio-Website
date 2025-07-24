@@ -2,7 +2,7 @@
   {
     "value": "frontend-development",
     "label": "Front-End",
-    "image": "//images/tabs/frontend/1.png",
+    "image": "/images/tabs/frontend/1.png",
     "title": "Front-End Development",
     "description": "With a strong foundation in core web technologies, I build modern, accessible, and high-performance user interfaces.",
     "points": [
@@ -30,63 +30,60 @@
       "Pixelmator"
     ]
   },
-
-{
-  "value": "backend-development",
-  "label": "Back-End",
-  "image": "/images/tabs/backend/4.png",
-  "title": "Back-End Development",
-  "description": "I design and build robust, scalable server-side applications and APIs to power the frontend.",
-  "points": [
-    "Developing RESTful APIs with Node.js and Express for seamless data communication.",
-    "Integrating with third-party services and APIs, such as payment gateways and AI models.",
-    "Writing unit and integration tests for APIs to ensure code quality and reliability.",
-    "Using ORM (Object-Relational Mapping) libraries to efficiently interact with databases."
-  ],
-  "tech": [
-    "Node.js",
-    "Express.js",
-    "Python",
-    "Flask",
-    "REST APIs",
-    "PostgreSQL",
-    "Unit Testing",
-    "ORM",
-    "Postman",
-    ".Net"
-  ]
-},
-
-{
-  "value": "devops-cloud",
-  "label": "DevOps & Cloud",
-  "image": "/images/tabs/devops/1.png",
-  "title": "DevOps & Cloud Infrastructure",
-  "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
-  "points": [
-    "Deploying full-stack applications to cloud platforms, with strong experience in AWS Lightsail.",
-    "Using Docker and Docker Compose to create consistent, portable environments for development and deployment.",
-    "Authoring CI/CD pipelines with GitHub Actions to automate the build, push, and deployment of containerized applications.",
-    "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
-  ],
-  "tech": [
-    "AWS",
-    "Docker",
-    "Docker Compose",
-    "GitHub Actions",
-    "CI/CD",
-    "Linux",
-    "NGINX",
-    "Proxmox VE",
-    "OpenWrt",
-    "DNS"
-  ]
-},
-
+  {
+    "value": "backend-development",
+    "label": "Back-End",
+    "image": "/images/tabs/backend/4.png",
+    "title": "Back-End Development",
+    "description": "I design and build robust, scalable server-side applications and APIs to power the frontend.",
+    "points": [
+      "Developing RESTful APIs with Node.js and Express for seamless data communication.",
+      "Integrating with third-party services and APIs, such as payment gateways and AI models.",
+      "Writing unit and integration tests for APIs to ensure code quality and reliability.",
+      "Using ORM (Object-Relational Mapping) libraries to efficiently interact with databases."
+    ],
+    "tech": [
+      "Node.js",
+      "Express.js",
+      "Python",
+      "Flask",
+      "REST APIs",
+      "PostgreSQL",
+      "Unit Testing",
+      "ORM",
+      "Postman",
+      ".Net"
+    ]
+  },
+  {
+    "value": "devops-cloud",
+    "label": "DevOps & Cloud",
+    "image": "/images/tabs/devops/1.png",
+    "title": "DevOps & Cloud Infrastructure",
+    "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
+    "points": [
+      "Deploying full-stack applications to cloud platforms, with strong experience in AWS Lightsail.",
+      "Using Docker and Docker Compose to create consistent, portable environments for development and deployment.",
+      "Authoring CI/CD pipelines with GitHub Actions to automate the build, push, and deployment of containerised applications.",
+      "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
+    ],
+    "tech": [
+      "AWS",
+      "Docker",
+      "Docker Compose",
+      "GitHub Actions",
+      "CI/CD",
+      "Linux",
+      "NGINX",
+      "Proxmox VE",
+      "OpenWrt",
+      "DNS"
+    ]
+  },
   {
     "value": "ai-automation",
     "label": "AI & Automation",
-    "image": "/images/tabs/backend/1.png",
+    "image": "/images/tabs/ai/4.png",
     "title": "AI & Automation",
     "description": "I have a keen interest and growing experience in leveraging emerging AI tools to build smarter applications and workflows.",
     "points": [

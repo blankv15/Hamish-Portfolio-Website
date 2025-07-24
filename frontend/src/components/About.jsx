@@ -12,10 +12,9 @@ function About() {
   return (
     <div className="about-section">
       <div className="about-grid">
-        {/* The image container is now first in the code for easier mobile ordering */}
         <div className="about-image-container">
           <img
-            src={`${API_URL}/images/profile/profile.png`}
+            src={`${API_URL}/images/profile/profile2.png`}
             alt="A portrait of Hamish Chhagan"
             className="about-image"
           />
@@ -30,7 +29,6 @@ function About() {
           </p>
           <br/>
 
-          {/* This div will smoothly expand and collapse on mobile */}
           <div className={`collapsible-text ${isExpanded ? "expanded" : ""}`}>
             <p>
               My experience ranges from building lead generation websites to, more

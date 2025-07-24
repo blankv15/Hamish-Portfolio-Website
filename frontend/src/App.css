@@ -4,9 +4,8 @@
    GENERAL LAYOUT STYLES
    ================================================================= */
 
-/* NEW: This class creates uniform spacing for all content sections */
 .content-section {
-  padding: 4rem 10%; /* Vertic  al and horizontal padding */
+  padding: 4rem 10%; 
 }
 
 .section-title {
@@ -19,15 +18,7 @@
   color: #e67319;
 }
 
-/* REMOVED: The individual margins are no longer needed */
-/*
-.featured-projects,
-.skills,
-.about,
-.contact {
-  margin: 10%;
-}
-*/
+
 
 .featured-grid {
   display: grid;
@@ -41,51 +32,9 @@
 }
 
 
-/* =================================================================
-   RESPONSIVE ADJUSTMENTS
-   ================================================================= */
 
-/* --- Desktop Hero --- */
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero h1 {
-    font-size: 2.986rem; 
-  }
-}
-
-/* --- Mobile Hero Styles --- */
 @media (max-width: 768px) {
-  .hero {
-    /* Reset margins and remove horizontal padding for full width */
-    margin: 0;
-    padding: 4rem 0;
-    min-height: 60vh;
-  }
 
-  .hero img {
-    /* Ensure the whole image is visible and not cut off */
-    max-width: 200px;
-    width: 60%;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    border: none;
-    object-fit: contain; /* This ensures the whole image is displayed */
-  }
-
-  .hero h1 {
-    /* Adjust text for mobile readability */
-    font-size: 2rem;
-    line-height: 1.4;
-    text-align: center;
-    padding: 0 1.5rem; /* Add padding here to keep text from touching edges */
-  }
-  
   /* Adjust section padding for mobile to be full-width */
   .content-section {
     padding: 3rem 1.5rem; /* Re-added padding for content sections */

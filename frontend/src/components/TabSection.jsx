@@ -7,7 +7,6 @@ import './TabSection.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
-// --- Reusable Child Components ---
 
 const SkillBadge = ({ skill }) => (
   <span className="skill-badge">{skill}</span>
@@ -65,14 +64,12 @@ const TabPanelContent = ({ tab, onBack, onNext }) => {
 };
 
 
-// --- Main TabSection Component ---
 
 function TabSection() {
   const { data: tabData, loading, error } = useFetch(`${API_URL}/api/tabs`);
   const [activeTab, setActiveTab] = useState(null);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const sectionRef = useRef(null); // Create a ref for the section container
-
+  const sectionRef = useRef(null); 
   useEffect(() => {
     if (tabData && tabData.length > 0) {
       setActiveTab(tabData[0].value); 
@@ -91,7 +88,6 @@ function TabSection() {
     return null;
   }
 
-  // Function to handle tab changes and scroll to the top of the section
   const handleTabChange = (newTabValue) => {
     setActiveTab(newTabValue);
     if (sectionRef.current) {
@@ -114,26 +110,23 @@ function TabSection() {
   const selectData = tabData.map(tab => ({ value: tab.value, label: tab.label }));
 
   return (
-    // Add a wrapper div and attach the ref to it
     <div ref={sectionRef}>
       <Tabs 
       color='var(--accent-orange)'
         className="custom-tabs-container" 
         value={activeTab} 
-        onChange={handleTabChange} // Use the new handler for all changes
+        onChange={handleTabChange} 
         styles={{
           list: { borderColor: 'var(--border-color)' },
           tab: {
             color: 'var(--text-muted)',
             fontWeight: 600,
             '&:hover': { color: 'var(--accent-orange)', backgroundColor: 'transparent' },
-            '&[data-active]': { color: 'var(--accent-orange)', borderColor: 'var(--accent-orange)' },
           },
         }}
       >
         {isMobile ? (
           <>
-            {/* New mobile navigation header */}
             <div className="mobile-nav-header">
               <Button 
                 onClick={handleBack} 
@@ -168,7 +161,7 @@ function TabSection() {
               className="mobile-tabs-select"
               data={selectData}
               value={activeTab}
-              onChange={handleTabChange} // Use the new handler here as well
+              onChange={handleTabChange} 
               rightSection={<IconSelector size={14} />}
               allowDeselect={false}
               styles={{
