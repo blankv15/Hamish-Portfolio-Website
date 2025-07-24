@@ -11,9 +11,8 @@ function ProjectCard(props) {
       shadow="sm"
       padding="lg"
       radius="md"
-      // Use the 'bg' prop with a CSS variable for the background color
       bg="var(--background-light)"
-      className="project-card" // Keep the class for hover effects
+      className="project-card" 
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
       <Card.Section>
@@ -26,7 +25,6 @@ function ProjectCard(props) {
 
       <div className="project-card-content">
         <Group justify="space-between" mt="md" mb="xs">
-          {/* Use the 'c' prop for text color */}
           <Text fw={500} c="var(--text-primary)">
             {props.title}
           </Text>
@@ -41,9 +39,7 @@ function ProjectCard(props) {
           fullWidth 
           mt="md" 
           radius="md" 
-          // Use the 'bg' prop for the button's background
           bg="var(--accent-orange)"
-          // Add a hover effect directly
           styles={{ root: { '&:hover': { backgroundColor: 'var(--accent-orange-hover)' } } }}
         >
           {props.buttonText}

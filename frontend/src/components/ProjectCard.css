@@ -15,7 +15,6 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* This ensures the content below the image fills the remaining space */
 .project-card-content {
   display: flex;
   flex-direction: column;
@@ -44,7 +43,7 @@
 .project-card-button {
   background-color: var(--accent-orange);
   color: var(--text-primary);
-  margin-top: auto; /* Pushes the button to the bottom */
+  margin-top: auto; 
 }
 
 .project-card-button:hover {

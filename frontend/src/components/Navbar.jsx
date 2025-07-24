@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./Navbar.css";
 
-// --- SVG Icon Components ---
 
 const GitHubIcon = ({ className }) => (
     <svg 
@@ -62,7 +61,6 @@ const Navbar = () => {
     const toggleMenu = () => setMenuOpen(!isMenuOpen);
     const closeMenu = () => setMenuOpen(false);
 
-    // Add a class to the body to prevent scrolling when the mobile menu is open
     useEffect(() => {
         if (isMenuOpen) {
             document.body.classList.add('no-scroll');
@@ -80,7 +78,6 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <a href="#" className="navbar-logo">Hamish Chhagan</a>
 
-                    {/* New container for mobile-only actions */}
                     <div className="nav-actions-mobile">
                         <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
                             <GitHubIcon className="github-icon" />
@@ -108,7 +105,6 @@ const Navbar = () => {
 
                     <div className="mobile-menu-toggle">
                         <button onClick={toggleMenu} aria-label="Toggle menu">
-                            {/* This line conditionally renders the correct icon */}
                             {isMenuOpen ? <CloseIcon className="menu-icon" /> : <MenuIcon className="menu-icon" />}
                         </button>
                     </div>

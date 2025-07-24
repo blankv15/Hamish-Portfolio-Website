@@ -34,7 +34,6 @@ function App() {
     : null;
 
   return (
-    // FIX: The provider now wraps the entire application, allowing it to initialize correctly.
     <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
       <main>
         <Hero />

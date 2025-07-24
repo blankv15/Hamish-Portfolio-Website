@@ -88,7 +88,6 @@
   margin-bottom: 2rem;
 }
 
-/* --- Highlighted Points --- */
 .points-list {
   margin-bottom: 2rem;
 }
@@ -159,7 +158,6 @@
   font-weight: 500;
 }
 
-/* --- Navigation Buttons --- */
 .tab-navigation-buttons {
   flex-shrink: 0;
 }
@@ -195,40 +193,35 @@
 }
 
 @media (max-width: 768px) {
-  /* Reduce title size on mobile */
   .tab-title {
     font-size: 2rem;
   }
   
-  /* Show and style the mobile nav header */
   .mobile-nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    gap: 0.5rem; /* Add a gap between the buttons */
+    gap: 0.5rem; 
   }
 
   .mobile-nav-arrow {
-    flex-grow: 1; /* Make both buttons fill the space */
+    flex-grow: 1; 
     padding: 8px 16px;
     font-size: 0.9rem;
     height: auto;
   }
 
-  /* Stack footer items vertically and align them left */
   .tab-footer {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  /* Make the button group take full width */
   .tab-navigation-buttons {
     width: 100%;
-    margin-top: 1rem; /* Add some space above the buttons */
+    margin-top: 1rem; 
   }
 
-  /* Make the Back and Next buttons grow to fill the available space */
   .nav-arrow-button {
     flex-grow: 1;
   }

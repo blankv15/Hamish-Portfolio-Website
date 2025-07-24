@@ -12,7 +12,6 @@ function ProjectSection({ onProjectClick }) {
   const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
   const [isExpanded, setIsExpanded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  // Create a separate ref for the button container
   const buttonRef = useRef(null); 
 
   if (loading) {
@@ -30,9 +29,7 @@ function ProjectSection({ onProjectClick }) {
   const projectsToShow = isMobile && !isExpanded ? projectsData.slice(0, 3) : projectsData;
 
   const toggleExpanded = () => {
-    // If we are about to collapse the view, scroll back to the button itself
     if (isExpanded && buttonRef.current) {
-      // A short timeout allows the DOM to update before we scroll
       setTimeout(() => {
         buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 100);
@@ -62,7 +59,6 @@ function ProjectSection({ onProjectClick }) {
       </div>
       
       {isMobile && projectsData.length > 3 && (
-        // Attach the new ref to the button's container
         <Center mt="xl" ref={buttonRef}>
           <button onClick={toggleExpanded} className="view-more-button">
             {isExpanded ? 'View Less' : 'View More'}

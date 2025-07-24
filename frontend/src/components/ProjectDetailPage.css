@@ -1,7 +1,6 @@
 .pdp-container {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   font-family: "Questrial", sans-serif;
-  /* Use the universal background color from your index.css */
   background-color: var(--background-light); 
   border-radius: 12px;
 }
@@ -14,7 +13,6 @@
   color: var(--text-primary);
 }
 
-/* --- Improved Text Styles --- */
 .description h4 {
   font-size: 1.25rem;
   color: var(--text-primary);
@@ -27,11 +25,11 @@
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
-  color: var(--text-muted); /* Use the universal muted text color */
+  color: var(--text-muted); 
 }
 
 .description p strong {
-  color: var(--text-secondary); /* Use a brighter text color for emphasis */
+  color: var(--text-secondary); 
   font-weight: 600;
 }
 
