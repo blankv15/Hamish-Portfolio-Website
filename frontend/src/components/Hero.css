@@ -46,27 +46,26 @@
 /* --- Mobile Hero Styles --- */
 @media (max-width: 768px) {
   .hero {
-    /* Reset margins and remove horizontal padding for full width */
     margin: 0;
     padding: 4rem 0;
     min-height: 60vh;
   }
 
   .hero img {
-
-    max-width: 60%; 
-    width: 100%;
+    max-width: 200px;
+    width: 60%;
     height: auto;
     border-radius: 12px;
-    margin-bottom: 2.5rem; 
-    margin-top: 3rem;
-    object-fit: contain;
+    margin-bottom: 2rem;
+    border: none;
+    object-fit: contain; 
   }
 
   .hero h1 {
+
     font-size: 2rem;
     line-height: 1.4;
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 }
