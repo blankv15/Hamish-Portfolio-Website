@@ -4,8 +4,9 @@
    GENERAL LAYOUT STYLES
    ================================================================= */
 
+/* NEW: This class creates uniform spacing for all content sections */
 .content-section {
-  padding: 4rem 10%; 
+  padding: 4rem 10%; /* Vertical and horizontal padding */
 }
 
 .section-title {
@@ -17,7 +18,6 @@
 .section-title span {
   color: #e67319;
 }
-
 
 
 .featured-grid {
@@ -32,9 +32,17 @@
 }
 
 
+/* =================================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================================= */
 
+/* --- Desktop Hero --- */
+
+
+/* --- Mobile Hero Styles --- */
 @media (max-width: 768px) {
-
+ 
+  
   /* Adjust section padding for mobile to be full-width */
   .content-section {
     padding: 3rem 1.5rem; /* Re-added padding for content sections */
