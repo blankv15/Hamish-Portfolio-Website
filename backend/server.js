@@ -56,7 +56,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 app.get('/api/projects', (req, res) => {
-  const projectsDataPath = path.join(__dirname, 'data', 'projects.json');
+  const projectsDataPath = path.join(__dirname, 'data', 'projectsData.json');
   res.sendFile(projectsDataPath, (err) => {
     if (err) {
       console.error('Error sending projects.json:', err);
