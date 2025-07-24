@@ -9,7 +9,7 @@ function Hero() {
       <img src={`${API_URL}/images/hero/hero9.png`} alt="Hamish Chhagan" />
       <h1 className="heroText">
         Welcome to my Website,{" "}
-        <span className="name">I'm a FullStack Developer</span>.
+        <span className="name">I am a Full Stack Developer</span>.
       </h1>
     </section>
   );

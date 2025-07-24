@@ -36,16 +36,13 @@
    RESPONSIVE ADJUSTMENTS
    ================================================================= */
 
-/* --- Desktop Hero --- */
 
 
-/* --- Mobile Hero Styles --- */
 @media (max-width: 768px) {
  
   
-  /* Adjust section padding for mobile to be full-width */
   .content-section {
-    padding: 3rem 1.5rem; /* Re-added padding for content sections */
+    padding: 3rem 1.5rem;
   }
 
   .section-title {

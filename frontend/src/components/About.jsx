@@ -22,7 +22,7 @@ function About() {
 
         <div className="about-me-content">
           <p>
-            A full-stack developer, I bring a unique perspective
+            As a full-stack developer, I bring a unique perspective
             shaped by years of experience in and business. This
             background gives me a practical, first-hand understanding of the
             relationship between User Experience, Design, and business goals.
@@ -49,7 +49,6 @@ function About() {
             </p>
           </div>
           
-          {/* A single button that toggles the text and changes its label */}
           <button onClick={toggleReadMore} className="read-more-button">
             {isExpanded ? "Read Less" : "Read More"}
           </button>
