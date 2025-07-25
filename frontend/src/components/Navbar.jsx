@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./Navbar.css";
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
 const GitHubIcon = ({ className }) => (
     <svg 
@@ -72,6 +73,8 @@ const Navbar = () => {
     const navClasses = `navbar ${isScrolled ? 'scrolled' : ''}`;
     const mobileMenuClasses = `mobile-menu ${isMenuOpen ? 'open' : ''}`;
 
+    const cvPath = `${API_URL}/cv/HamishChhaganCV.pdf`;
+
     return (
         <header>
             <nav className={navClasses}>
@@ -82,7 +85,7 @@ const Navbar = () => {
                         <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
                             <GitHubIcon className="github-icon" />
                         </a>
-                        <a href="/HamishChhaganCV.pdf" download className="cv-button">
+                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button">
                             CV
                         </a>
                     </div>
@@ -98,7 +101,7 @@ const Navbar = () => {
                         <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
                             <GitHubIcon className="github-icon" />
                         </a>
-                        <a href="/HamishChhaganCV.pdf" download className="cv-button">
+                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button">
                             Download CV
                         </a>
                     </div>
@@ -122,8 +125,8 @@ const Navbar = () => {
                         GitHub
                         <GitHubIcon/>
                     </a>
-                    <a href="/HamishChhaganCV.pdf" download onClick={closeMenu} className="cv-button mobile-menu-cv-button">
-                        Download CV
+                    <a href={cvPath} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="cv-button mobile-menu-cv-button">
+                        View CV
                     </a>
                 </div>
             </div>
