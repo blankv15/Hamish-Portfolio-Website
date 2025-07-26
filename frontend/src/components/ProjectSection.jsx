@@ -5,14 +5,15 @@ import { IconAlertCircle } from '@tabler/icons-react';
 import useFetch from '../hooks/useFetch';
 import ProjectCard from './ProjectCard';
 import './ProjectSection.css';
+import { Link } from 'react-router-dom'; // Import Link
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function ProjectSection({ onProjectClick }) {
+function ProjectSection() {
   const { data: projectsData, loading, error } = useFetch(`${API_URL}/api/projects`);
   const [isExpanded, setIsExpanded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const buttonRef = useRef(null); 
+  const buttonRef = useRef(null);
 
   if (loading) {
     return <Center style={{ minHeight: '300px' }}><Loader size="xl" /></Center>;
@@ -41,12 +42,8 @@ function ProjectSection({ onProjectClick }) {
     <div>
       <div className="featured-grid">
         {projectsToShow.map((project) => (
-          <div
-            key={project.id}
-            className="featured-grid-item"
-            onClick={() => onProjectClick(project)}
-            style={{ cursor: "pointer" }}
-          >
+          // Each card links to a unique URL for the project
+          <Link key={project.id} to={`/project/${project.id}`} className="featured-grid-item" style={{ textDecoration: 'none' }}>
             <ProjectCard
               title={project.title}
               imageUrl={`${API_URL}${project.images[0]}`}
@@ -54,10 +51,10 @@ function ProjectSection({ onProjectClick }) {
               description={project.summary}
               buttonText="Learn More"
             />
-          </div>
+          </Link>
         ))}
       </div>
-      
+
       {isMobile && projectsData.length > 3 && (
         <Center mt="xl" ref={buttonRef}>
           <button onClick={toggleExpanded} className="view-more-button">

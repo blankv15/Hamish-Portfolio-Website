@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { Loader, Alert, Center } from '@mantine/core';
 import "./ProjectDetailPage.css";
+
+// NOTE: No need for useFetch or useEffect here anymore
 
 const TechBadge = ({ techName }) => (
   <span className="pdp-tech-badge">{techName}</span>
@@ -62,9 +65,10 @@ const ImageCarousel = ({ images }) => {
   );
 };
 
+
 const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
   if (!project) {
-    return null;
+    return <Center style={{ height: '50vh' }}><Loader /></Center>;
   }
 
   const fullImageUrls = project.images 
@@ -75,7 +79,8 @@ const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
 
   return (
     <div className="pdp-container">
-      <h1 className="pdp-title">{project.title}</h1>
+      {/* The title is now in the modal header, so we can remove it from here */}
+      {/* <h1 className="pdp-title">{project.title}</h1> */}
 
       {project.images && project.images.length > 0 && (
         <ImageCarousel images={fullImageUrls} />
@@ -94,7 +99,7 @@ const ProjectDetailPage = ({ project, EmbeddedComponent }) => {
           ))}
         </div>
       </div>
-<div className="description" dangerouslySetInnerHTML={{ __html: project.description }} />
+      <div className="description" dangerouslySetInnerHTML={{ __html: project.description }} />
 
       {hasLinks && (
         <div className="pdp-links-section">

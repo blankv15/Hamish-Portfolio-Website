@@ -1,33 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import "@mantine/core/styles.css"; // Import Mantine styles
+import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import "./index.css";
 import Navbar from "./components/Navbar.jsx";
-import { BrowserRouter, Routes, Route } from "react-router";
-import ProjectDetailPage from "./components/ProjectDetailPage.jsx";
-
-
-
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-
-
-    <MantineProvider >
-      <>
+    <MantineProvider>
+      {/* Wrap the entire application with BrowserRouter */}
+      <BrowserRouter>
         <Navbar />
-
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />} />
-
-          </Routes>
-        </BrowserRouter>
-
-      </>
+        <App />
+      </BrowserRouter>
     </MantineProvider>
-
   </StrictMode>
 );
