@@ -1,0 +1,26 @@
+main {
+    padding: 0 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-section {
+    /* The key fix: Use the CSS variable for the scroll offset */
+    scroll-margin-top: var(--navbar-height); 
+
+    /* This padding provides the visual spacing between your sections */
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: left;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: var(--accent-orange);
+}

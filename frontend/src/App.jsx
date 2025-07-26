@@ -1,17 +1,13 @@
 import React from 'react';
-import { useMatch, useNavigate } from 'react-router-dom';
+import { Routes, Route, useMatch, useNavigate } from 'react-router-dom';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Modal, Loader, Center } from '@mantine/core';
 
-import Hero from './components/Hero';
-import ProjectSection from './components/ProjectSection';
-import TabSection from './components/TabSection';
+// Import your new Home component
+import Home from './pages/Home'; 
 import ProjectDetailPage from './components/ProjectDetailPage';
-import About from './components/About';
-import ContactSection from './components/ContactSection';
 import useFetch from './hooks/useFetch';
 
-// Import the interactive components
 import Stopwatch from './components/Stopwatch';
 import ToDoList from './components/ToDoList';
 
@@ -20,40 +16,13 @@ import './App.css';
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 const API_URL = import.meta.env.VITE_API_URL;
 
-// Corrected: The keys now match the 'component' field in your project data
 const componentMap = {
   'Stopwatch': Stopwatch,
   'ToDoList': ToDoList,
 };
 
-const MainPageLayout = () => (
-  <main>
-    <Hero />
-    <section id="projects" className="content-section">
-      <h2 className="section-title">
-        My <span>Projects</span>
-      </h2>
-      <ProjectSection />
-    </section>
-    <section id="skills" className="content-section">
-      <h2 className="section-title">
-        My <span>Skills</span>
-      </h2>
-      <TabSection />
-    </section>
-    <section id="about" className="content-section">
-      <h2 className="section-title">
-        Who is <span>Hamish Chhagan</span>?
-      </h2>
-      <About />
-    </section>
-    <section id="contact" className="content-section">
-      <ContactSection />
-    </section>
-  </main>
-);
-
 const ProjectModal = () => {
+    // ... (This component remains unchanged from our previous steps)
   const navigate = useNavigate();
   const match = useMatch('/project/:id');
   const projectId = match?.params.id;
@@ -61,11 +30,10 @@ const ProjectModal = () => {
   const { data: projects } = useFetch(`${API_URL}/api/projects`);
   const project = projects?.find(p => p.id === projectId);
 
-  // Corrected: The lookup now uses 'project.component' instead of 'project.id'
-  const EmbeddedComponent = project ? componentMap[project.embeddedComponent] : null;
+  const EmbeddedComponent = project ? componentMap[project.component] : null;
 
   const handleClose = () => {
-    navigate('/');
+    navigate(-1); // Go back to the previous page
   };
 
   return (
@@ -99,7 +67,16 @@ const ProjectModal = () => {
 function App() {
   return (
     <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
-      <MainPageLayout />
+      {/* Define the routes for your application */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Home />} />
+        <Route path="/skills/:tabValue" element={<Home />} />
+        <Route path="/about" element={<Home />} />
+        <Route path="/contact" element={<Home />} />
+      </Routes>
+      
+      {/* The ProjectModal is still rendered here to appear over any page */}
       <ProjectModal />
     </GoogleReCaptchaProvider>
   );

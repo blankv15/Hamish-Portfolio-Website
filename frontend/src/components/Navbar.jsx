@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+// Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
@@ -79,7 +81,8 @@ const Navbar = () => {
         <header>
             <nav className={navClasses}>
                 <div className="navbar-content">
-                    <a href="#" className="navbar-logo">Hamish Chhagan</a>
+                    {/* Link to the top of the page */}
+                    <Link to="/" className="navbar-logo">Hamish Chhagan</Link>
 
                     <div className="nav-actions-mobile">
                         <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
@@ -91,10 +94,11 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-links-desktop">
-                        <a href="#projects" className="nav-link">Projects</a>
-                        <a href="#skills" className="nav-link">Skills</a>
-                        <a href="#about" className="nav-link">About</a>
-                        <a href="#contact" className="nav-link">Contact</a>
+                        {/* Use Link component for URL-based navigation */}
+                        <Link to="/projects" className="nav-link">Projects</Link>
+                        <Link to="/skills/frontend-development" className="nav-link">Skills</Link>
+                        <Link to="/about" className="nav-link">About</Link>
+                        <Link to="/contact" className="nav-link">Contact</Link>
                     </div>
 
                     <div className="nav-actions-desktop">
@@ -116,10 +120,11 @@ const Navbar = () => {
 
             <div className={mobileMenuClasses}>
                 <div className="mobile-menu-content">
-                    <a href="#projects" onClick={closeMenu}>Projects</a>
-                    <a href="#skills" onClick={closeMenu}>Skills</a>
-                    <a href="#about" onClick={closeMenu}>About</a>
-                    <a href="#contact" onClick={closeMenu}>Contact</a>
+                    {/* Use Link component in mobile menu as well */}
+                    <Link to="/projects" onClick={closeMenu}>Projects</Link>
+                    <Link to="/skills/frontend-development" onClick={closeMenu}>Skills</Link>
+                    <Link to="/about" onClick={closeMenu}>About</Link>
+                    <Link to="/contact" onClick={closeMenu}>Contact</Link>
                     <div className="mobile-menu-divider"></div>
                     <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
                         GitHub
