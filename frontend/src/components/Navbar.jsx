@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-// Import Link from react-router-dom
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
+// --- SVG Icon Components (assuming they are defined above) ---
 const GitHubIcon = ({ className }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -81,7 +81,6 @@ const Navbar = () => {
         <header>
             <nav className={navClasses}>
                 <div className="navbar-content">
-                    {/* Link to the top of the page */}
                     <Link to="/" className="navbar-logo">Hamish Chhagan</Link>
 
                     <div className="nav-actions-mobile">
@@ -94,9 +93,9 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-links-desktop">
-                        {/* Use Link component for URL-based navigation */}
+                        {/* FIX: Use simple paths for section scrolling */}
                         <Link to="/projects" className="nav-link">Projects</Link>
-                        <Link to="/skills/frontend-development" className="nav-link">Skills</Link>
+                        <Link to="/skills" className="nav-link">Skills</Link>
                         <Link to="/about" className="nav-link">About</Link>
                         <Link to="/contact" className="nav-link">Contact</Link>
                     </div>
@@ -120,9 +119,9 @@ const Navbar = () => {
 
             <div className={mobileMenuClasses}>
                 <div className="mobile-menu-content">
-                    {/* Use Link component in mobile menu as well */}
+                    {/* FIX: Use simple paths in the mobile menu as well */}
                     <Link to="/projects" onClick={closeMenu}>Projects</Link>
-                    <Link to="/skills/frontend-development" onClick={closeMenu}>Skills</Link>
+                    <Link to="/skills" onClick={closeMenu}>Skills</Link>
                     <Link to="/about" onClick={closeMenu}>About</Link>
                     <Link to="/contact" onClick={closeMenu}>Contact</Link>
                     <div className="mobile-menu-divider"></div>

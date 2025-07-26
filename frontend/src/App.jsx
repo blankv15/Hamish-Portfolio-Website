@@ -3,7 +3,6 @@ import { Routes, Route, useMatch, useNavigate } from 'react-router-dom';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Modal, Loader, Center } from '@mantine/core';
 
-// Import your new Home component
 import Home from './pages/Home'; 
 import ProjectDetailPage from './components/ProjectDetailPage';
 import useFetch from './hooks/useFetch';
@@ -22,18 +21,19 @@ const componentMap = {
 };
 
 const ProjectModal = () => {
-    // ... (This component remains unchanged from our previous steps)
   const navigate = useNavigate();
+  // FIX: Listen for a more specific project route
   const match = useMatch('/project/:id');
   const projectId = match?.params.id;
 
   const { data: projects } = useFetch(`${API_URL}/api/projects`);
   const project = projects?.find(p => p.id === projectId);
 
-  const EmbeddedComponent = project ? componentMap[project.component] : null;
+  const EmbeddedComponent = project ? componentMap[project.embeddedComponent] : null;
 
   const handleClose = () => {
-    navigate(-1); // Go back to the previous page
+    // Go back to the previous page in history
+    navigate(-1); 
   };
 
   return (
@@ -67,16 +67,11 @@ const ProjectModal = () => {
 function App() {
   return (
     <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
-      {/* Define the routes for your application */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Home />} />
-        <Route path="/skills/:tabValue" element={<Home />} />
-        <Route path="/about" element={<Home />} />
-        <Route path="/contact" element={<Home />} />
+        {/* FIX: Use a wildcard to catch all main section routes and the project route */}
+        <Route path="/*" element={<Home />} />
       </Routes>
       
-      {/* The ProjectModal is still rendered here to appear over any page */}
       <ProjectModal />
     </GoogleReCaptchaProvider>
   );

@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+// Import useNavigationType
+import { useLocation, useNavigationType } from 'react-router-dom';
 
 export const useScrollToSection = () => {
   const location = useLocation();
+  // Get the type of navigation action (PUSH, POP, or REPLACE)
+  const navigationType = useNavigationType();
 
-  // Create individual, stable refs. These objects persist for the full lifetime of the component.
   const refs = {
     projects: useRef(null),
     skills: useRef(null),
@@ -13,17 +15,16 @@ export const useScrollToSection = () => {
   };
 
   useEffect(() => {
-    // Correctly parse the base section from the URL.
-    // For example, '/skills/frontend-development' becomes 'skills'.
     const section = location.pathname.substring(1).split('/')[0];
 
-    if (refs[section] && refs[section].current) {
+    // ONLY scroll if the user clicked a new link (PUSH).
+    // Do NOT scroll on back/forward actions (POP).
+    if (navigationType === 'PUSH' && refs[section] && refs[section].current) {
       setTimeout(() => {
         refs[section].current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
     }
-    // The effect only needs to run when the URL path changes.
-    // The 'refs' object is not needed as a dependency because useRef guarantees its stability.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   return refs;
