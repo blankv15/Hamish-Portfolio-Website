@@ -16,5 +16,5 @@ RUN npm install --omit=dev
 COPY backend/ ./
 
 COPY --from=frontend-builder /app/frontend/dist ./public/react
-EXPOSE 5001
+EXPOSE ${PORT:-5001}
 CMD ["node", "server.js"]

@@ -1,31 +1,28 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const axios = require('axios');
-const fs = require('fs'); 
-const https = require('https'); 
+const fs = require('fs');
+const https = require('https');
 
 require('dotenv').config();
 
 const app = express();
 const HTTP_PORT = process.env.PORT || 5001;
-const HTTPS_PORT = 5002; 
+const HTTPS_PORT = 5002;
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/react')));
+
+// Health check endpoint for Railway
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message, token } = req.body;
@@ -40,14 +37,15 @@ app.post('/api/send-email', async (req, res) => {
     if (!name || !email || !message) {
       return res.status(400).json({ message: 'All fields are required.' });
     }
-    const mailOptions = {
-      from: `"${name}" <${process.env.FROM_EMAIL}>`,
+
+    await resend.emails.send({
+      from: process.env.FROM_EMAIL,
       to: process.env.YOUR_EMAIL,
-      replyTo: email,
+      reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `You have a new message from:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    };
-    await transporter.sendMail(mailOptions);
+    });
+
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error('Error during reCAPTCHA or email sending:', error);
@@ -79,8 +77,8 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'public/react', 'index.html'));
 });
 
-app.listen(HTTP_PORT, () => {
-  console.log(`HTTP Server is running on http://localhost:${HTTP_PORT}`);
+app.listen(HTTP_PORT, '0.0.0.0', () => {
+  console.log(`HTTP Server is running on http://0.0.0.0:${HTTP_PORT}`);
 });
 
 try {
