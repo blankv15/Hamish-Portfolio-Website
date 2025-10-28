@@ -1,5 +1,72 @@
 [
   {
+    "id": "ai-content-platform",
+    "title": "AI Content Generation & WordPress Publishing Platform",
+    "summary": "A production-grade SaaS platform combining multi-agent AI systems, WordPress automation, and SEO optimisation using LangChain, LangGraph, and OpenAI GPT-4.",
+    "buttonText": "Learn More",
+    "images": [
+      "/images/features/ai-content/1.png",
+      "/images/features/ai-content/2.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>A sophisticated SaaS platform that combines AI-powered content generation, WordPress publishing automation, and SEO optimisation. The platform uses multi-agent AI systems built with LangChain and LangGraph to research, write, and optimise blog content while leveraging real search data from Google Search Console.</p><h4>AI & LLM Integration</h4><ul><li>Built a <strong>multi-agent AI system with LangGraph</strong> featuring 9 specialised research tools including Google Search Console integration, website crawling, competitor analysis, and vector-based knowledge retrieval.</li><li>Implemented <strong>RAG (Retrieval-Augmented Generation)</strong> using PostgreSQL with pgvector extension for semantic search across crawled website content, enabling context-aware article generation with automatic internal linking.</li><li>Integrated <strong>Google Search Console API with OAuth 2.0</strong> to leverage real search performance data, content gap analysis (high impressions, low clicks), and trending queries with 7-day caching optimisation.</li><li>Developed an <strong>intelligent website crawler</strong> that extracts and classifies content (products, services, pages), brand information (colours, logos, tagline), and generates vector embeddings for context-aware article generation.</li></ul><h4>Full-Stack Architecture</h4><ul><li>React/TypeScript frontend with Mantine UI for bot management, content generation dashboard, and lead management.</li><li>Node.js/Express backend with Sequelize ORM, Redis session management, multi-tenant architecture, and isolated knowledge bases per bot.</li><li>Custom WordPress plugin (PHP) enabling one-click publishing with automatic category/tag creation, metadata synchronisation (Yoast/Rank Math compatible), and featured image handling.</li></ul><h4>Key Features</h4><ul><li>Automated blog generation with SEO optimisation, keyword density management (1-2%), and meta description generation (155 chars).</li><li>Content ideas pipeline from multiple sources (GSC content gaps, competitor analysis, RSS feeds, website context).</li><li>WordPress REST API integration for seamless publishing and metadata synchronisation.</li></ul>",
+    "technologies": [
+      "LangChain",
+      "LangGraph",
+      "OpenAI GPT-4",
+      "PostgreSQL",
+      "pgvector",
+      "RAG",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Sequelize ORM",
+      "Redis",
+      "Google Search Console API",
+      "OAuth 2.0",
+      "WordPress",
+      "PHP",
+      "Docker",
+      "Cheerio",
+      "JSDOM",
+      "RSS Parsing"
+    ],
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "id": "ai-chatbot-platform",
+    "title": "AI-Powered Lead Generation Chatbot Platform",
+    "summary": "A multi-tenant SaaS platform for creating RAG-powered chatbots with dynamic lead capture, PDF knowledge bases, and automated email notifications.",
+    "buttonText": "Learn More",
+    "images": [
+      "/images/features/chatbot/1.png",
+      "/images/features/chatbot/2.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>A comprehensive multi-tenant chatbot platform that combines RAG-powered conversational AI with intelligent lead capture. Built for businesses to deploy custom chatbots on their websites with knowledge bases from uploaded PDFs and automated lead generation workflows.</p><h4>AI & RAG Implementation</h4><ul><li>Implemented <strong>RAG (Retrieval-Augmented Generation) system</strong> using LangChain with FAISS vector store and OpenAI embeddings (text-embedding-ada-002) for context-aware responses from PDF knowledge bases.</li><li>Built <strong>LangChain agents with OpenAI GPT-4o</strong> for natural conversations with hallucination prevention through semantic search and context retrieval.</li><li>Created <strong>dynamic tool generation system</strong> using Zod schemas and LangChain's DynamicStructuredTool, allowing chatbots to intelligently capture structured lead data based on customizable schemas.</li><li>Engineered <strong>PDF processing pipeline</strong> with text extraction (pdf-parse), chunking using RecursiveCharacterTextSplitter (1000 char chunks, 200 overlap), and embedding generation with vector store persistence.</li></ul><h4>Platform Features</h4><ul><li><strong>Multi-tenant architecture</strong> with isolated knowledge bases, secure bot management, and API key-based authentication for each bot.</li><li><strong>Session-based conversation memory</strong> with chat history persistence in PostgreSQL, maintaining context across multiple interactions.</li><li><strong>Automatic email notifications</strong> via Nodemailer with formatted lead details, chat transcripts, and customizable SMTP configuration per bot.</li><li>React/TypeScript admin dashboard for bot creation, knowledge base updates (PDF upload/replacement), lead management, and analytics.</li><li>WordPress widget integration with CORS-enabled public API for easy deployment on client websites.</li></ul><h4>Technical Highlights</h4><ul><li>Migrated backend from Flask/Python to Express.js/TypeScript with full feature parity, improved performance, and enhanced type safety.</li><li>User authentication with Passport.js, session management with express-session, and secure API key generation with bcrypt hashing.</li><li>Vector store persistence with automatic loading and caching for improved performance (avoiding recreation on every request).</li></ul>",
+    "technologies": [
+      "LangChain",
+      "OpenAI GPT-4",
+      "OpenAI Embeddings",
+      "FAISS",
+      "RAG",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Passport.js",
+      "Zod",
+      "Nodemailer",
+      "PDF Processing",
+      "Python",
+      "Flask",
+      "bcrypt"
+    ],
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "id": "portfolio-website",
     "title": "Full-Stack Portfolio & CI/CD Pipeline",
     "summary": "A full-stack portfolio website featuring a complete CI/CD pipeline for automated builds and deployments to a cloud server.",
@@ -28,64 +95,51 @@
     "githubUrl": "https://github.com/blankv15/Hamish-Portfolio-Website",
     "liveUrl": "https://hamishc.nz"
   },
-
   {
-    "id": "ai-content-generator",
-    "title": "AI Content Generator",
-    "summary": "A web application that leverages Google's Gemini Pro to help users generate high-quality website content.",
-    "buttonText": "Fork Me",
+    "id": "kiwikandy",
+    "title": "Kiwi Kandy - WooCommerce E-commerce Platform",
+    "summary": "A complete e-commerce platform selling classic New Zealand confectionery worldwide, featuring Google Merchant Center integration and automated order fulfillment.",
+    "buttonText": "Visit Site",
     "images": [
-      "/images/features/blogwriter/3.png",
-      "/images/features/blogwriter/4.png",
-      "/images/features/blogwriter/5.png",
-      "/images/features/blogwriter/6.png",
-      "/images/features/blogwriter/7.png"
+      "/images/features/kiwi-kandy/1.png",
+      "/images/features/kiwi-kandy/2.png",
+      "/images/features/kiwi-kandy/3.png"
     ],
-    "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content.</p><h4>Core Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's needs.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong>.</li><li>Generates a variety of content types, including full-length blog posts and 'About Us' pages.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned.</li></ul>",
-    "technologies": ["Python", "Google Gemini Pro", "Streamlit"],
-    "githubUrl": "https://github.com/blankv15/ai-content-generator",
-    "liveUrl": ""
-  },
-
-  {
-    "id": "social-meetup-app",
-    "title": "WEDO IOS/Android App",
-    "summary": "A full-stack, cross-platform mobile application designed to connect people through local events and activities.",
-    "buttonText": "Learn More",
-    "images": ["/images/features/we-do/2.png", "/images/features/we-do/1.jpeg"],
-    "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li>Personalised event recommendations tailored to user interests.</li><li>Advanced event search with robust filtering options.</li><li>An integrated personal calendar to easily track upcoming activities.</li><li>Functionality for users to create and manage their own events.</li></ul><h4>Technical Architecture</h4><ul><li>A cross-platform front-end built with <strong>React Native</strong> for a consistent iOS and Android experience.</li><li>A scalable back-end powered by <strong>Node.js</strong> and <strong>Express.js</strong>.</li><li>A fully <strong>serverless architecture</strong> leveraging a suite of AWS services including Lambda, API Gateway, and DynamoDB.</li></ul>",
+    "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas. This project demonstrates comprehensive e-commerce management, payment processing, and international shipping logistics.</p><h4>E-commerce Features</h4><ul><li>Built on <strong>WordPress with WooCommerce</strong> to manage complete online sales operations including inventory management, order processing, and customer accounts.</li><li><strong>Google Merchant Center integration</strong> for automated product feed generation, enabling product listings across Google Shopping with automated inventory synchronization.</li><li>Configured complex <strong>international shipping zones and rates</strong> to handle global deliveries with accurate cost calculations based on weight and destination.</li><li>Integrated secure <strong>payment gateways including Stripe</strong> for safe and reliable transactions with PCI compliance.</li></ul><h4>Platform Management</h4><ul><li>Designed user-friendly product catalogue with advanced filtering, search functionality, and category organization for easy navigation.</li><li>Implemented <strong>automated order fulfillment workflows</strong> including shipping label generation, inventory tracking, and customer notification systems.</li><li>Custom product configurations for gift boxes and variety packs with dynamic pricing based on selections.</li></ul><h4>Business Impact</h4><ul><li>Established reliable platform for handling international payments and worldwide shipping logistics.</li><li>Created seamless shopping experience optimized for conversion with streamlined checkout process.</li></ul>",
     "technologies": [
-      "React Native",
-      "Node.js",
-      "Express.js",
-      "AWS Lambda",
-      "AWS Cognito",
-      "API Gateway",
-      "S3",
-      "DynamoDB",
-      "JavaScript"
+      "WordPress",
+      "WooCommerce",
+      "Google Merchant Center",
+      "Stripe",
+      "Payment Gateways",
+      "Elementor",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
     ],
-    "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
-    "liveUrl": ""
+    "githubUrl": "",
+    "liveUrl": "https://www.kiwikandy.com"
   },
-
   {
     "id": "the-phone-mason",
-    "title": "The Phone Mason",
-    "summary": "A business website for a phone and computer repair shop, focusing on local SEO and lead generation.",
-    "buttonText": "Learn More",
+    "title": "The Phone Mason - Local SEO & Lead Generation",
+    "summary": "A business website for a device repair shop, achieving top 3 local search rankings through strategic SEO and continuous optimization.",
+    "buttonText": "Visit Site",
     "images": [
       "/images/features/the-phone-mason/1.png",
       "/images/features/the-phone-mason/2.png",
       "/images/features/the-phone-mason/3.png"
     ],
-    "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO.</p><h4>Key Objectives</h4><ul><li>To generate a consistent stream of qualified local customer leads.</li><li>To establish a strong, professional online presence in the Howick, Auckland area.</li><li>To rank highly in local search results for key device repair services.</li></ul><h4>My Contribution</h4><ul><li>Led the end-to-end development and deployment of the WordPress website.</li><li>Implemented a robust local SEO strategy, including Google Business Profile optimisation.</li><li>Performed extensive on-page optimisation focused on relevant keywords and user experience.</li></ul><h4>Outcomes</h4><ul><li>Achieved a significant boost in organic search visibility within the local market.</li><li>The website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
+    "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO and lead generation optimization.</p><h4>SEO Strategy & Implementation</h4><ul><li>Implemented robust <strong>local SEO strategy</strong> including Google Business Profile optimization, local citations, and location-based keyword targeting.</li><li>Performed extensive <strong>on-page optimization</strong> focused on relevant keywords, meta descriptions, header tags, and semantic HTML structure.</li><li>Continuous <strong>SEO monitoring and refinement</strong> using Google Analytics and Ahrefs for keyword tracking, backlink analysis, and competitor research.</li><li>Created targeted <strong>ad campaigns</strong> with optimized landing pages for specific repair services (screen repair, battery replacement, water damage).</li></ul><h4>Technical Implementation</h4><ul><li>Led end-to-end development and deployment of WordPress website with custom theme modifications and plugin integration.</li><li>Deployed on <strong>AWS</strong> with optimized server configuration for fast loading times and reliable uptime.</li><li>Implemented <strong>conversion optimization</strong> with strategic call-to-action placement, contact forms, and click-to-call functionality.</li></ul><h4>Results</h4><ul><li>Achieved <strong>top 3 local search rankings</strong> for competitive repair keywords in the Howick, Auckland area.</li><li>Website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
     "technologies": [
       "WordPress",
       "Elementor",
       "AWS",
       "Google Analytics",
+      "Google Business Profile",
       "Ahrefs",
+      "Local SEO",
       "Photoshop",
       "HTML",
       "CSS",
@@ -95,32 +149,48 @@
     "liveUrl": "https://thephonemason.nz/"
   },
   {
-    "id": "kiwikandy",
-    "title": "Kiwi Kandy",
-    "summary": "An e-commerce store built to sell classic New Zealand confectionery to Kiwis living and working overseas.",
-    "buttonText": "Learn More",
+    "id": "ai-content-generator",
+    "title": "AI Content Generator with Gemini Pro",
+    "summary": "A web application leveraging Google's Gemini Pro to help users generate high-quality, brand-aligned website content.",
+    "buttonText": "Fork Me",
     "images": [
-      "/images/features/kiwi-kandy/1.png",
-      "/images/features/kiwi-kandy/2.png",
-      "/images/features/kiwi-kandy/3.png"
+      "/images/features/blogwriter/3.png",
+      "/images/features/blogwriter/4.png",
+      "/images/features/blogwriter/5.png",
+      "/images/features/blogwriter/6.png",
+      "/images/features/blogwriter/7.png"
     ],
-    "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas.</p><h4>Key Objectives</h4><ul><li>Provide a seamless and enjoyable shopping experience for homesick Kiwis abroad.</li><li>Establish a secure and reliable platform for handling international payments and shipping.</li><li>Showcase a wide range of products in a well-organised, user-friendly catalogue.</li></ul><h4>Features & Implementation</h4><ul><li>Built on a robust WordPress foundation using the powerful WooCommerce plugin to manage all online sales.</li><li>Configured complex international shipping zones and rates to handle global deliveries.</li><li>Integrated secure payment gateways, including Stripe, for safe and reliable transactions.</li><li>Designed a user-friendly product catalogue that is easy to browse and navigate.</li></ul>",
+    "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content. This project demonstrates integration with Google's Gemini Pro API for generative AI capabilities.</p><h4>AI Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's specific needs and brand voice.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong> for rapid prototyping and deployment.</li><li>Generates a variety of content types, including full-length blog posts, 'About Us' pages, product descriptions, and marketing copy.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned with their business identity.</li><li>Real-time content generation with streaming responses for immediate feedback.</li></ul><h4>Use Cases</h4><ul><li>Blog post generation with SEO-friendly structure and keyword integration.</li><li>Marketing content creation for landing pages and promotional materials.</li><li>Content ideation and outline generation for content planning.</li></ul>",
+    "technologies": ["Python", "Google Gemini Pro", "Streamlit", "API Integration"],
+    "githubUrl": "https://github.com/blankv15/ai-content-generator",
+    "liveUrl": ""
+  },
+  {
+    "id": "social-meetup-app",
+    "title": "WEDO - Social Connection Mobile App",
+    "summary": "A full-stack, cross-platform mobile application for iOS and Android using serverless AWS architecture to connect people through local events.",
+    "buttonText": "Learn More",
+    "images": ["/images/features/we-do/2.png", "/images/features/we-do/1.jpeg"],
+    "description": "<h4>Project Overview</h4><p>A full-stack, cross-platform social connection app built for iOS and Android as part of a university capstone project. 'WeDo' helps users build meaningful connections by creating, discovering, and joining local events and activities.</p><h4>Key Features</h4><ul><li><strong>Personalised event recommendations</strong> powered by user interest profiles and location-based filtering.</li><li>Advanced event search with robust filtering options (date, location, category, price range).</li><li>Integrated personal calendar to easily track upcoming activities and manage RSVPs.</li><li>Full event creation and management functionality for users to host their own activities.</li><li>Real-time notifications for event updates, new attendees, and messages.</li></ul><h4>Technical Architecture</h4><ul><li>Cross-platform frontend built with <strong>React Native</strong> for consistent iOS and Android experience with a single codebase.</li><li>Scalable backend powered by <strong>Node.js and Express.js</strong> with RESTful API design.</li><li>Fully <strong>serverless architecture</strong> leveraging AWS services: Lambda (compute), API Gateway (routing), DynamoDB (database), S3 (image storage), and Cognito (authentication).</li><li>Cost-efficient, auto-scaling infrastructure that handles traffic spikes without manual intervention.</li></ul>",
     "technologies": [
-      "WordPress",
-      "WooCommerce",
-      "Stripe",
-      "Elementor",
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "AWS Lambda",
+      "AWS Cognito",
+      "API Gateway",
+      "S3",
+      "DynamoDB",
+      "JavaScript",
+      "Serverless"
     ],
-    "githubUrl": "",
-    "liveUrl": "https://www.kiwikandy.com"
+    "githubUrl": "https://github.com/blankv15/Soical-Connection-Meetup-App",
+    "liveUrl": ""
   },
   {
     "id": "simple-stopwatch-react",
     "title": "React Stopwatch",
-    "summary": "A clean and functional stopwatch application built with React, featuring start, stop, and reset capabilities.",
+    "summary": "A clean and functional stopwatch application built with React, demonstrating state management with hooks.",
     "buttonText": "Try Me",
     "images": ["/images/features/stopwatch/1.png"],
     "description": "<h4>Project Overview</h4><p>A straightforward stopwatch application built to demonstrate a solid understanding of core React concepts, particularly state management with hooks like <code>useState</code> and <code>useEffect</code>.</p><h4>Key Feature</h4><p>The entire logic for starting, stopping, and resetting the timer is handled cleanly within a single, reusable component, highlighting a component-based approach to building interactive UIs.</p><h4>Interactive Demo</h4><p>The actual functioning component is rendered directly below for you to try.</p>",
@@ -131,11 +201,11 @@
   },
   {
     "id": "simple-todo-app-react",
-    "title": "React To-Do",
-    "summary": "A classic to-do list application built to demonstrate fundamental React concepts like state management and event handling.",
+    "title": "React To-Do List",
+    "summary": "A classic to-do list application demonstrating fundamental React concepts like state management and event handling.",
     "buttonText": "Try Me",
     "images": ["/images/features/todo/1.png"],
-    "description": "<h4>Project Overview</h4><p>A classic to-do list application built as a practical exercise to demonstrate fundamental React skills in state management and component architecture.</p><h4>Core Functionality</h4><ul><li>Add new tasks to the list.</li><li>Mark tasks as complete with a visual indicator.</li><li>Remove tasks from the list.</li></ul><h4>Technical Implementation</h4><p>The application's state is managed efficiently with the <code>useState</code> hook. The UI is structured with reusable components for the input form and individual task items.</p><h4>Interactive Demo</h4><p>The live application is embedded below for you to try.</p>",
+    "description": "<h4>Project Overview</h4><p>A classic to-do list application built as a practical exercise to demonstrate fundamental React skills in state management and component architecture.</p><h4>Core Functionality</h4><ul><li>Add new tasks to the list with input validation.</li><li>Mark tasks as complete with visual indicators and strike-through styling.</li><li>Remove tasks from the list with delete functionality.</li><li>Persist task state during the session.</li></ul><h4>Technical Implementation</h4><p>The application's state is managed efficiently with the <code>useState</code> hook. The UI is structured with reusable components for the input form and individual task items, demonstrating component composition principles.</p><h4>Interactive Demo</h4><p>The live application is embedded below for you to try.</p>",
     "technologies": ["React", "JavaScript", "HTML", "CSS"],
     "githubUrl": "https://github.com/blankv15/Simple-To-Do-App-Built-with-React",
     "liveUrl": "",

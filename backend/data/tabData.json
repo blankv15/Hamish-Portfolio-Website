@@ -1,33 +1,71 @@
 [
   {
+    "value": "ai-automation",
+    "label": "AI & Automation",
+    "image": "/images/tabs/ai/4.png",
+    "title": "AI & Machine Learning",
+    "description": "I specialise in building production-grade AI systems, from multi-agent architectures to RAG-powered applications, leveraging cutting-edge LLM technologies.",
+    "points": [
+      "Building multi-agent AI systems with LangChain and LangGraph, featuring specialised tools for research, content generation, and data retrieval.",
+      "Implementing RAG (Retrieval-Augmented Generation) using vector databases (FAISS, pgvector) with OpenAI embeddings for context-aware AI responses.",
+      "Integrating OpenAI GPT-4 and Google Gemini APIs into production applications with prompt engineering and hallucination prevention strategies.",
+      "Developing PDF processing pipelines with text extraction, chunking, and semantic search capabilities for knowledge base creation.",
+      "Creating dynamic tool systems and agent workflows for intelligent lead capture, content generation, and automated decision-making.",
+      "Building web scraping and content classification systems (Cheerio, JSDOM) for AI training data and context gathering.",
+      "Implementing Redis caching strategies for high-performance AI applications with session management and data persistence."
+    ],
+    "tech": [
+      "LangChain",
+      "LangGraph",
+      "OpenAI GPT-4",
+      "OpenAI Embeddings",
+      "Google Gemini",
+      "RAG",
+      "FAISS",
+      "pgvector",
+      "Vector Databases",
+      "Python",
+      "TypeScript",
+      "Prompt Engineering",
+      "PDF Processing",
+      "Web Scraping",
+      "Redis",
+      "N8N",
+      "Automation Workflows"
+    ]
+  },
+  {
     "value": "frontend-development",
     "label": "Front-End",
     "image": "/images/tabs/frontend/4.png",
     "title": "Front-End Development",
-    "description": "With a strong foundation in core web technologies, I build modern, accessible, and high-performance user interfaces.",
+    "description": "With a strong foundation in modern web technologies, I build responsive, accessible, and high-performance user interfaces with attention to detail.",
     "points": [
-      "Building interactive UIs with modern, functional React.",
-      "Utilising JavaScript component libraries to ensure design consistency and speed up development.",
-      "Crafting responsive and accessible layouts using core HTML5, CSS3, and JavaScript.",
-      "Implementing on-page SEO best practices to improve search visibility."
+      "Building interactive, component-based UIs with React and TypeScript for type-safe, maintainable applications.",
+      "Utilising modern component libraries (Mantine UI) and design systems to ensure consistency and accelerate development.",
+      "Crafting responsive and accessible layouts using HTML5, CSS3, and modern JavaScript (ES6+) with mobile-first approach.",
+      "Implementing comprehensive on-page and off-page SEO strategies including meta tags, structured data, and Core Web Vitals optimisation.",
+      "Developing cross-platform mobile applications with React Native for iOS and Android from a single codebase."
     ],
     "tech": [
       "React",
-      "NextJs",
-      "React Native",
+      "TypeScript",
       "JavaScript",
+      "Next.js",
+      "React Native",
       "HTML5",
       "CSS3",
-      "Mantine",
-      "On Page SEO",
-      "Off Page SEO",
-      "Git",
-      "Wordpress",
-      "Themify",
+      "Mantine UI",
+      "Tailwind CSS",
+      "Responsive Design",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "WordPress",
       "Elementor",
+      "Git",
+      "Vite",
       "Figma",
-      "Photoshop",
-      "Pixelmator"
+      "Photoshop"
     ]
   },
   {
@@ -35,24 +73,35 @@
     "label": "Back-End",
     "image": "/images/tabs/backend/4.png",
     "title": "Back-End Development",
-    "description": "I design and build robust, scalable server-side applications and APIs to power the frontend.",
+    "description": "I design and build robust, scalable server-side applications and APIs with a focus on security, performance, and maintainability.",
     "points": [
-      "Developing RESTful APIs with Node.js and Express for seamless data communication.",
-      "Integrating with third-party services and APIs, such as payment gateways and AI models.",
-      "Writing unit and integration tests for APIs to ensure code quality and reliability.",
-      "Using ORM (Object-Relational Mapping) libraries to efficiently interact with databases."
+      "Developing RESTful APIs with Node.js, Express, and TypeScript for type-safe, maintainable server-side applications.",
+      "Building multi-tenant SaaS architectures with isolated data, secure authentication (Passport.js, JWT), and role-based access control.",
+      "Designing and optimising PostgreSQL databases with complex relationships, indexing strategies, and query optimisation.",
+      "Implementing Redis for session management, caching strategies, and high-performance data storage in distributed systems.",
+      "Integrating with third-party services and APIs including payment gateways (Stripe), Google APIs (Search Console, OAuth 2.0), and WordPress REST API.",
+      "Implementing comprehensive testing strategies with unit tests, integration tests, and API validation using modern testing frameworks.",
+      "Working with ORM libraries (Sequelize) for efficient database interactions and migration management."
     ],
     "tech": [
       "Node.js",
       "Express.js",
+      "TypeScript",
       "Python",
       "Flask",
+      "PHP",
       "REST APIs",
       "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "Sequelize ORM",
+      "Session Management",
+      "Authentication",
+      "API Security",
       "Unit Testing",
-      "ORM",
       "Postman",
-      ".Net"
+      "WooCommerce",
+      "WordPress Plugins"
     ]
   },
   {
@@ -60,38 +109,67 @@
     "label": "DevOps & Cloud",
     "image": "/images/tabs/devops/1.png",
     "title": "DevOps & Cloud Infrastructure",
-    "description": "I have practical experience in deploying and managing applications using modern DevOps practices and cloud services.",
+    "description": "I have extensive experience deploying and managing production applications using modern DevOps practices, containerisation, and cloud services.",
     "points": [
-      "Deploying full-stack applications to cloud platforms, with strong experience in AWS Lightsail.",
-      "Using Docker and Docker Compose to create consistent, portable environments for development and deployment.",
-      "Authoring CI/CD pipelines with GitHub Actions to automate the build, push, and deployment of containerised applications.",
-      "Proficient in administering Linux servers via SSH, including server setup, configuration, and writing Bash scripts for automation."
+      "Deploying full-stack applications to AWS cloud platforms (Lightsail, EC2, S3, Lambda) with infrastructure-as-code practices.",
+      "Building CI/CD pipelines with GitHub Actions to automate testing, building, and deployment of containerised applications with zero downtime.",
+      "Using Docker and Docker Compose to create consistent, portable environments across development, staging, and production.",
+      "Administering Linux servers (Ubuntu) via SSH including server setup, NGINX configuration, SSL/TLS certificates, and Bash scripting for automation.",
+      "Implementing serverless architectures with AWS Lambda, API Gateway, and DynamoDB for cost-effective, auto-scaling solutions.",
+      "Managing database backups, monitoring, Redis cache optimisation, and performance tuning in production environments."
     ],
     "tech": [
       "AWS",
+      "AWS Lambda",
+      "AWS Lightsail",
       "Docker",
       "Docker Compose",
       "GitHub Actions",
       "CI/CD",
       "Linux",
+      "Ubuntu",
       "NGINX",
+      "Apache",
+      "SSH",
+      "Bash Scripting",
+      "Redis",
       "Proxmox VE",
-      "OpenWrt",
-      "DNS"
+      "Virtualisation",
+      "DNS Management",
+      "SSL/TLS"
     ]
   },
   {
-    "value": "ai-automation",
-    "label": "AI & Automation",
-    "image": "/images/tabs/ai/4.png",
-    "title": "AI & Automation",
-    "description": "I have a keen interest and growing experience in leveraging emerging AI tools to build smarter applications and workflows.",
+    "value": "ecommerce-seo",
+    "label": "E-commerce & SEO",
+    "image": "/images/tabs/ecommerce/1.png",
+    "title": "E-commerce & SEO",
+    "description": "I have comprehensive experience building and managing e-commerce platforms, with proven success in on-page and off-page SEO optimisation and search visibility.",
     "points": [
-      "Integrating generative AI platforms like OpenAI/GPT and Gemini to enhance application capabilities.",
-      "Developing custom tools to automate workflows and streamline repetitive tasks.",
-      "Using Python as a primary language for AI scripting and API integration.",
-      "Actively exploring and experimenting with new AI models and their practical applications."
+      "Building complete WooCommerce e-commerce platforms with custom product configurations, payment gateway integration (Stripe), and order management.",
+      "Implementing Google Merchant Centre integration for automated product feed generation and Google Shopping optimisation.",
+      "Executing comprehensive on-page SEO including keyword optimisation, meta tags, schema markup, header hierarchy, and Core Web Vitals.",
+      "Executing off-page SEO strategies including local citations, link building, Google Business Profile optimisation, and directory submissions.",
+      "Developing custom WordPress plugins for WooCommerce including event booking systems, inventory management, and booking workflows.",
+      "Managing international shipping logistics with complex zone configurations, rate calculations, and automated fulfilment workflows.",
+      "Performing ongoing SEO monitoring and optimisation using Google Analytics, Search Console, and Ahrefs for keyword tracking and competitor analysis."
     ],
-    "tech": ["OpenAI API", "Gemini API", "Python", "Automation", "Workflows","N8N"]
+    "tech": [
+      "WooCommerce",
+      "WordPress",
+      "Google Merchant Centre",
+      "Stripe",
+      "Payment Gateways",
+      "On-Page SEO",
+      "Off-Page SEO",
+      "Local SEO",
+      "Google Search Console",
+      "Google Analytics",
+      "Ahrefs",
+      "Schema Markup",
+      "Product Feeds",
+      "Inventory Management",
+      "Order Fulfilment"
+    ]
   }
 ]
