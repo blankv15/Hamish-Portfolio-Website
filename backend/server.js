@@ -39,8 +39,8 @@ app.post('/api/send-email', async (req, res) => {
     }
 
     await resend.emails.send({
-      from: process.env.FROM_EMAIL,
-      to: process.env.YOUR_EMAIL,
+      from: `${name} <${process.env.FROM_EMAIL}>`,
+      to: [process.env.YOUR_EMAIL],
       reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `You have a new message from:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
