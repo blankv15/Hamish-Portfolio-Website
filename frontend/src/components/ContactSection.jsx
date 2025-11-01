@@ -36,6 +36,13 @@ export function ContactSection() {
     setLoading(true);
     setFormStatus(null);
 
+    // Track form submission attempt in GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'contact_form_submit',
+      form_name: 'contact_form'
+    });
+
     if (!executeRecaptcha) {
       setFormStatus({ status: 'error', message: 'reCAPTCHA not ready. Please try again.' });
       setLoading(false);
@@ -54,11 +61,24 @@ export function ContactSection() {
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred on the server.');
       }
-      
+
+      // Track successful submission
+      window.dataLayer.push({
+        event: 'contact_form_success',
+        form_name: 'contact_form'
+      });
+
       setFormStatus({ status: 'success', message: 'Message sent! Thank you for reaching out.' });
       form.reset();
 
     } catch (error) {
+      // Track form submission error
+      window.dataLayer.push({
+        event: 'contact_form_error',
+        form_name: 'contact_form',
+        error_message: error.message
+      });
+
       setFormStatus({ status: 'error', message: error.message });
     } finally {
       setLoading(false);

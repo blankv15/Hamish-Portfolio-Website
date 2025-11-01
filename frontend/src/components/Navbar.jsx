@@ -59,6 +59,45 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (section) => {
+        // Track navigation click in GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'navigation_click',
+            section: section,
+            nav_type: 'desktop'
+        });
+    };
+
+    const handleMobileNavClick = (section) => {
+        // Track mobile navigation click in GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'navigation_click',
+            section: section,
+            nav_type: 'mobile'
+        });
+        closeMenu();
+    };
+
+    const handleCVClick = (source) => {
+        // Track CV download click in GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'cv_download',
+            button_location: source
+        });
+    };
+
+    const handleGitHubClick = (source) => {
+        // Track GitHub link click in GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'github_click',
+            button_location: source
+        });
+    };
+
     const toggleMenu = () => setMenuOpen(!isMenuOpen);
     const closeMenu = () => setMenuOpen(false);
 
@@ -82,26 +121,26 @@ const Navbar = () => {
                     <a href="#" className="navbar-logo">Hamish Chhagan</a>
 
                     <div className="nav-actions-mobile">
-                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={() => handleGitHubClick('mobile_header')}>
                             <GitHubIcon className="github-icon" />
                         </a>
-                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button">
+                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button" onClick={() => handleCVClick('mobile_header')}>
                             CV
                         </a>
                     </div>
 
                     <div className="nav-links-desktop">
-                        <a href="#projects" className="nav-link">Projects</a>
-                        <a href="#skills" className="nav-link">Skills</a>
-                        <a href="#about" className="nav-link">About</a>
-                        <a href="#contact" className="nav-link">Contact</a>
+                        <a href="#projects" className="nav-link" onClick={() => handleNavClick('projects')}>Projects</a>
+                        <a href="#skills" className="nav-link" onClick={() => handleNavClick('skills')}>Skills</a>
+                        <a href="#about" className="nav-link" onClick={() => handleNavClick('about')}>About</a>
+                        <a href="#contact" className="nav-link" onClick={() => handleNavClick('contact')}>Contact</a>
                     </div>
 
                     <div className="nav-actions-desktop">
-                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={() => handleGitHubClick('desktop_header')}>
                             <GitHubIcon className="github-icon" />
                         </a>
-                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button">
+                        <a href={cvPath} target="_blank" rel="noopener noreferrer" className="cv-button" onClick={() => handleCVClick('desktop_header')}>
                             Download CV
                         </a>
                     </div>
@@ -116,16 +155,16 @@ const Navbar = () => {
 
             <div className={mobileMenuClasses}>
                 <div className="mobile-menu-content">
-                    <a href="#projects" onClick={closeMenu}>Projects</a>
-                    <a href="#skills" onClick={closeMenu}>Skills</a>
-                    <a href="#about" onClick={closeMenu}>About</a>
-                    <a href="#contact" onClick={closeMenu}>Contact</a>
+                    <a href="#projects" onClick={() => handleMobileNavClick('projects')}>Projects</a>
+                    <a href="#skills" onClick={() => handleMobileNavClick('skills')}>Skills</a>
+                    <a href="#about" onClick={() => handleMobileNavClick('about')}>About</a>
+                    <a href="#contact" onClick={() => handleMobileNavClick('contact')}>Contact</a>
                     <div className="mobile-menu-divider"></div>
-                    <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mobile-menu-github-link">
+                    <a href="https://github.com/blankv15" target="_blank" rel="noopener noreferrer" onClick={() => { handleGitHubClick('mobile_menu'); closeMenu(); }} className="mobile-menu-github-link">
                         GitHub
                         <GitHubIcon/>
                     </a>
-                    <a href={cvPath} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="cv-button mobile-menu-cv-button">
+                    <a href={cvPath} target="_blank" rel="noopener noreferrer" onClick={() => { handleCVClick('mobile_menu'); closeMenu(); }} className="cv-button mobile-menu-cv-button">
                         View CV
                     </a>
                 </div>

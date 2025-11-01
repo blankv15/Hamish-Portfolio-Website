@@ -28,7 +28,26 @@ function ProjectSection({ onProjectClick }) {
 
   const projectsToShow = isMobile && !isExpanded ? projectsData.slice(0, 3) : projectsData;
 
+  const handleProjectClick = (project) => {
+    // Track project click in GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'project_click',
+      project_name: project.title,
+      project_id: project.id,
+      project_technology: project.technologies[0]
+    });
+    onProjectClick(project);
+  };
+
   const toggleExpanded = () => {
+    // Track view more/less button click
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'projects_toggle',
+      action: isExpanded ? 'view_less' : 'view_more'
+    });
+
     if (isExpanded && buttonRef.current) {
       setTimeout(() => {
         buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -44,7 +63,7 @@ function ProjectSection({ onProjectClick }) {
           <div
             key={project.id}
             className="featured-grid-item"
-            onClick={() => onProjectClick(project)}
+            onClick={() => handleProjectClick(project)}
             style={{ cursor: "pointer" }}
           >
             <ProjectCard

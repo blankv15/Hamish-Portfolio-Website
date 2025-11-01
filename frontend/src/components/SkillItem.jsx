@@ -8,8 +8,18 @@ const Icon = ({ iconName }) => {
 };
 
 const SkillItem = ({ skill }) => {
+  const handleSkillClick = () => {
+    // Track skill click in GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'skill_click',
+      skill_name: skill.name,
+      skill_category: skill.category || 'uncategorized'
+    });
+  };
+
   return (
-    <div className="skill-item">
+    <div className="skill-item" onClick={handleSkillClick} style={{ cursor: 'pointer' }}>
       <Icon iconName={skill.icon} />
       <span>{skill.name}</span>
     </div>
