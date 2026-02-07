@@ -1,0 +1,1076 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2025-12-09 00:00:00",
+  "containerVersion": {
+    "path": "accounts/6321733106/containers/233974572/versions/0",
+    "accountId": "6321733106",
+    "containerId": "233974572",
+    "containerVersionId": "0",
+    "name": "Portfolio Website Analytics",
+    "description": "Complete GTM setup for portfolio website with all custom events",
+    "container": {
+      "path": "accounts/6321733106/containers/233974572",
+      "accountId": "6321733106",
+      "containerId": "233974572",
+      "name": "Portfolio Website",
+      "publicId": "GTM-W6CB6FQB",
+      "usageContext": [
+        "WEB"
+      ],
+      "fingerprint": "",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6321733106/containers/233974572/workspaces?apiLink=container"
+    },
+    "tag": [
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "2",
+        "name": "GA4 Config - G-20M5QKPGW4",
+        "type": "gaawc",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "sendPageView",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-20M5QKPGW4"
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "3",
+        "name": "GA4 Event - Navigation Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "navigation_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "section"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - section}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "nav_type"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - nav_type}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "4"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "5",
+        "name": "GA4 Event - Project Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "project_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "project_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - project_name}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "project_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - project_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "project_technology"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - project_technology}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "6"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "7",
+        "name": "GA4 Event - Projects Toggle",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "projects_toggle"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "action"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - action}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "8"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "9",
+        "name": "GA4 Event - Contact Form Submit",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "contact_form_submit"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "form_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - form_name}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "10"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "11",
+        "name": "GA4 Event - Contact Form Success",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "contact_form_success"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "form_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - form_name}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "12"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "13",
+        "name": "GA4 Event - Contact Form Error",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "contact_form_error"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "form_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - form_name}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "error_message"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - error_message}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "14"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "15",
+        "name": "GA4 Event - CV Download",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "cv_download"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "button_location"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - button_location}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "16"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "17",
+        "name": "GA4 Event - GitHub Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "github_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "button_location"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - button_location}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "18"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "tagId": "19",
+        "name": "GA4 Event - Skill Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "skill_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 Config - G-20M5QKPGW4"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "skill_name"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - skill_name}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "skill_category"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{DLV - skill_category}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fingerprint": "",
+        "firingTriggerId": [
+          "20"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "2147479553",
+        "name": "All Pages",
+        "type": "PAGEVIEW",
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "4",
+        "name": "CE - navigation_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "navigation_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "6",
+        "name": "CE - project_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "project_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "8",
+        "name": "CE - projects_toggle",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "projects_toggle"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "10",
+        "name": "CE - contact_form_submit",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "contact_form_submit"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "12",
+        "name": "CE - contact_form_success",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "contact_form_success"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "14",
+        "name": "CE - contact_form_error",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "contact_form_error"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "16",
+        "name": "CE - cv_download",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "cv_download"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "18",
+        "name": "CE - github_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "github_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "triggerId": "20",
+        "name": "CE - skill_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "skill_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": ""
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "21",
+        "name": "DLV - section",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "section"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "22",
+        "name": "DLV - nav_type",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "nav_type"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "23",
+        "name": "DLV - project_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "project_name"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "24",
+        "name": "DLV - project_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "project_id"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "25",
+        "name": "DLV - project_technology",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "project_technology"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "26",
+        "name": "DLV - action",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "action"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "27",
+        "name": "DLV - form_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "form_name"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "28",
+        "name": "DLV - error_message",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "error_message"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "29",
+        "name": "DLV - button_location",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "button_location"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "30",
+        "name": "DLV - skill_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "skill_name"
+          }
+        ],
+        "fingerprint": ""
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "variableId": "31",
+        "name": "DLV - skill_category",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "skill_category"
+          }
+        ],
+        "fingerprint": ""
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "type": "PAGE_HOSTNAME",
+        "name": "Page Hostname"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "type": "REFERRER",
+        "name": "Referrer"
+      },
+      {
+        "accountId": "6321733106",
+        "containerId": "233974572",
+        "type": "EVENT",
+        "name": "Event"
+      }
+    ],
+    "fingerprint": "",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6321733106/containers/233974572/versions/0?apiLink=version"
+  }
+}

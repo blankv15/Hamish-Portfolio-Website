@@ -1,70 +1,130 @@
 [
   {
-    "id": "ai-content-platform",
-    "title": "AI Content Generation & WordPress Publishing Platform",
-    "summary": "A production-grade SaaS platform combining multi-agent AI systems, WordPress automation, and SEO optimisation using LangChain, LangGraph, and OpenAI GPT-4.",
+    "id": "writelab",
+    "title": "WriteLab, AI Content Generation & SEO Platform",
+    "summary": "A comprehensive SaaS platform for AI-powered content generation, SEO optimization, and multi-channel publishing with multi-LLM orchestration and Google enterprise integrations.",
     "buttonText": "Learn More",
     "images": [
-      "/images/features/ai-content/1.png",
-      "/images/features/ai-content/2.png"
+      "/images/features/writelab/1.jpg",
+      "/images/features/writelab/2.jpg"
     ],
-    "description": "<h4>Project Overview</h4><p>A sophisticated SaaS platform that combines AI-powered content generation, WordPress publishing automation, and SEO optimisation. The platform uses multi-agent AI systems built with LangChain and LangGraph to research, write, and optimise blog content while leveraging real search data from Google Search Console.</p><h4>AI & LLM Integration</h4><ul><li>Built a <strong>multi-agent AI system with LangGraph</strong> featuring 9 specialised research tools including Google Search Console integration, website crawling, competitor analysis, and vector-based knowledge retrieval.</li><li>Implemented <strong>RAG (Retrieval-Augmented Generation)</strong> using PostgreSQL with pgvector extension for semantic search across crawled website content, enabling context-aware article generation with automatic internal linking.</li><li>Integrated <strong>Google Search Console API with OAuth 2.0</strong> to leverage real search performance data, content gap analysis (high impressions, low clicks), and trending queries with 7-day caching optimisation.</li><li>Developed an <strong>intelligent website crawler</strong> that extracts and classifies content (products, services, pages), brand information (colours, logos, tagline), and generates vector embeddings for context-aware article generation.</li></ul><h4>Full-Stack Architecture</h4><ul><li>React/TypeScript frontend with Mantine UI for bot management, content generation dashboard, and lead management.</li><li>Node.js/Express backend with Sequelize ORM, Redis session management, multi-tenant architecture, and isolated knowledge bases per bot.</li><li>Custom WordPress plugin (PHP) enabling one-click publishing with automatic category/tag creation, metadata synchronisation (Yoast/Rank Math compatible), and featured image handling.</li></ul><h4>Key Features</h4><ul><li>Automated blog generation with SEO optimisation, keyword density management (1-2%), and meta description generation (155 chars).</li><li>Content ideas pipeline from multiple sources (GSC content gaps, competitor analysis, RSS feeds, website context).</li><li>WordPress REST API integration for seamless publishing and metadata synchronisation.</li></ul>",
+    "description": "<h4>Project Overview</h4><p>WriteLab is a comprehensive SaaS platform for AI-powered content generation, SEO optimization, and multi-channel publishing. The platform integrates sophisticated multi-agent AI workflows, Google's enterprise ecosystem, and WordPress publishing capabilities to automate end-to-end content marketing operations.</p><h4>Unified Research Experience</h4><ul><li>Redesigned research workflow from <strong>4 disconnected tabs requiring 3+ redundant searches</strong> into a unified, scrollable interface with parallel API orchestration.</li><li>Reduced user workflow from <strong>6+ page transitions to a single research view</strong>, loading all insights (SERP analysis, keyword research, topic exploration) in one search.</li><li>Implemented progressive loading strategy: SERP data (~45s), content briefs (~60s), and topic exploration (~120s) load independently without blocking the UI.</li><li>Competitor analysis: Studied Surfer SEO, Frase.io, ContentShake AI, and Clearscope; designed differentiated UX focusing on research-to-action workflows.</li></ul><h4>Multi-LLM Orchestration with LangGraph</h4><ul><li>Built context-aware blog generation using <strong>LangGraph multi-agent workflows</strong> with specialized tool-calling agents.</li><li>Integrated <strong>4 LLM providers</strong>: Anthropic Claude (4.5, 4, 3.5), Google Gemini (2.5, 2.0), DeepSeek (Chat, R1 Reasoner), and Perplexity for research.</li><li>Implemented <strong>RAG system using pgvector</strong> for semantic search across website content and knowledge base documents (OpenAI ada-002 embeddings).</li></ul><h4>Google Enterprise Integration</h4><ul><li>Single <strong>OAuth flow connecting 3 Google services</strong>: Search Console (keyword performance, content gaps), Analytics 4 (traffic analytics), and Business Profile (multi-location management, review responses).</li><li>Built data caching layer (7-day TTL) to optimize API usage and reduce latency.</li></ul><h4>WordPress Publishing Without Plugins</h4><ul><li>Developed <strong>plugin-free WordPress integration</strong> using built-in Application Passwords (WordPress 5.6+).</li><li>Features: Draft/live publishing, category/tag management, AI-suggested categorization, SEO metadata (Yoast/Rank Math compatible), scheduled posts.</li></ul><h4>Architecture & Security</h4><ul><li><strong>Frontend</strong>: React 19 with React Router 7, TanStack Query, Zustand, Mantine UI, TipTap editor, CSS Modules design system.</li><li><strong>Backend</strong>: Node.js + Express.js with TypeScript (37 route modules), PostgreSQL 17 + pgvector, Redis 7, MinIO, Sequelize ORM with Zod validation.</li><li><strong>Security</strong>: Session-based auth (Passport.js), CSRF protection, SSRF prevention, rate limiting tiers, Helmet.js security headers, encrypted credential storage.</li></ul>",
     "technologies": [
       "LangChain",
       "LangGraph",
       "OpenAI GPT-4",
+      "Anthropic Claude",
+      "Google Gemini",
+      "DeepSeek",
+      "Perplexity",
       "PostgreSQL",
       "pgvector",
       "RAG",
-      "React",
+      "React 19",
       "TypeScript",
       "Node.js",
       "Express.js",
-      "Sequelize ORM",
+      "TanStack Query",
+      "Zustand",
       "Redis",
       "Google Search Console API",
+      "Google Analytics 4",
+      "Google Business Profile",
       "OAuth 2.0",
-      "WordPress",
-      "PHP",
+      "WordPress REST API",
       "Docker",
-      "Cheerio",
-      "JSDOM",
-      "RSS Parsing"
+      "Mantine UI",
+      "TipTap"
     ],
     "githubUrl": "",
     "liveUrl": ""
   },
   {
-    "id": "ai-chatbot-platform",
-    "title": "AI-Powered Lead Generation Chatbot Platform",
-    "summary": "A multi-tenant SaaS platform for creating RAG-powered chatbots with dynamic lead capture, PDF knowledge bases, and automated email notifications.",
+    "id": "marketing-mailer",
+    "title": "SaaS Email Marketing Platform",
+    "summary": "A production-ready email marketing platform with multi-tenant architecture, queue-based processing, and real-time analytics built with Next.js 16 and TypeScript.",
     "buttonText": "Learn More",
     "images": [
-      "/images/features/chatbot/1.png",
-      "/images/features/chatbot/2.png"
+      "/images/features/marketingMailer/1.jpg",
+      "/images/features/marketingMailer/2.jpg",
+      "/images/features/marketingMailer/3.jpg",
+      "/images/features/marketingMailer/4.jpg"
+
     ],
-    "description": "<h4>Project Overview</h4><p>A comprehensive multi-tenant chatbot platform that combines RAG-powered conversational AI with intelligent lead capture. Built for businesses to deploy custom chatbots on their websites with knowledge bases from uploaded PDFs and automated lead generation workflows.</p><h4>AI & RAG Implementation</h4><ul><li>Implemented <strong>RAG (Retrieval-Augmented Generation) system</strong> using LangChain with FAISS vector store and OpenAI embeddings (text-embedding-ada-002) for context-aware responses from PDF knowledge bases.</li><li>Built <strong>LangChain agents with OpenAI GPT-4o</strong> for natural conversations with hallucination prevention through semantic search and context retrieval.</li><li>Created <strong>dynamic tool generation system</strong> using Zod schemas and LangChain's DynamicStructuredTool, allowing chatbots to intelligently capture structured lead data based on customizable schemas.</li><li>Engineered <strong>PDF processing pipeline</strong> with text extraction (pdf-parse), chunking using RecursiveCharacterTextSplitter (1000 char chunks, 200 overlap), and embedding generation with vector store persistence.</li></ul><h4>Platform Features</h4><ul><li><strong>Multi-tenant architecture</strong> with isolated knowledge bases, secure bot management, and API key-based authentication for each bot.</li><li><strong>Session-based conversation memory</strong> with chat history persistence in PostgreSQL, maintaining context across multiple interactions.</li><li><strong>Automatic email notifications</strong> via Nodemailer with formatted lead details, chat transcripts, and customizable SMTP configuration per bot.</li><li>React/TypeScript admin dashboard for bot creation, knowledge base updates (PDF upload/replacement), lead management, and analytics.</li><li>WordPress widget integration with CORS-enabled public API for easy deployment on client websites.</li></ul><h4>Technical Highlights</h4><ul><li>Migrated backend from Flask/Python to Express.js/TypeScript with full feature parity, improved performance, and enhanced type safety.</li><li>User authentication with Passport.js, session management with express-session, and secure API key generation with bcrypt hashing.</li><li>Vector store persistence with automatic loading and caching for improved performance (avoiding recreation on every request).</li></ul>",
+    "description": "<h4>Project Overview</h4><p>Marketing Mailer is a production-ready, full-stack SaaS email marketing platform built with Next.js 16, TypeScript, and modern cloud technologies. The platform enables users to create, send, and track personalized email campaigns at scale with real-time analytics.</p><h4>Multi-Tenant Architecture</h4><ul><li><strong>User-provided API key model</strong>: Each user brings their own Resend API key for complete tenant isolation.</li><li><strong>No shared infrastructure</strong>: Direct billing relationship with email provider, isolated sending reputation.</li><li><strong>Encrypted credentials</strong>: AES-256 encryption for API keys stored at rest.</li><li><strong>Per-user domain management</strong>: Subdomain enforcement for email deliverability.</li></ul><h4>Core Features</h4><ul><li><strong>Domain Management</strong>: DNS record verification (SPF, DKIM, DMARC), domain ownership validation, Resend domain verification API integration.</li><li><strong>Email Template System</strong>: Dynamic template builder with variable interpolation ({{firstName}}, {{lastName}}), HTML and text content support, real-time preview.</li><li><strong>Recipient Management</strong>: CSV import functionality, list segmentation, suppression list management (bounces, complaints, unsubscribes).</li><li><strong>Campaign Management</strong>: Draft → Scheduled → Sending → Completed workflow with real-time status tracking.</li></ul><h4>Queue-Based Email Processing</h4><ul><li><strong>BullMQ worker</strong> for asynchronous email sending with rate limiting (10 emails/second, configurable).</li><li><strong>5 concurrent workers</strong> with retry logic and failure handling.</li><li>Job tracking and monitoring for operational visibility.</li></ul><h4>Real-Time Analytics</h4><ul><li><strong>TinyBird integration</strong> for real-time metrics and event tracking.</li><li>Event tracking: sent, delivered, opened, clicked, bounced, complained.</li><li>Webhook integration for Resend email events with campaign-level statistics caching.</li></ul><h4>Technical Stack</h4><ul><li><strong>Frontend/Backend</strong>: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4.</li><li><strong>Database</strong>: PostgreSQL with Prisma ORM (7 normalized models with proper indexing).</li><li><strong>Authentication</strong>: NextAuth.js v5 with bcrypt password hashing.</li><li><strong>Infrastructure</strong>: Docker Compose, BullMQ + Redis, ~6,000 lines of TypeScript across 43 files.</li></ul>",
     "technologies": [
-      "LangChain",
-      "OpenAI GPT-4",
-      "OpenAI Embeddings",
-      "FAISS",
-      "RAG",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
-      "Node.js",
-      "Express.js",
       "PostgreSQL",
-      "Passport.js",
+      "Prisma ORM",
+      "Redis",
+      "BullMQ",
+      "TinyBird",
+      "Resend API",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Docker",
       "Zod",
-      "Nodemailer",
-      "PDF Processing",
-      "Python",
-      "Flask",
-      "bcrypt"
+      "bcrypt",
+      "Webhooks"
     ],
     "githubUrl": "",
-    "liveUrl": ""
+    "liveUrl": "https://marketingmailer.hamishc.nz/templates"
+  },
+  
+  {
+    "id": "kiwikandy",
+    "title": "Kiwi Kandy, WooCommerce E-commerce Platform",
+    "summary": "A complete e-commerce platform selling classic New Zealand confectionery worldwide, with SEO improvements driving 445% increase in clicks and 115% increase in impressions.",
+    "buttonText": "Visit Site",
+    "images": [
+      "/images/features/kiwi-kandy/1.png",
+      "/images/features/kiwi-kandy/2.png",
+      "/images/features/kiwi-kandy/3.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built from scratch for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas. This project demonstrates comprehensive e-commerce development, SEO optimization with measurable results, and international shipping logistics.</p><h4>SEO Results & Performance</h4><ul><li>Implemented SEO strategy improving <strong>average search position from 51 to 12</strong> (39 positions improvement) over 6 months.</li><li>Achieved <strong>115% increase in impressions</strong> and <strong>445% increase in organic clicks</strong> through technical SEO, content optimization, and strategic keyword targeting.</li><li>Ranking for competitive product keywords including 'pineapple lumps', 'whittaker chocolates', and NZ confectionery terms.</li></ul><h4>E-commerce Features</h4><ul><li>Built complete <strong>WooCommerce e-commerce store from scratch</strong> with custom product configurations, shopping cart, and secure payment gateway integrations.</li><li><strong>Google Merchant Center integration</strong> for automated product feed generation, enabling product listings across Google Shopping with inventory synchronization.</li><li>Configured complex <strong>international shipping zones and rates</strong> to handle global deliveries with accurate cost calculations based on weight and destination.</li><li>Integrated secure <strong>payment gateways including Stripe</strong> for safe and reliable transactions with PCI compliance.</li></ul><h4>Automation & Fulfillment</h4><ul><li>Developed custom <strong>shipping and fulfillment automation</strong> including label generation, inventory tracking, and customer notification workflows.</li><li>Custom product configurations for gift boxes and variety packs with dynamic pricing based on selections.</li><li>Automated order processing with status updates and tracking information delivery.</li></ul>",
+    "technologies": [
+      "WordPress",
+      "WooCommerce",
+      "Google Merchant Center",
+      "Google Search Console",
+      "Stripe",
+      "Payment Gateways",
+      "SEO",
+      "PHP",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "githubUrl": "",
+    "liveUrl": "https://www.kiwikandy.com"
+  },
+  {
+    "id": "the-phone-mason",
+    "title": "The Phone Mason, Local SEO & Lead Generation",
+    "summary": "A business website built from scratch achieving page 1 rankings for competitive keywords, generating 920+ organic clicks and 150K+ impressions over 16 months.",
+    "buttonText": "Visit Site",
+    "images": [
+      "/images/features/the-phone-mason/1.png",
+      "/images/features/the-phone-mason/2.png",
+      "/images/features/the-phone-mason/3.png"
+    ],
+    "description": "<h4>Project Overview</h4><p>A comprehensive business website built from scratch for The Phone Mason, a device repair specialist. The project demonstrates end-to-end web development combined with strategic SEO that delivered measurable results in a competitive local market.</p><h4>SEO Results & Performance</h4><ul><li>Implemented SEO strategy improving <strong>average search position from 28 to 15</strong>, achieving page 1 rankings for competitive repair keywords.</li><li>Achieved <strong>page 1 rankings</strong> for competitive terms: 'phone repairs' (#10), 'samsung battery replacement' (#10), 'android repair' (#9).</li><li>Generated <strong>920+ organic clicks</strong> and <strong>150K+ impressions</strong> over 16 months through technical SEO, content optimization, and local citation building.</li><li>Strong brand presence with 'the phone mason' ranking #1.7 average position.</li></ul><h4>Technical Implementation</h4><ul><li>Built complete business website from scratch including service pages, online booking system, and contact forms optimized for local lead generation.</li><li>Implemented robust <strong>local SEO strategy</strong> including Google Business Profile optimization, local citations, and location-based keyword targeting.</li><li>Performed extensive <strong>on-page optimization</strong> focused on relevant keywords, meta descriptions, header tags, and semantic HTML structure.</li><li>Deployed on <strong>AWS</strong> with optimized server configuration for fast loading times and reliable uptime.</li></ul><h4>Ongoing Management</h4><ul><li>Continuous <strong>SEO monitoring and refinement</strong> using Google Analytics and Google Search Console for keyword tracking and performance analysis.</li><li>Managed <strong>Google Ads campaigns</strong> with optimized landing pages for specific repair services.</li><li>Ongoing maintenance including security updates, performance optimization, and content freshness.</li></ul>",
+    "technologies": [
+      "WordPress",
+      "Google Search Console",
+      "Google Analytics",
+      "Google Business Profile",
+      "Local SEO",
+      "Google Ads",
+      "AWS",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "githubUrl": "",
+    "liveUrl": "https://thephonemason.nz/"
   },
   {
     "id": "portfolio-website",
@@ -94,76 +154,6 @@
     ],
     "githubUrl": "https://github.com/blankv15/Hamish-Portfolio-Website",
     "liveUrl": "https://hamishc.nz"
-  },
-  {
-    "id": "kiwikandy",
-    "title": "Kiwi Kandy - WooCommerce E-commerce Platform",
-    "summary": "A complete e-commerce platform selling classic New Zealand confectionery worldwide, featuring Google Merchant Center integration and automated order fulfillment.",
-    "buttonText": "Visit Site",
-    "images": [
-      "/images/features/kiwi-kandy/1.png",
-      "/images/features/kiwi-kandy/2.png",
-      "/images/features/kiwi-kandy/3.png"
-    ],
-    "description": "<h4>Project Overview</h4><p>A full-scale e-commerce website built for KiwiKandy, dedicated to selling iconic New Zealand confectionery to customers living overseas. This project demonstrates comprehensive e-commerce management, payment processing, and international shipping logistics.</p><h4>E-commerce Features</h4><ul><li>Built on <strong>WordPress with WooCommerce</strong> to manage complete online sales operations including inventory management, order processing, and customer accounts.</li><li><strong>Google Merchant Center integration</strong> for automated product feed generation, enabling product listings across Google Shopping with automated inventory synchronization.</li><li>Configured complex <strong>international shipping zones and rates</strong> to handle global deliveries with accurate cost calculations based on weight and destination.</li><li>Integrated secure <strong>payment gateways including Stripe</strong> for safe and reliable transactions with PCI compliance.</li></ul><h4>Platform Management</h4><ul><li>Designed user-friendly product catalogue with advanced filtering, search functionality, and category organization for easy navigation.</li><li>Implemented <strong>automated order fulfillment workflows</strong> including shipping label generation, inventory tracking, and customer notification systems.</li><li>Custom product configurations for gift boxes and variety packs with dynamic pricing based on selections.</li></ul><h4>Business Impact</h4><ul><li>Established reliable platform for handling international payments and worldwide shipping logistics.</li><li>Created seamless shopping experience optimized for conversion with streamlined checkout process.</li></ul>",
-    "technologies": [
-      "WordPress",
-      "WooCommerce",
-      "Google Merchant Center",
-      "Stripe",
-      "Payment Gateways",
-      "Elementor",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP"
-    ],
-    "githubUrl": "",
-    "liveUrl": "https://www.kiwikandy.com"
-  },
-  {
-    "id": "the-phone-mason",
-    "title": "The Phone Mason - Local SEO & Lead Generation",
-    "summary": "A business website for a device repair shop, achieving top 3 local search rankings through strategic SEO and continuous optimization.",
-    "buttonText": "Visit Site",
-    "images": [
-      "/images/features/the-phone-mason/1.png",
-      "/images/features/the-phone-mason/2.png",
-      "/images/features/the-phone-mason/3.png"
-    ],
-    "description": "<h4>Project Overview</h4><p>A comprehensive business website for The Phone Mason, a device repair specialist, designed to capture local market share through strategic SEO and lead generation optimization.</p><h4>SEO Strategy & Implementation</h4><ul><li>Implemented robust <strong>local SEO strategy</strong> including Google Business Profile optimization, local citations, and location-based keyword targeting.</li><li>Performed extensive <strong>on-page optimization</strong> focused on relevant keywords, meta descriptions, header tags, and semantic HTML structure.</li><li>Continuous <strong>SEO monitoring and refinement</strong> using Google Analytics and Ahrefs for keyword tracking, backlink analysis, and competitor research.</li><li>Created targeted <strong>ad campaigns</strong> with optimized landing pages for specific repair services (screen repair, battery replacement, water damage).</li></ul><h4>Technical Implementation</h4><ul><li>Led end-to-end development and deployment of WordPress website with custom theme modifications and plugin integration.</li><li>Deployed on <strong>AWS</strong> with optimized server configuration for fast loading times and reliable uptime.</li><li>Implemented <strong>conversion optimization</strong> with strategic call-to-action placement, contact forms, and click-to-call functionality.</li></ul><h4>Results</h4><ul><li>Achieved <strong>top 3 local search rankings</strong> for competitive repair keywords in the Howick, Auckland area.</li><li>Website successfully converts targeted traffic into valuable customer leads, creating a reliable growth engine for the business.</li></ul>",
-    "technologies": [
-      "WordPress",
-      "Elementor",
-      "AWS",
-      "Google Analytics",
-      "Google Business Profile",
-      "Ahrefs",
-      "Local SEO",
-      "Photoshop",
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "githubUrl": "",
-    "liveUrl": "https://thephonemason.nz/"
-  },
-  {
-    "id": "ai-content-generator",
-    "title": "AI Content Generator with Gemini Pro",
-    "summary": "A web application leveraging Google's Gemini Pro to help users generate high-quality, brand-aligned website content.",
-    "buttonText": "Fork Me",
-    "images": [
-      "/images/features/blogwriter/3.png",
-      "/images/features/blogwriter/4.png",
-      "/images/features/blogwriter/5.png",
-      "/images/features/blogwriter/6.png",
-      "/images/features/blogwriter/7.png"
-    ],
-    "description": "<h4>Project Overview</h4><p>An AI-powered content assistant designed to help bloggers, marketers, and website owners overcome writer's block and efficiently produce high-quality, relevant content. This project demonstrates integration with Google's Gemini Pro API for generative AI capabilities.</p><h4>AI Technology</h4><p>The application leverages the power of <strong>Google's Gemini Pro API</strong> to generate text that is coherent, context-aware, and tailored to the user's specific needs and brand voice.</p><h4>Key Features</h4><ul><li>A clean and interactive user interface built with <strong>Streamlit</strong> for rapid prototyping and deployment.</li><li>Generates a variety of content types, including full-length blog posts, 'About Us' pages, product descriptions, and marketing copy.</li><li>Allows users to define a specific context or 'brand voice' to ensure all generated content is perfectly aligned with their business identity.</li><li>Real-time content generation with streaming responses for immediate feedback.</li></ul><h4>Use Cases</h4><ul><li>Blog post generation with SEO-friendly structure and keyword integration.</li><li>Marketing content creation for landing pages and promotional materials.</li><li>Content ideation and outline generation for content planning.</li></ul>",
-    "technologies": ["Python", "Google Gemini Pro", "Streamlit", "API Integration"],
-    "githubUrl": "https://github.com/blankv15/ai-content-generator",
-    "liveUrl": ""
   },
   {
     "id": "social-meetup-app",
