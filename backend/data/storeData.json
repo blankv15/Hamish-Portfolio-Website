@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ai-automation-starter",
+    "name": "AI Automation Starter Kit",
+    "price": 49,
+    "currency": "NZD",
+    "type": "digital",
+    "badge": "Popular",
+    "description": "A collection of ready-to-deploy n8n and Make.com workflow templates for common business automation tasks — lead capture, email follow-ups, CRM updates, Slack notifications, and more. Each template is documented and ready to customise.",
+    "features": [
+      "10 production-ready n8n workflow templates",
+      "5 Make.com scenario templates",
+      "Setup guide and documentation",
+      "Lifetime access to template updates"
+    ],
+    "stripePriceId": "",
+    "downloadUrl": "",
+    "deliveryNote": "Your download link is above. If you have any issues accessing it, reply to this email."
+  },
+  {
+    "id": "shopify-dev-toolkit",
+    "name": "Shopify Developer Toolkit",
+    "price": 79,
+    "currency": "NZD",
+    "type": "digital",
+    "badge": "New",
+    "description": "A curated set of reusable Shopify Liquid snippets, Dawn customisation patches, and metafield configurations that I use across client projects. Skip the boilerplate and get straight to building.",
+    "features": [
+      "20+ reusable Liquid snippets",
+      "Dawn theme customisation patches",
+      "Metafield schema definitions",
+      "Performance checklist and audit guide"
+    ],
+    "stripePriceId": "",
+    "downloadUrl": "",
+    "deliveryNote": "Your download link is above. If you have any issues accessing it, reply to this email."
+  },
+  {
+    "id": "dev-consultation",
+    "name": "1-Hour Dev Consultation",
+    "price": 150,
+    "currency": "NZD",
+    "type": "service",
+    "badge": null,
+    "description": "A focused 60-minute session to tackle whatever you're working on — code review, architecture decisions, debugging, Shopify strategy, AI tool integration, or anything else in my wheelhouse. I'll send a Calendly link after purchase to book your time.",
+    "features": [
+      "60-minute video call",
+      "Code review or architecture walkthrough",
+      "Written follow-up notes after the session",
+      "Flexible scheduling within 2 weeks"
+    ],
+    "stripePriceId": "",
+    "downloadUrl": "",
+    "deliveryNote": "I'll be in touch within 24 hours with a Calendly link to book your session. Looking forward to it!"
+  }
+]
