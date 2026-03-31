@@ -6,6 +6,11 @@ const axios = require('axios');
 const fs = require('fs');
 const https = require('https');
 
+let stripe = null;
+if (process.env.STRIPE_SECRET_KEY) {
+  stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+}
+
 require('dotenv').config();
 
 const app = express();
@@ -15,6 +20,70 @@ const HTTPS_PORT = 5002;
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
+
+// Stripe webhook — must be before express.json() middleware
+app.post('/api/webhook/stripe', express.raw({ type: 'application/json' }), async (req, res) => {
+  if (!stripe) return res.status(503).send('Stripe not configured');
+
+  const sig = req.headers['stripe-signature'];
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  if (!webhookSecret) return res.status(503).send('Webhook secret not configured');
+
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err.message);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const customerEmail = session.customer_details?.email;
+
+    if (customerEmail) {
+      try {
+        // Find which product was purchased by matching price ID
+        const storeDataPath = path.join(__dirname, 'data', 'storeData.json');
+        const products = JSON.parse(fs.readFileSync(storeDataPath, 'utf8'));
+
+        // Get line items to find the product
+        const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+        const priceId = lineItems.data[0]?.price?.id;
+        const product = products.find(p => p.stripePriceId === priceId);
+
+        if (product) {
+          let emailBody = `<p>Hi there,</p><p>Thanks for purchasing <strong>${product.name}</strong>!</p>`;
+
+          if (product.downloadUrl) {
+            emailBody += `<p>Here is your download link: <a href="${product.downloadUrl}">${product.downloadUrl}</a></p>`;
+          }
+
+          if (product.deliveryNote) {
+            emailBody += `<p>${product.deliveryNote}</p>`;
+          }
+
+          emailBody += `<p>If you have any questions, just reply to this email.</p><p>— Hamish</p>`;
+
+          await resend.emails.send({
+            from: process.env.FROM_EMAIL || 'noreply@hamishc.nz',
+            to: [customerEmail],
+            subject: `Your purchase: ${product.name}`,
+            html: emailBody,
+          });
+
+          console.log(`Delivery email sent to ${customerEmail} for product: ${product.name}`);
+        }
+      } catch (err) {
+        console.error('Error sending delivery email:', err);
+      }
+    }
+  }
+
+  res.json({ received: true });
+});
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/react')));
@@ -71,6 +140,63 @@ app.get('/api/tabs', (req, res) => {
       res.status(404).send('Tab data not found');
     }
   });
+});
+
+app.get('/api/blog', (req, res) => {
+  const blogDataPath = path.join(__dirname, 'data', 'blogData.json');
+  const posts = JSON.parse(fs.readFileSync(blogDataPath, 'utf8'));
+  // Return list without full content for the index
+  const index = posts.map(({ content, ...rest }) => rest);
+  res.json(index);
+});
+
+app.get('/api/blog/:slug', (req, res) => {
+  const blogDataPath = path.join(__dirname, 'data', 'blogData.json');
+  const posts = JSON.parse(fs.readFileSync(blogDataPath, 'utf8'));
+  const post = posts.find(p => p.slug === req.params.slug);
+  if (!post) return res.status(404).json({ message: 'Post not found' });
+  res.json(post);
+});
+
+app.get('/api/store', (req, res) => {
+  const storeDataPath = path.join(__dirname, 'data', 'storeData.json');
+  res.sendFile(storeDataPath, (err) => {
+    if (err) {
+      console.error('Error sending storeData.json:', err);
+      res.status(404).send('Store data not found');
+    }
+  });
+});
+
+app.post('/api/checkout/session', async (req, res) => {
+  if (!stripe) {
+    return res.status(503).json({ error: 'Store payments are not configured yet. Please check back soon.' });
+  }
+  const { productId } = req.body;
+  if (!productId) return res.status(400).json({ error: 'Product ID is required.' });
+
+  const storeDataPath = path.join(__dirname, 'data', 'storeData.json');
+  const products = JSON.parse(fs.readFileSync(storeDataPath, 'utf8'));
+  const product = products.find(p => p.id === productId);
+
+  if (!product) return res.status(404).json({ error: 'Product not found.' });
+  if (!product.stripePriceId) {
+    return res.status(400).json({ error: 'This product is not yet available for purchase. Check back soon.' });
+  }
+
+  try {
+    const siteUrl = process.env.SITE_URL || 'https://hamishc.nz';
+    const session = await stripe.checkout.sessions.create({
+      line_items: [{ price: product.stripePriceId, quantity: 1 }],
+      mode: 'payment',
+      success_url: `${siteUrl}/store?payment=success`,
+      cancel_url: `${siteUrl}/store?payment=cancelled`,
+    });
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error('Stripe checkout error:', err);
+    res.status(500).json({ error: 'Payment processing error. Please try again.' });
+  }
 });
 
 app.get(/.*/, (req, res) => {
