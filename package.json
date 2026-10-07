@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "build-hero": "node scripts/build-hero.js"
   },
   "devDependencies": {
     "sharp": "^0.34.4"
